@@ -1,0 +1,512 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700|Noto+Sans:400,700&display=swap&subset=korean');
+
+/* reset */
+html {font-size:100%}
+body {
+	font-size:12px;
+	font-family: 'Noto Sans','Noto Sans KR', sans-serif;
+	line-height:1.6;
+	margin:0;
+	padding:0;
+	word-break: keep-all;
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol, li {list-style:none;}
+a:link, a:visited {color: #666666;text-decoration:none;}
+strong, span, p {color: #1e1e1e; }
+
+/* layout-------------------------------------------------------------- */
+.kakao_wrap {width: 100%; overflow: hidden; }
+.kakao_head { width:100%;height: 60px; overflow: hidden; }
+.header_inner {height: 60px; display: block; padding: 0 80px; max-width: 1760px;}
+main {width:100%; background-color:#fff; margin: 0 auto;}
+.main_info {max-width: 1800px;min-width: 1200px; }
+.main_service {max-width: 1800px;min-width: 1200px; }
+footer {width: 100%; height: 100px; background-color:#fff ;}
+.foot_inner {
+	max-width:1800px;  
+	min-width: 1200px; 
+	height: 70px; 
+	background-color: #fff; 
+	margin: 0 auto; 
+	border-top: 1px solid#d4d4d4; 
+	padding: 22px 80px 0;
+}
+
+/* common------------------------------------------------------------------- */
+.clear:after {content: ''; display: block; clear: both;}
+
+/* header---------------------------------------------------------------------- */
+header {position: fixed; z-index: 200; min-width: 1300px; width: 100%; }
+header.on {
+	background-color: #fff; 
+	border-bottom: 1px solid #e6e6e6 ;
+	transition: all ease 0.7s;
+}
+header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
+.header_inner > .logo {float:left;}
+.header_inner > .logo > a {padding:20px 0; display: block;}
+/* nav-- */
+.head_nav {
+	height: 61px; 
+	position: absolute; 
+	top:0; left:33%; 
+	display: inline-block;
+}
+.head_nav > ul > li { 
+	float:left; 
+	position: relative; 
+	padding:0 14px 0 13px;
+}
+.head_nav > ul > li:hover:after {
+	content:'';
+	border-bottom:2px solid #1e1e1e;;
+	position: absolute;
+	left:0;
+	right:0;
+	bottom:-1px;
+}
+.head_nav > ul > li > a {
+	color:#121e1b; 
+	font-size: 16px;
+	padding:22px 0 ;
+	display: block;
+	line-height: 16px;
+}
+.wh {
+	color: #fff;
+}
+.head_nav ul > li.go {position: relative;}
+.head_nav ul > li.go a {padding-right: 19px;}
+.head_nav ul > .go > a:after {
+	content: '';
+	position: absolute;
+	top:24px;
+	right: 0;
+	display: block;
+	width: 13px; height: 13px;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -155px 0;
+	}
+
+/* head 공통 부분----------- */
+.head_nav div {
+	height: auto;
+	background-color:#ffffff;
+	position: fixed;
+	top:61px;;
+	left:0;
+	right: 0;
+	display: none;
+}
+.head_nav div.on {
+	display: block;
+}
+.head_nav ul h3 {margin:61px 0 31px;}
+.head_nav div > ul { 
+	display: table; 
+	height: auto; 
+	margin: 0 auto; 
+}
+.head_nav div > ul > li {
+	text-align: center; 
+	padding-bottom:68px; 
+	height: 100%;
+	display:table-cell;
+	border-right: 1px solid #e6e6e6;
+}
+.head_nav div > ul > li:first-child {border-left: 1px solid #e6e6e6;}
+.head_nav h3 {font-size: 13px; color: #1e1e36;}
+.head_nav div > ul > li > ul > li + li {margin-top:18px;}
+.head_nav div > ul > li > ul > li > a {font-size: 13px;}
+.head_nav div > ul > li > ul > li:hover {text-decoration-line: underline;}
+/* head 공통 끝---------------*/
+
+.sub6 > ul > li {width:192px;}
+.sub6 > ul > li > ul > li {display: block;}
+.sub6 .btn > a {padding-right: 19px; position: relative;}
+.sub6 > ul > li > ul > .btn > a:after {
+	position: absolute;
+	top: 4px;
+	right: -3px;
+	content: '';
+	width: 13px; height: 13px;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -155px 0;
+ }
+.sub8 > ul > li {width:144px;}
+.sub5 > ul > li {width:231px ;}
+/* head_lang */
+.head_lang {float: right;}
+.head_lang > a {
+	color:#807f7d; 
+	padding:22px 0; 
+	float: left; 
+	font-size: 14px; 
+	font-weight: 300;
+}
+.head_lang > a + a {margin-left:16px; }
+.head_lang > a > span {line-height: 16px; display: block; }
+.head_lang > a > span:hover {color: #1e1e1e; font-weight: 500;}
+.head_lang > a.click {color: #1e1e1e; font-weight: 500;}
+
+/* main --------------------------------------------------------------- */
+.main_visual {
+	position: relative; 
+	width: 100%; 
+	min-height: 602px;
+    max-height: 842px;
+	min-width: 1300px;
+	overflow: hidden; 
+	z-index: 100;
+}
+.visual_inner {min-height: 602px; }
+.main_visual > .page {border:1px solid liem; }
+div.bx-wrapper .bx-controls-direction a {
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	width: 40px;
+	height: 40px;
+	transform: translateY(-50%);
+	margin-top: 0;
+}
+div.bx-wrapper .bx-controls-direction a.bx-prev {
+	background-position:-155px -110px;
+	left: 0;
+}
+div.bx-wrapper .bx-controls-direction a.bx-next {
+	background-position:  -205px -110px;
+	right: 0;
+}
+.main_visual > .page > a {
+	position: absolute;
+	display: inline_block;
+	text-indent: -999px;
+	overflow: hidden;
+	
+}
+/* .main_visual > .page > .prev {
+	top:50%; left: 0;
+	
+	transform: translateY(-50%);
+}
+.main_visual > .page > .next {
+	top:50%; right: 0;
+	
+	transform: translateY(-50%);
+} */
+div.bx-wrapper {
+	border: none;
+	box-shadow: none;
+	margin-bottom: 0;
+}
+
+.visual_inner > ul {
+	height: 100%;
+}
+.visual_inner .visual_inner_slid {padding-top: 46%; position: relative;}
+.visual_inner .visual_inner_slid > img {height: 100%;max-width: none; position: absolute; top:0;} 
+.visual_inner .visual_inner_slid > .slid_inner.wh p {color:#fff;}
+.slid_inner { 
+	margin: 118px 0 0 80px; 
+	position: absolute;
+	top:0; left:0;
+}
+.slid_inner p {
+	margin-bottom: 39px;
+	font-size: 30px;
+	line-height: 48px;
+	font-weight: bold;
+}
+.slid_inner a {
+	color: #1e1e1e;
+	width:122px; height:38px;
+	line-height: 38px;
+	padding-left: 14px;
+	background-color: #fff;
+	font-size: 14px;
+	position: absolute;
+	left:0;
+	bottom:-32px;
+}
+.slid_inner a:hover {
+	background-color:#1e1e1e; 
+	color:#fff;
+}
+.slid_inner.wh a {
+	border:1px solid #1e1e1e;
+}
+.slid_inner a:hover span {background-position:-130px -65px;}
+.slid_inner a > span {
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;
+	vertical-align: top;
+	margin:16px 0 0 33px;
+	width:6px; height: 9px;
+	background: url('../images/ico_corp_181031.png') no-repeat;	
+	background-position:-115px -65px;
+}
+
+/* page_num-- */
+.page_num div {border:1px solid orange;
+	position: absolute;
+	bottom:21px;
+	right:80px;
+}
+.page_num > .num {font-size: 16px; font-weight: bold; color:#1e1e1e;}
+.page_num > .num > strong {margin-right: 4px; color:#1e1e1e;}
+.page_num > .num.wh {color:#fff ;}
+.page_num > .num.wh > strong {color:#fff; }
+
+div.bx-wrapper .bx-pager{
+	bottom: 18px;
+	right: 80px;
+	text-align: right;
+	width: auto;
+	padding-top: 0;
+	font-size: 16px;
+	color: #1e1e1e;
+	font-family: 'Noto Sans';
+}
+/* page_num 끝-- */
+/* content :main_info--------------------------------------------------------*/  
+/* maininfo 공통 */
+.main_info { 
+	max-width:1800px; 
+	min-width: 1320px;
+	padding:35px 60px 0 ;  
+	overflow: hidden; 
+	margin: 0 auto;
+}     
+.main_info > div {
+	float:left; 
+	width: 33.333%; 
+	box-sizing: border-box;
+	padding:0 20px;
+} 
+.main_info h3 { font-size: 14px; margin-bottom: 18px; font-weight: 500;}    
+.main_info a:hover strong {text-decoration-line: underline;}
+
+.press > a > * {display: block;}
+.press > a > strong {
+	font-weight: bold;
+	font-size:20px;
+	color:#1e1e1e;
+ }
+.press > a > span {
+	color: #666;
+	font-size: 14px;
+	padding-top: 8px;
+	overflow: hidden;
+	font-weight: 300;
+}
+
+.stock > h3 {margin-bottom: 0;}
+.stock_inner {padding-top:47px; padding-bottom: 34px;}
+.stock_inner > * { float: left; display: block;}
+.stock_inner > .stock_now {
+	float:left;
+	display:block;
+	font-size: 32px;
+    font-weight: bold;
+	color: #1e1e1e;
+	margin-right: 25px;	
+	line-height: 32px;
+}
+.stock_icon {
+	margin: 15px 11px 0 0;;
+	width: 18px; height: 14px;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -40px -20px; 
+	}
+.stock_inner > .up {
+	line-height: 16px;
+	font-size: 20px; color: #ff0018;
+	display: inline-block;
+	margin-top: 14px;
+}
+.priv a {font-size: 20px; color: #1e1e1e;}
+
+/* main_service-------------------------------------------------------------- */
+/* 공통 */
+.main_service { 
+	padding: 76px 60px 180px 60px; 
+	margin: 0 auto;  
+	overflow: hidden;
+}
+.main_service > ul > li { 
+	width: 33.333%; 
+	float: left; 
+	position: relative;
+	padding:0 20px;
+	box-sizing: border-box;
+	min-width: 359.95px;
+}
+
+.main_service a:hover strong {text-decoration-line: underline;}
+.main_service > ul > li > a > h3 {position: absolute; top:15px; left:40px; font-weight: 500; color:#1e1e1e;}
+.main_service > ul > li > a > img {margin-bottom:32px; width: 100%; }
+.main_service > ul > li > a > * {display: block;}
+.main_service > ul > li > a > strong {font-size: 20px; font-weight: bold; padding-bottom:15px; }
+.main_service > ul > li > a > span {color: #666; font-size:14px;}
+/* 끝 */
+.main_service > ul > li > a > .mid {color:#fff;}
+
+/*kakao_foot------------------------------------------------------------------ */
+/* coppyright 공통----- */
+.foot_inner {padding-top:30px; position: relative; }
+.coppy_info > li {float:left; position: relative;}
+.coppy_info > li + li {margin-left:20px;}
+.coppy_info .cop_arrow { padding-right:13px; position: relative; }
+.cop_arrow > span {
+	width: 7px; height: 4px;
+	display: inline-block;
+	position: absolute;
+	top:7px;
+	right:0;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -275px -25px ;
+}
+.coppy_info > li  {line-height: 12px; display: block;}
+.coppy_info > li > a:hover {color:#1e1e1e;}
+.coppy_info > li > a:hover > span {background-position: -285px -25px}
+.coppy_info .cop {
+	border:1px solid #d4d4d4;
+	background-color: #ffffff;
+	height: auto;;
+	padding: 11px 0 ;
+	position: absolute;
+	bottom:22px;;
+	left:0; 
+	display: none;
+}
+.coppy_info .cop.on{display: block;}
+
+.cop > li > a {
+	color: #666;
+	white-space: nowrap;
+	display: block;
+	font-size: 12px;
+	line-height: 30px;
+	padding: 0 14px;
+	cursor: pointer;
+}
+.cop_btn > span {
+	font-size:0;
+	margin-left: 6px;
+	line-height: 0;
+	display:inline-block;
+	overflow: hidden;
+	width: 13px; height: 13px;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -155px 0;
+}
+/* 공통끝----- */
+
+.coppy_info > .new { 
+	position: relative;
+	width: 73px;
+}
+.coppy_info > .new > a {display: block; padding-right: 19px;}
+.coppy_info > .new > a > span {
+	position: absolute; 
+	top:4px;
+	right:0;
+}
+.cop_arrow > i {
+	position: absolute;
+	display:block;
+	top:1px;
+	right: 15px;;
+	width:11px; height: 11px;
+	background:url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -100px -50px;
+}
+.coppy_info > li > a {font-weight: 300; color: #1e1e1e;}
+.coppy_info > li > a:hover {font-weight: 700;}
+.coppy_info > li > a.bold {font-weight: 700;}
+.coppy_info > li > .cop1 {width:137px;}
+.coppy_info > li  > ul > li > a {font-weight: 300;}
+.coppy_info > li  > ul > li > a:hover {text-decoration-line: underline;}
+.coppy_txt {margin-top:4px; clear: both;}
+.coppy_txt > small {font-size: 12px; font-weight: 300;}
+.coppy_txt > small > a:hover {text-decoration-line: underline;}
+.coppy_txt > small > .link {color:#1e1e1e}
+
+.relation { 
+	float:right; 
+	position: absolute;
+	bottom:55px; 
+	right:80px;
+}
+.relation > a {
+	border-bottom:1px solid #1e1e1e;
+	 width: 160px; 
+	 display: block; 
+	 line-height: 28px;
+	 position: relative;
+	}
+.relation > a:after {
+	position: absolute;
+	top:9px; right:0;
+	content: '';
+	display: block;
+	width:9px; height: 9px;
+	overflow: hidden;
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position:-143px  -65px ;
+}
+.relation > .on:after  {background-position: -172px -65px; font-weight:bold;}
+
+.relation > ul {
+	 position: absolute; left:0; bottom:28px; 
+	 width:92px;
+	 border:1px solid #d4d4d4;
+	 background-color: #ffffff;
+	 padding:20px 54px 21px 14px;
+	 display: none;
+	}
+.relation > ul.on {
+display: block;
+}
+.relation > ul > li {line-height: 12px; color: #666;}
+.relation > ul > li > a {font-weight: 300;;}
+.relation > ul > li > a:hover {text-decoration-line: underline;}
+.relation > ul > li + li {margin-top:19px; }
+
+/* link_top ---------------------------------------------------------------------- */
+.link_top {
+	opacity: 0;
+	bottom: 160px;
+}
+.link_top.on {
+	position: fixed;
+	bottom:60px;
+	right: 40px;
+	opacity: 1;
+	transition: all ease 0.3s;
+}
+.link_top.queue{
+	bottom: 160px;
+	opacity: 1;
+}
+
+.link_top > span {
+	background: url('../images/ico_corp_181031.png') no-repeat;
+	background-position: -90px -10px;
+	display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+	vertical-align: top;
+	width: 21px;
+	height: 30px;
+}
+
+
