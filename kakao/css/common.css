@@ -49,7 +49,23 @@ header.on {
 	transition: all ease 0.7s;
 }
 header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
-.header_inner > .logo {float:left;}
+header:hover > .header_inner > .logo{
+	background-image:url('../images/logo_kakao.png') ;
+}
+.header_inner.bk > .logo {
+	background-image:url('../images/logo_kakao.png') ;	
+}
+.header_inner > .logo {
+	float:left;
+	display: block;
+    overflow: hidden;
+    width: 66px;
+    height: 60px;
+	background-image: url('../images/logo_kakao_white.png');
+	background-size: auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
 .header_inner > .logo > a {padding:20px 0; display: block;}
 /* nav-- */
 .head_nav {
@@ -72,14 +88,17 @@ header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
 	bottom:-1px;
 }
 .head_nav > ul > li > a {
-	color:#121e1b; 
+	color:#fff; 
 	font-size: 16px;
 	padding:22px 0 ;
 	display: block;
 	line-height: 16px;
 }
-.wh {
-	color: #fff;
+.header_inner.bk > .head_nav > ul > li > a {
+	color: #1e1e1e;
+}
+header:hover .head_nav > ul > li > a {
+	color:#1e1e1e
 }
 .head_nav ul > li.go {position: relative;}
 .head_nav ul > li.go a {padding-right: 19px;}
@@ -102,6 +121,7 @@ header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
 	top:61px;;
 	left:0;
 	right: 0;
+	min-width: 1230px;
 	display: none;
 }
 .head_nav div.on {
@@ -151,7 +171,9 @@ header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
 	font-weight: 300;
 }
 .head_lang > a + a {margin-left:16px; }
-.head_lang > a > span {line-height: 16px; display: block; }
+.head_lang > a > span {line-height: 16px; display: block; color: #fff; }
+.header_inner.bk > .head_lang > a > span{color: #1e1e1e;}
+header:hover>.header_inner> .head_lang > a > span{color: #1e1e1e;}
 .head_lang > a > span:hover {color: #1e1e1e; font-weight: 500;}
 .head_lang > a.click {color: #1e1e1e; font-weight: 500;}
 
@@ -208,7 +230,7 @@ div.bx-wrapper {
 .visual_inner > ul {
 	height: 100%;
 }
-.visual_inner .visual_inner_slid {padding-top: 46%; position: relative;}
+.visual_inner .visual_inner_slid {padding-top: 45%; position: relative;}
 .visual_inner .visual_inner_slid > img {height: 100%;max-width: none; position: absolute; top:0;} 
 .visual_inner .visual_inner_slid > .slid_inner.wh p {color:#fff;}
 .slid_inner { 
@@ -270,7 +292,7 @@ div.bx-wrapper .bx-pager{
 	width: auto;
 	padding-top: 0;
 	font-size: 16px;
-	color: #1e1e1e;
+	color: #fff;
 	font-family: 'Noto Sans';
 }
 /* page_num 끝-- */
@@ -509,4 +531,8 @@ display: block;
 	height: 30px;
 }
 
+@media (max-width: 1240px){
+	.header_inner {
+    padding: 0 40px;}
+}
 
