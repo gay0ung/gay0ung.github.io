@@ -79,9 +79,11 @@ window.addEventListener('load', function () {
             var fontColor = slideLis[num].dataset.color;
             var headerInner = document.querySelector('.header_inner');
             
+
             
             if (fontColor === 'black') {
                 headerInner.classList.add('bk');
+
             }else{
                 headerInner.classList.remove('bk');
             }
@@ -118,7 +120,7 @@ window.addEventListener('load', function () {
             } else {
                 footerTarget.classList.add('on');
                 copArrow.style.backgroundPosition = '-285px -25px';
-                copArrow.parentNode.style.fontWeight = 'bold'
+                copArrow.parentNode.style.fontWeight = '700'
             }
             
         }

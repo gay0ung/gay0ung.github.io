@@ -48,13 +48,12 @@ header.on {
 	border-bottom: 1px solid #e6e6e6 ;
 	transition: all ease 0.7s;
 }
-header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
-header:hover > .header_inner > .logo{
+header.on > .header_inner > .logo ,header:hover > .header_inner > .logo, .header_inner.bk > .logo{
 	background-image:url('../images/logo_kakao.png') ;
 }
-.header_inner.bk > .logo {
-	background-image:url('../images/logo_kakao.png') ;	
-}
+header:hover {background-color:#fff ;border-bottom: 1px solid #e6e6e6 ;}
+
+
 .header_inner > .logo {
 	float:left;
 	display: block;
@@ -94,12 +93,10 @@ header:hover > .header_inner > .logo{
 	display: block;
 	line-height: 16px;
 }
-.header_inner.bk > .head_nav > ul > li > a {
+header.on > .header_inner > .head_nav >ul > li > a, .header_inner.bk > .head_nav > ul > li > a, header:hover .head_nav > ul > li > a {
 	color: #1e1e1e;
 }
-header:hover .head_nav > ul > li > a {
-	color:#1e1e1e
-}
+
 .head_nav ul > li.go {position: relative;}
 .head_nav ul > li.go a {padding-right: 19px;}
 .head_nav ul > .go > a:after {
@@ -172,8 +169,9 @@ header:hover .head_nav > ul > li > a {
 }
 .head_lang > a + a {margin-left:16px; }
 .head_lang > a > span {line-height: 16px; display: block; color: #fff; }
-.header_inner.bk > .head_lang > a > span{color: #1e1e1e;}
-header:hover>.header_inner> .head_lang > a > span{color: #1e1e1e;}
+header.on > .header_inner > .head_lang > a > span, .header_inner.bk > .head_lang > a > span, header:hover>.header_inner> .head_lang > a > span{
+	color: #1e1e1e;
+}
 .head_lang > a > span:hover {color: #1e1e1e; font-weight: 500;}
 .head_lang > a.click {color: #1e1e1e; font-weight: 500;}
 
@@ -203,6 +201,9 @@ div.bx-wrapper .bx-controls-direction a.bx-prev {
 div.bx-wrapper .bx-controls-direction a.bx-next {
 	background-position:  -205px -110px;
 	right: 0;
+}
+div.bx-wrapper .bx-pager.on {
+	color: #fff;
 }
 .main_visual > .page > a {
 	position: absolute;
@@ -395,8 +396,11 @@ div.bx-wrapper .bx-pager{
 	background-position: -275px -25px ;
 }
 .coppy_info > li  {line-height: 12px; display: block;}
-.coppy_info > li > a:hover {color:#1e1e1e;}
-.coppy_info > li > a:hover > span {background-position: -285px -25px}
+.coppy_info > li > a:hover {
+	color:#1e1e1e !important;
+	font-weight: 700 !important;
+}
+.coppy_info > li > a:hover > span {background-position: -285px -25px !important}
 .coppy_info .cop {
 	border:1px solid #d4d4d4;
 	background-color: #ffffff;
