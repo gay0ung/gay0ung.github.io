@@ -1397,6 +1397,9 @@ div.bx-wrapper {
 		max-width: 100%;
 		height: auto;
 	}
+	.contact_box.queue {
+		bottom: 24px;
+	}
 }
 /* 826이하 -------------------------------*/
 @media screen and (max-width:841px) {

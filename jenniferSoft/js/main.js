@@ -84,7 +84,7 @@ window.addEventListener('load', function () {
             if (headerNav.classList.contains('on')) {
                 headerNav.classList.remove('on');
                 headerTarget.classList.remove('on');
-                
+
                 
             } else {
                 headerNav.classList.add('on');
@@ -142,16 +142,15 @@ window.addEventListener('load', function () {
     //etcLangBtn
         function LangClick(e) {
             e.preventDefault();
-            var footerTarget = encodeURI.target.parentNode.querySelector('ul');
+
+            var footerTarget = e.target.parentNode.querySelector('ul');
             
             if (e.target.tagName !== 'A') return;
 
             if (footerTarget.classList.contains('on')) {
                 footerTarget.classList.remove('on');
-
             } else {
                 footerTarget.classList.add('on');
-       
             }
 
         }
@@ -173,11 +172,26 @@ window.addEventListener('load', function () {
                 mailIcon.classList.add('on');
             }
         }
+
         function licenseClick(e) {
             e.preventDefault();
             var licenseOp = document.querySelector('.license_option')
+            var licenseTxt = document.querySelectorAll('.license_option > a');
+
+//라이센스 텍스트에서 글자를 찾는다
+//찾은 글자를 라이센스 옵션에 글자로 박는다.
+// slideroption참고 해보기
+
+            for (let i = 0; i < licenseTxt.length; i++){
+                licenseOp = licenseTxt[i].textContent
+                console.log(licenseOp);
+                licenseTxt.getAttribute()
+                
+            }
+            
             if (licenseBtn.classList.contains('active')){
-                licenseBtn.classList.remove('active')
+                licenseBtn.classList.remove('active');
+                
             } else { 
                 licenseBtn.classList.add('active')
             }
