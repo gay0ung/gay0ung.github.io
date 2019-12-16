@@ -15,16 +15,9 @@ window.addEventListener('load', function () {
 
         var scrollTop = jenniferSF.scrollTop;
         console.log(scrollTop);
-
-        // if (oldScroll < scrollTop) {
-        //     console.log('내려감');
-        // } else if (scrollTop < oldScroll) {
-        //     console.log('올라감');
-        // }
-        //---------------------
         if (scrollTop > 0) {
             header.className='queue';
-            hamBtn.className = 'ham_btn on'
+            hamBtn.className = 'ham_btn queue'
         }
         if (scrollTop < 2) {
             header.className='';
@@ -32,7 +25,7 @@ window.addEventListener('load', function () {
         }
         if (scrollTop > 402) {
             header.className='on';
-            hamBtn.className = 'ham_btn on'
+            hamBtn.className = 'ham_btn queue'
         }
         if (scrollTop < 3100) {
             mailIcon.className = 'contact_box'
@@ -51,21 +44,20 @@ window.addEventListener('load', function () {
 
         var headerNav = document.querySelector('.head_nav');
         var navLis = document.querySelectorAll('.head_nav > ul > li');
+        var headerBtn = document.querySelector('.ham_btn');
 
-        // console.log(headerNav);
+        headerBtn.addEventListener('click', headerClick);
+
 
         for (var i = 0; i < navLis.length; i++) {
             navLis[i].addEventListener('mouseenter', enterWork);
             navLis[i].addEventListener('mouseleave', leaveWork);
         };
+
         function enterWork(ev) {
-            // console.log(ev.target.tagName);
             
             var headUls = ev.target.querySelector('ul');
             var headAs = ev.target.querySelector('a');
-
-            // console.log(headUls);
-            // console.log(headAs);
 
             if (headUls) {
                 headUls.className='on';
@@ -83,6 +75,22 @@ window.addEventListener('load', function () {
                 headUls.className ='';
                 headAs.className = '';
             }
+        }
+        //headerClick
+        function headerClick(ev) {
+            console.log()
+            var headerTarget = headerNav.parentNode.querySelector('.ham_btn');
+
+            if (headerNav.classList.contains('on')) {
+                headerNav.classList.remove('on');
+                headerTarget.classList.remove('on');
+                
+                
+            } else {
+                headerNav.classList.add('on');
+                headerTarget.classList.add('on')
+            }
+
         }
         
     }
@@ -116,45 +124,27 @@ window.addEventListener('load', function () {
 
 /* footer --------------------------------------------------------------------*/ 
 //click
-    ClickWork();
+    footerClick();
 
-    function ClickWork() {
-        var headerBtn = document.querySelector('.ham_btn');
+    function footerClick() {
         var etcLangBtn = document.querySelector('.etc_lang');
-        var contactBox = document.querySelector('.contact_box');
+        var icoMail = document.querySelector('.ico_mail');
+        var licenseBtn = document.querySelector('.license')
 
-        headerBtn.addEventListener('click', headerClick )
+        
         etcLangBtn.addEventListener('click', LangClick);
-        contactBox.addEventListener('click', boxClick);
+        icoMail.addEventListener('click', boxClick);
+        licenseBtn.addEventListener('click', licenseClick)
         //console.log(headerBtn.parentNode);
 
-        //console.log(contactBox);
-    //headerClick
-        function headerClick(ev) {
-            
-            var NavTarget = document.querySelector('.head_nav');
-
-            console.log(NavTarget);
-            console.log(ev.target.tagName);
-            
-            if (NavTarget.classList.contains('on')) {
-                NavTarget.classList.remove('on');
-
-            } else {
-                NavTarget.classList.add('on');
-
-            }
-
-        }
+        //console.log(icoMail);
+    
     //etcLangBtn
-        function LangClick(ev) {
-            ev.preventDefault();
-            var footerTarget = ev.target.parentNode.querySelector('ul');
+        function LangClick(e) {
+            e.preventDefault();
+            var footerTarget = encodeURI.target.parentNode.querySelector('ul');
             
-            
-            console.log(ev.target.tagName);
-            
-            if (ev.target.tagName !== 'A') return;
+            if (e.target.tagName !== 'A') return;
 
             if (footerTarget.classList.contains('on')) {
                 footerTarget.classList.remove('on');
@@ -165,9 +155,9 @@ window.addEventListener('load', function () {
             }
 
         }
-    // contactBox
-        function boxClick(ev) {
-            ev.preventDefault();
+    // icoMail
+        function boxClick(e) {
+            e.preventDefault();
 
             var mailBox = document.querySelector('.box_wrap');
             var mailIcon = document.querySelector('.box_mail_icon');
@@ -181,6 +171,15 @@ window.addEventListener('load', function () {
                 mailIcon.classList.remove('on');
             }else {
                 mailIcon.classList.add('on');
+            }
+        }
+        function licenseClick(e) {
+            e.preventDefault();
+            var licenseOp = document.querySelector('.license_option')
+            if (licenseBtn.classList.contains('active')){
+                licenseBtn.classList.remove('active')
+            } else { 
+                licenseBtn.classList.add('active')
             }
         }
     }
