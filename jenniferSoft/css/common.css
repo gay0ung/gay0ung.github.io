@@ -358,15 +358,25 @@ div.bx-wrapper {
 	position: relative;
 	
 	}
+/* 여기서부터 해봐야함!!!!       ----------------------------------------- */
 .section_bar{
 	height: 1px;
     background-color: rgba(255,255,255,.1);
 }
+.section_bar:after {
+	transition:all 5s linear;
+	width:0;
+}
+.section_bar.on:after {
+	width:100%;
+}
+/* 여기서부터 해봐야함!!!!       ----------------------------------------- */
 .progress_section > p {
 	margin-top: 10px;
     font-size: 16px;
     line-height: 24px;
-    font-weight: 700;
+	font-weight: 700;
+	opacity: .5;
 }
 .visual_progress > .round {
 	background-color: #fff;
@@ -722,13 +732,14 @@ div.bx-wrapper {
 	background-color: #fff;
 	box-shadow: 0 5px 40px 0 rgba(0,0,0,.16);
 	border-radius: 8px;
-	display: none;
+	visibility: hidden;
+	opacity: 0;
 	transition: height 0s,opacity .8s,bottom .8s;
 	transition-timing-function: cubic-bezier(.19,1,.22,1);
 }
 .box_wrap.on {
-	display: block;     
-	
+	visibility: visible;
+	opacity: 1;   
 }
 .box_header {
 	background-color:#242635;
@@ -881,9 +892,9 @@ div.bx-wrapper {
 	cursor: pointer;
 }
 .box_footer_check > span {color: #17181a; font-weight: 400;}
-.box_footer_check_btn {
+input.box_footer_check_btn {
 	border:1px solid #959595;
-	background-color: #fff;
+	background-color: #6fe09e;
 	width: 16px;
 	height: 16px;
 	float: left;
@@ -1127,7 +1138,12 @@ div.bx-wrapper {
 	.text > a {height: auto;}
 	.text > a > h3 {margin-bottom :0; font-size: 18px; line-height: 24px;} 
 	.text > a > p {display: none;}
-	.text > a > span {display: block;}
+	.text > a > span {
+		display: block;
+		bottom:4px;
+		opacity: 1;
+		right: 10px;
+	}
 
 	/* main_spec */
 	.main_spec {padding:96px 0;}
@@ -1160,10 +1176,6 @@ div.bx-wrapper {
 		font-size: 18px;
 		margin:30px 0 22px;
 		line-height: 1.4;
-	}
-	.text > a > span {
-		bottom:4px;
-		
 	}
 	/* main_platform */
 	.main_platform {
@@ -1322,14 +1334,11 @@ div.bx-wrapper {
 		font-size: 14px;
 		font-weight: 700;
 		line-height: 42px;
-
-		
 	}
 	.box_mail_icon.on:hover{
 		background-color: rgba(146,69,219,.1);
 		border-radius:4px
 	}
-
 	.box_mail_icon.on > a > span{
 		background-image: none;
 		width: 100%;

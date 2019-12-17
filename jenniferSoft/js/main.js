@@ -4,29 +4,43 @@ window.addEventListener('load', function () {
 //scroll
     var jenniferSF = document.querySelector('html');
     var header = document.querySelector('header');
-    var mailIcon = document.querySelector('.contact_box')
-    var links = document.querySelector('.link')
-    var hamBtn = document.querySelector('.ham_btn')
-    var oldScroll = 0;
+    var mailIcon = document.querySelector('.contact_box');
+    var links = document.querySelector('.link');
+    var hamBtn = document.querySelector('.ham_btn');
+
     
-    window.addEventListener('scroll', work);
-
-    function work() {
-
+    window.addEventListener('scroll', scrollWork);
+    var oldScroll = 0; //--> 전역변수로 호명해준다(지역으로 하면 계속 호출되기 때문)
+    function scrollWork() {
         var scrollTop = jenniferSF.scrollTop;
-        console.log(scrollTop);
-        if (scrollTop > 0) {
-            header.className='queue';
-            hamBtn.className = 'ham_btn queue'
+
+        if(oldScroll < scrollTop){
+            //console.log('down');
+            downScroll();
+        }else {
+            //console.log('up');
+            upScroll();
         }
-        if (scrollTop < 2) {
-            header.className='';
+        oldScroll = scrollTop;
+
+        if (oldScroll === 0){
+            header.className = '';
             hamBtn.className = 'ham_btn'
         }
-        if (scrollTop > 402) {
-            header.className='on';
+        if(oldScroll > 0 && oldScroll < 402){
+            upScroll();
+        }
+
+        function downScroll() {
+            header.className = 'on';
             hamBtn.className = 'ham_btn queue'
         }
+        function upScroll() {
+            header.className = 'queue';
+            hamBtn.className = 'ham_btn queue'
+        }
+
+    //contact_box :scroll
         if (scrollTop < 3100) {
             mailIcon.className = 'contact_box'
             links.className = 'link'
@@ -54,10 +68,10 @@ window.addEventListener('load', function () {
             navLis[i].addEventListener('mouseleave', leaveWork);
         };
 
-        function enterWork(ev) {
+        function enterWork(e) {
             
-            var headUls = ev.target.querySelector('ul');
-            var headAs = ev.target.querySelector('a');
+            var headUls = e.target.querySelector('ul');
+            var headAs = e.target.querySelector('a');
 
             if (headUls) {
                 headUls.className='on';
@@ -68,27 +82,30 @@ window.addEventListener('load', function () {
             }
             
         }
-        function leaveWork(ev) {
-            var headUls = ev.target.querySelector('ul');
-            var headAs = ev.target.querySelector('a');
+        function leaveWork(e) {
+            var headUls = e.target.querySelector('ul');
+            var headAs = e.target.querySelector('a');
             if (headUls) {
                 headUls.className ='';
                 headAs.className = '';
             }
         }
         //headerClick
-        function headerClick(ev) {
+        function headerClick(e) {
             console.log()
             var headerTarget = headerNav.parentNode.querySelector('.ham_btn');
+            var jsHtml = document.querySelector('html');
 
             if (headerNav.classList.contains('on')) {
                 headerNav.classList.remove('on');
                 headerTarget.classList.remove('on');
-
-                
+                header.classList.remove('queue');
+                jsHtml.style.overflow = '';
             } else {
                 headerNav.classList.add('on');
-                headerTarget.classList.add('on')
+                headerTarget.classList.add('on');
+                jsHtml.style.overflow = 'hidden';
+                header.classList.add('queue')
             }
 
         }
@@ -105,7 +122,7 @@ window.addEventListener('load', function () {
             nextSelector: $('.txt_btn.next'),
             prevSelector: $('.txt_btn.prev'),
             onSlideBefore: function () {
-                // console.log(this.getCurrentSlide());
+                console.log(this.getCurrentSlide());
                 // onSlidWork()
                 lineAni(this.getCurrentSlide())
             }
@@ -114,8 +131,6 @@ window.addEventListener('load', function () {
         let lis = document.querySelectorAll('.visual_photo_inner > li')
 
         function lineAni(num){
-            lis[0].classList.remove('on');
-            lis[1].classList.remove('on');
             lis[num].classList.add('on')
         }
 
@@ -175,26 +190,28 @@ window.addEventListener('load', function () {
 
         function licenseClick(e) {
             e.preventDefault();
-            var licenseOp = document.querySelector('.license_option')
-            var licenseTxt = document.querySelectorAll('.license_option > a');
+            e.stopPropagation();
+            console.log(e.target);
+            if (e.target.tagName === 'BUTTON') {
+                if (licenseBtn.classList.contains('active')) {
+                    licenseBtn.classList.remove('active');
+                } else {
+                    licenseBtn.classList.add('active')
+                }
+
+            } else if (e.target.tagName === 'A') {
+                console.log(licenseBtn.childNodes[0]);
+                licenseBtn.childNodes[0].nodeValue = e.target.textContent;
+                licenseBtn.classList.remove('active');
+                return;
+            }
 
 //라이센스 텍스트에서 글자를 찾는다
 //찾은 글자를 라이센스 옵션에 글자로 박는다.
 // slideroption참고 해보기
 
-            for (let i = 0; i < licenseTxt.length; i++){
-                licenseOp = licenseTxt[i].textContent
-                console.log(licenseOp);
-                licenseTxt.getAttribute()
-                
-            }
             
-            if (licenseBtn.classList.contains('active')){
-                licenseBtn.classList.remove('active');
-                
-            } else { 
-                licenseBtn.classList.add('active')
-            }
+            
         }
     }
 })
