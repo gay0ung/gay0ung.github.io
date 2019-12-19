@@ -44,7 +44,6 @@ window.addEventListener('load', function () {
         if (scrollTop < 3100) {
             mailIcon.className = 'contact_box'
             links.className = 'link'
-            
         }
         if (scrollTop > 3300 ) {
             mailIcon.className ='contact_box queue'
@@ -121,17 +120,28 @@ window.addEventListener('load', function () {
             speed:800,
             nextSelector: $('.txt_btn.next'),
             prevSelector: $('.txt_btn.prev'),
-            onSlideBefore: function () {
-                console.log(this.getCurrentSlide());
-                // onSlidWork()
+            onSliderLoad: function () {
                 lineAni(this.getCurrentSlide())
-            }
+            }, //--> 로드되면서 먼저 실행 시키는 메소드
+            onSlideBefore: function () {
+                lineAni(this.getCurrentSlide())
+            } //-->클릭할때마다 실행 시키는 메소드
         }
 
-        let lis = document.querySelectorAll('.visual_photo_inner > li')
+        let visualLis = document.querySelectorAll('.visual_photo_inner > li')
 
         function lineAni(num){
-            lis[num].classList.add('on')
+            visualLis[num].classList.add('on');
+            var mainSectionBar = document.querySelectorAll('.section_bar'); 
+            var mainSectionPage = document.querySelectorAll('.section_no');
+            console.log(mainSectionPage);
+            
+            for (let i = 0; i < mainSectionBar.length; i++) {
+                mainSectionBar[i].classList.remove('on');
+                mainSectionPage[i].classList.remove('on');
+            }
+            mainSectionBar[num].classList.add('on');
+            mainSectionPage[num].classList.add('on');
         }
 
         $('.visual_photo_inner').bxSlider(options);

@@ -341,8 +341,6 @@ div.bx-wrapper {
 	background-position: center;
 }
 
-
-
 /*  */
 .visual_progress {
 	z-index: 300;
@@ -352,25 +350,29 @@ div.bx-wrapper {
     right:128px;
 
 }
-.progress_section {box-sizing: border-box;
+.progress_section {
+	box-sizing: border-box;
 	float: left;
 	width: 50%; height: 35px;
 	position: relative;
-	
-	}
-/* 여기서부터 해봐야함!!!!       ----------------------------------------- */
+}
 .section_bar{
 	height: 1px;
-    background-color: rgba(255,255,255,.1);
+	background-color: rgba(255,255,255,.1);
 }
-.section_bar:after {
-	transition:all 5s linear;
+.section_bar::after {
 	width:0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 1px;
+	content: '';
+	background-color: #fff;
 }
-.section_bar.on:after {
+.section_bar.on::after {
 	width:100%;
+	transition:all 5s linear;
 }
-/* 여기서부터 해봐야함!!!!       ----------------------------------------- */
 .progress_section > p {
 	margin-top: 10px;
     font-size: 16px;
@@ -378,10 +380,12 @@ div.bx-wrapper {
 	font-weight: 700;
 	opacity: .5;
 }
+.section_no.on{
+	opacity: 1;
+}
 .visual_progress > .round {
 	background-color: #fff;
 	border-radius: 50%;
-    background-color: #fff;
 	opacity: .5;
 	display: block;
 	width: 12px; height: 12px;
@@ -1065,7 +1069,7 @@ input.box_footer_check_btn {
 	}
 	.contact_box {position: fixed; z-index: 1000;}
 	/* main------------------------------------------------------- */
-	/* main_visual- */
+	/* main_visual--------------------------- */
 	.main_inner > .main_visual {height:550px;}
 	div.bx-wrapper {
 		margin-bottom: 0;
@@ -1116,7 +1120,31 @@ input.box_footer_check_btn {
 	.txt_btn.next > a {
 		left: 8px;
 	}
-	/* main_content */
+	/* visual_progress */
+	.visual_progress{
+		bottom:0 ;
+	}
+	.progress_section{
+		width: auto;
+		left: 50%;
+		transform: translateX(-100%);
+		width: 32px;
+	}
+	.section_bar{
+		background-color: #fff;
+		border-radius: 50%;
+		opacity: .5;
+		display: block;
+		width: 10px; height: 10px;
+		right:0; top:17px;
+		transition: none;
+		text-align: center;
+		margin: 0 auto;
+	}
+	.section_bar.on{opacity: 1;}
+	.section_bar.on::after, .visual_progress > .round,.section_no {display: none;}
+
+	/* main_content -------------------------------------*/
 	.main_content {padding:96px 32px;}
 	.content_now {width: 100%;	margin-bottom: 48px; padding: 0;}
 	.content_now > h2 {
