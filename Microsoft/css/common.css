@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&display=swap&subset=korean');
+
+
+/* reset--------------------------------------------------------------------- */
+html {font-size:100%}
+body {
+	font-size:15px;
+	font-family: "Nanum Gothic", Gulim, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	min-width: 320px;
+	margin:0;
+	padding:0;
+    word-break: keep-all;background-color: #fff;
+    color: #000;
+}
+h1, h2, h3, h4, h5, h6 {font-size:1em;}
+h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
+	margin:0;
+	padding:0;
+}
+ul, ol, li {list-style:none;}
+a:link, a:visited {color:#000; text-decoration:none;}
+nav{white-space:nowrap}
+
+
+
+/* common------------------------------------------------------------------- */
+.clear:after {content: ''; display: block; clear: both;}
+
+
+/* layout ------------------------------------------------------------------ */
+/* header ------------------------------------------------------------------ */
+.header_inner{
+    background-color:lightblue;
+    padding: 0 5%;
+    height: 54px;
+    line-height: 54px;
+}
+.header_inner > * {outline: 1px solid rebeccapurple;}
+.MS_logo{
+    width: 137px;
+    padding-left:10px;
+    float: left;
+    box-sizing: border-box;
+}
+.MS_logo>img {
+    display: block;
+    width: 108px;
+    margin-top: 14px;
+}
+.header_nav {float: left;}
+.header_nav > ul > li {
+    float: left; 
+    font-size: 12px;
+    padding:0 12px;
+}
+.header_action {float: right;}
+.header_action > * {float: left;;}
+.action_all > ul {display: none;}
+/* main -------------------------------------------------------------------- */
+/* footer ------------------------------------------------------------------ */
