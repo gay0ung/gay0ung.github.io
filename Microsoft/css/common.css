@@ -11,6 +11,7 @@ body {
 	padding:0;
     word-break: keep-all;background-color: #fff;
     color: #000;
+    margin: 0 auto;
 }
 h1, h2, h3, h4, h5, h6 {font-size:1em;}
 h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquote, address, table, thead, tbody, tfoot, tr, td, caption {
@@ -25,20 +26,21 @@ nav{white-space:nowrap}
 
 /* common------------------------------------------------------------------- */
 .clear:after {content: ''; display: block; clear: both;}
-
+header > div, main > div, footer> div {margin: 0 auto;}
 
 /* layout ------------------------------------------------------------------ */
 /* header ------------------------------------------------------------------ */
+header {padding: 0 5%;}
 .header_inner{
     background-color:lightblue;
-    padding: 0 5%;
+    
     height: 54px;
     line-height: 54px;
+    max-width: 1600px;
 }
-.header_inner > * {outline: 1px solid rebeccapurple;}
 .MS_logo{
     width: 137px;
-    padding-left:10px;
+    padding-left:2px;
     float: left;
     box-sizing: border-box;
 }
@@ -51,10 +53,38 @@ nav{white-space:nowrap}
 .header_nav > ul > li {
     float: left; 
     font-size: 12px;
-    padding:0 12px;
+    padding:0 15px;
 }
 .header_action {float: right;}
 .header_action > * {float: left;;}
+.action_all {
+    padding:0 30px 0 12px;
+    position: relative;
+}
+.action_all > a::after {
+    content: '';
+    border-top: 1px solid #262626;
+    border-right: 1px solid #262626;
+    width: 7px; height: 7px;
+    position: absolute;
+    transform: rotate(135deg);
+    right: 15px;
+    bottom: 23px;
+}
 .action_all > ul {display: none;}
+.action {outline: 1px solid red; ;}
+.action > * {float: left}
+.action > span {
+    border: 1px solid lime;
+    width:16px ; height: 16px;
+    
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+}
+.action.search > span {background-image: url('../images/search-solid.svg');}
+.action.cart > span {background-image: url('../images/shopping-cart-solid.svg');}
+.action.login > span {background-image: url('../images/다운로드.svg');}
+
 /* main -------------------------------------------------------------------- */
 /* footer ------------------------------------------------------------------ */
