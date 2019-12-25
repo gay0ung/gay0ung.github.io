@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, div, p, dl, dt, dd, ul, ol, li, form, fieldset, blockquo
 	padding:0;
 }
 ul, ol, li {list-style:none;}
-a:link, a:visited {color:#000; text-decoration:none;}
+a:link, a:visited {color:#000; text-decoration:none; font-size: 13px;}
 nav{white-space:nowrap}
 
 
@@ -28,12 +28,10 @@ nav{white-space:nowrap}
 .clear:after {content: ''; display: block; clear: both;}
 header > div, main > div, footer> div {margin: 0 auto;}
 
-/* layout ------------------------------------------------------------------ */
 /* header ------------------------------------------------------------------ */
 header {padding: 0 5%;}
 .header_inner{
     background-color:lightblue;
-    
     height: 54px;
     line-height: 54px;
     max-width: 1600px;
@@ -49,42 +47,92 @@ header {padding: 0 5%;}
     width: 108px;
     margin-top: 14px;
 }
+/* header_nav */
 .header_nav {float: left;}
 .header_nav > ul > li {
     float: left; 
     font-size: 12px;
     padding:0 15px;
 }
+.header_nav > ul > li:first-child{padding-left: 6px;}
+/* header_action */
 .header_action {float: right;}
 .header_action > * {float: left;;}
 .action_all {
-    padding:0 30px 0 12px;
+    padding-right: 52px;
     position: relative;
 }
 .action_all > a::after {
     content: '';
     border-top: 1px solid #262626;
     border-right: 1px solid #262626;
-    width: 7px; height: 7px;
+    width: 6px; height: 6px;
     position: absolute;
     transform: rotate(135deg);
-    right: 15px;
+    right: 37px;
     bottom: 23px;
 }
-.action_all > ul {display: none;}
-.action {outline: 1px solid red; ;}
+.site_map {
+    background-color: #f2f2f2;
+    width: 1230px;
+    position: absolute;
+    right: 0;top: 54px;
+    display: table;
+}
+.site_map > li {
+    background-color: lime;
+    display: table-cell;
+    width: 195px;
+}
+.site_map > li:last-child{
+    position: absolute;
+    display: block;
+    background-color: rgb(53, 75, 105);
+    width: 1230px;
+    left: 0;bottom: 0;
+    }
+.site_map > li > h3 {
+    padding: 18px 30px 18px 24px;
+    line-height: 17px;
+    font-size: 13px;
+}
+.site_map_sub{
+    background-color: lightgray;
+
+} 
+
+.action {position: relative;}
 .action > * {float: left}
+.action.search {width: 90px;}
+.action.cart {
+    width: 48px;
+    padding-left: 10px;
+    }
+.action.login {
+    width: 96px;
+    padding-left: 20px;
+}
 .action > span {
-    border: 1px solid lime;
     width:16px ; height: 16px;
-    
     background-repeat: no-repeat;
     background-position: center;
     display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 0;
+   
 }
-.action.search > span {background-image: url('../images/search-solid.svg');}
-.action.cart > span {background-image: url('../images/shopping-cart-solid.svg');}
-.action.login > span {background-image: url('../images/다운로드.svg');}
-
+.action.search > span {
+    background-image: url('../images/search-solid.svg');
+    right: 40px;
+    transform:translateY(-50%) rotateY(180deg);
+}
+.action.cart > span {background-image: url('../images/shopping-cart-solid.svg')}
+.action.login > span {
+    background-image: url('../images/다운로드.svg');
+    right: 16px;
+    width: 32px; height: 32px;
+}
 /* main -------------------------------------------------------------------- */
 /* footer ------------------------------------------------------------------ */
