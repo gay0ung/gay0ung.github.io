@@ -43,6 +43,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     line-height: 54px;
     max-width: 1600px;
 }
+/* ms_logo----- */
 .MS_logo{
     width: 137px;
     padding-left:2px;
@@ -54,6 +55,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     width: 108px;
     margin:14px 0 0 8px;
 }
+
 /* header_nav----- */
 .header_nav {float: left;}
 .header_nav > ul > li {
@@ -183,6 +185,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     width: 32px; height: 32px;
 }
 /* main -------------------------------------------------------------------- */
+/* main_hero -----*/
 .main_hero {
     width:1600px;
     padding:0 5% 0 5%;
@@ -244,17 +247,25 @@ header {padding: 0 5%; margin-bottom: 2px;}
     border-color: #000;
 }
 .visual_page {
-    background-color: salmon; 
     position: absolute; 
-    left: 5%; right: 5%; bottom: 0;
+    left: 5%; right: 5%; bottom: 8px;
     text-align: center;
 }
+.visual_page_button { border: 1px solid lime; display: inline-block;}
+.visual_page button {
+    float: left;
+}
+
+/* --- */
 .page_num {
     width: 16px; height: 14px;
     padding: 2px 3px;
+    background-color: transparent;
+    border-color: #000;
+    margin-top: 11px;
 }
 .page_num > div {
-    border: 1px solid #000;
+    border:1px solid rgba(0,0,0,.8);
     border-radius: 50%;
     width: 6px; height: 6px;
     margin: 0 auto;
@@ -263,19 +274,94 @@ header {padding: 0 5%; margin-bottom: 2px;}
 .page_num.on > div {
     background-color: #000;
 }
-.page_set{
-    padding:6px 10px 8px;
+.page_set {
+    padding:9px 12px 10px;
     border: 2px solid transparent ;
     box-sizing: border-box;
+    position: relative;
+    margin-left: 15px;
+    background-color: transparent;
 }
-.page_set > div{
-    width: 16px; height: 16px;
+.page_set:hover {
+    background-color: #000;
 }
-/
+.page_set > div {
+    width: 8px; height: 12px;
+    position: relative;
+}
+.page_set_play {display: none;}
+.page_set > div > span {
+    display: block;
+    height: 12px;
+    width: 1px;
+    background-color: #000;
+}
+.page_set:hover > div > span {
+    background-color: #fff;
+}
+.page_set_play > span._top{
+    height: 9px;
+    transform: rotate(45deg) translate(-3px, -8px)
+}
+.page_set_play > span._bottom{
+    height:9px ;
+    transform: rotate(-45deg)translate(18px, -13px);
+}
+.page_set > .page_set_pause > span {
+    height: 11px;
+    position: absolute;
+    top: 1px;
+}
+.page_set_pause > span.pause_left {
+    left: 1px;
+}
+.page_set_pause > span.pause_right {
+    right: 1px;
+}
+
+
+/* --- */
 .visual_pager_btn {
     background-color: sandybrown;
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
     left: 5%; right: 5%;
 }
+.visual_pager_btn > .pager {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    opacity: 1;
+}
+/* .main_hero:hover .visual_pager_btn > .pager {
+    opacity: 1;
+} */
+.pager.prev { left: 4px; }
+.pager.next { right: 4px; }
+.visual_pager_btn > .pager > div {
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    width: 42px; height: 42px;
+    background-color: #fafafa;
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+.visual_pager_btn > .pager > div::after {
+    content: '';
+    width: 10px;height: 10px;
+    border-top: 0.5px solid #000;
+    border-right: 0.5px solid #000;
+    position: absolute;
+    left: 20px; top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%) rotate(-135deg);
+}
+.visual_pager_btn > .pager.next > div::after {
+    transform: translateY(-50%) rotate(45deg);
+    left: 15px;
+}
+/* main_contents ---- */
+/* main_hero store -- */
+/* main_contents user */
+/* main_social ------ */
 /* footer ------------------------------------------------------------------ */
