@@ -36,7 +36,7 @@ header > div, main > div, footer> div {margin: 0 auto;}
     border-bottom: 2px solid #262626;
 }
 /* header ------------------------------------------------------------------ */
-header {padding: 0 5%;}
+header {padding: 0 5%; margin-bottom: 2px;}
 .header_inner{
     background-color:lightblue;
     height: 54px;
@@ -52,7 +52,7 @@ header {padding: 0 5%;}
 .MS_logo>img {
     display: block;
     width: 108px;
-    margin-top: 14px;
+    margin:14px 0 0 8px;
 }
 /* header_nav----- */
 .header_nav {float: left;}
@@ -61,14 +61,18 @@ header {padding: 0 5%;}
     font-size: 12px;
     padding:0 15px;
 }
-.header_nav > ul > li:first-child{padding-left: 6px;}
+.header_nav > ul > li:first-child{padding-left: 10px;}
 /* header_action----- */
 .header_action {float: right;}
 .header_action > * {float: left;;}
 .action_all {
-    padding: 16px 24px 16px 15px;
     position: relative;
-    background-color: lawngreen;
+    height: 52px;
+    outline: 1px dashed #262626;
+    margin-top: 1px;
+}
+.action_all > a {
+    padding: 16px 24px 16px 15px;
 }
 .action_all > a::after {
     content: '';
@@ -77,16 +81,23 @@ header {padding: 0 5%;}
     width: 6px; height: 6px;
     position: absolute;
     transform: rotate(135deg);
-    right: -14px;
-    bottom: 3px;
+    right: 12px;
+    bottom: 20px;
+}
+.action_all > a:hover::before{
+    right: 24px; left: 15px; top:32px;
 }
 .site_map {
     background-color: #f2f2f2;
     width: 1230px;
     position: absolute;
-    right: 0;top: 54px;
+    right: -195px;top: 53px;
     display: table;
+    border:1px solid #e6e6e6;
+    box-sizing:border-box;
+    display: none;
 }
+.site_map.open {display: block;}
 .site_map > li {
     display: table-cell;
     width: 195px;
@@ -97,7 +108,7 @@ header {padding: 0 5%;}
     display: block;
     background-color:#e6e6e6;
     width: 1230px; height: 40px;
-    left: 0;bottom: -40px;
+    left: -1px;bottom: -40px;
     border-bottom: 2px solid #262626;
     box-sizing: border-box;
     padding: 0;
@@ -125,7 +136,6 @@ header {padding: 0 5%;}
 .site_map_sub > li {height: 41px;;}
 .site_map_sub > li > a {
     padding-left:24px;
-    outline: 1px solid blueviolet;
     display: block;
     line-height: 41px;
 }
@@ -138,7 +148,10 @@ header {padding: 0 5%;}
 .search.b_hover a:hover::before, .cart.b_hover a:hover::before {
     top:34px
 }
-.action.search {width: 90px;}
+.action.search {
+    width: 90px;
+    padding-left: 26px;
+}
 .action.cart {
     width: 48px;
     padding-left: 10px;
@@ -170,4 +183,99 @@ header {padding: 0 5%;}
     width: 32px; height: 32px;
 }
 /* main -------------------------------------------------------------------- */
+.main_hero {
+    width:1600px;
+    padding:0 5% 0 5%;
+    margin: 0 auto;
+    position: relative;
+
+}
+.visual_photo {outline: 1px solid red;}
+.visual_photo img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.visual_photo > li {
+    display: block;
+    float: left;
+}
+.visual_contents > div {
+    outline: 1px solid blue; 
+    position: absolute; 
+    bottom: 60px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+.visual_contents h1 {
+    font-size: 46px;
+    line-height: 56px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+.visual_contents > div > div {
+    background-color: cadetblue;
+    margin-top:24px
+}
+.visual_more {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 31px 6px 26px;
+    float: left;
+    text-align: center;
+    margin-right: 24px;
+    border:2px solid transparent;
+}
+.visual_more > span {line-height: 18.5px; font-weight:600}
+.visual_more> span::after {
+    content: '';
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-top: 1.4px solid #fff;
+    border-right: 1.4px solid #fff;
+    transform:rotate(45deg) translate(3px, -4px);
+}
+.visual_more.blan {
+    background-color: transparent;
+    color: #000;
+    padding:10px 57px 7px 25px;
+}
+.visual_more.blan> span::after {
+    border-color: #000;
+}
+.visual_page {
+    background-color: salmon; 
+    position: absolute; 
+    left: 5%; right: 5%; bottom: 0;
+    text-align: center;
+}
+.page_num {
+    width: 16px; height: 14px;
+    padding: 2px 3px;
+}
+.page_num > div {
+    border: 1px solid #000;
+    border-radius: 50%;
+    width: 6px; height: 6px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.page_num.on > div {
+    background-color: #000;
+}
+.page_set{
+    padding:6px 10px 8px;
+    border: 2px solid transparent ;
+    box-sizing: border-box;
+}
+.page_set > div{
+    width: 16px; height: 16px;
+}
+/
+.visual_pager_btn {
+    background-color: sandybrown;
+    position: absolute;
+    top: 0;
+    left: 5%; right: 5%;
+}
 /* footer ------------------------------------------------------------------ */
