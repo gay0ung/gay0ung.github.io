@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>P3_Microsoft</title>
     <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
     <div class="MS_wrap">
@@ -114,62 +115,67 @@
 <!-- main----------------------------------------------- -->
     <main>
         <div class="main_inner">
+        <!-- main_hero visual -->
             <div class="main_hero visual">
-                <ul class="visual_photo clear">
-                    <li><a href=""><img src="images/RE37lBy.webp" alt=""></a></li>
-                    <li style="display: none;"><a href=""><img src="images/RE3NJb7.webp" alt=""></a></li>
-                </ul>
-                <div class="visual_contents">
-                    <div class="on">
-                        <h1>여러분을 위한 365</h1>
-                        <p>날마다 Office 365로 할 수 있는 일들을 찾아보세요.</p>
-                        <div>
-                            <div class="visual_more">
-                                <span>최대 6명 사용 가능</span>
+                <div class="visual_slide_wrap">
+                    <div class="slide_box">
+                        <div class="slide_list">
+                            <div  class="list_sub slide01">
+                                <div class="slide_photo"><a href=""><img src="images/RE37lBy.webp" alt=""></a></div>
+                                <div class="slide_content">
+                                    <h1>여러분을 위한 365</h1>
+                                    <p>날마다 Office 365로 할 수 있는 일들을 찾아보세요.</p>
+                                    <div class="content_btn">
+                                        <div class="content_more">
+                                            <span>최대 6명 사용 가능</span>
+                                        </div>
+                                        <div class="content_more blan">
+                                            <span>1명 사용 가능</span>
+                                        </div>
+                                    </div>    
+                                </div>  
                             </div>
-                            <div class="visual_more blan">
-                                <span>1명 사용 가능</span>
+                            <div  class="list_sub slide02">
+                                <div class="slide_photo"><a href=""><img src="images/RE3NJb7.webp" alt=""></a></div>
+                                <div class="slide_content">
+                                    <h1>새로운 Surface Pro 7</h1>
+                                    <p>완벽한 일상용 노트북이 이제 더욱 빨라졌습니다.</p>
+                                    <div class="content_btn">
+                                        <div class="content_more">
+                                            <span>지금쇼핑하기</span>
+                                        </div>
+                                    </div>
+                                </div>  
                             </div>
                         </div>
                     </div>
-                    <div style="display: none;">
-                        <h1>새로운 Surface Pro 7</h1>
-                        <p>완벽한 일상용 노트북이 이제 더욱 빨라졌습니다.</p>
-                        <div>
-                            <div class="visual_more">
-                                <span>지금쇼핑하기</span>
-                            </div>
+                    <div class="slide_btn_box">
+                        <div class="visual_page_button">
+                            <button class="page_num"><div></div></button>
+                            <button class="page_num"><div></div></button>
+                            <button class="page_set">
+                                <div class="page_set_play">
+                                    <span class="_left"></span>
+                                    <span class="_bottom"></span>
+                                    <span class="_top"></span>
+                                </div>
+                                <div class="page_set_pause">
+                                    <span class="pause_left"></span>
+                                    <span class="pause_right"></span>
+                                </div>
+                            </button>
                         </div>
-                        
                     </div>
-                </div>
-                <div class="visual_page">
-                    <div class="visual_page_button clear">
-                        <button class="page_num"><div></div></button>
-                        <button class="page_num"><div></div></button>
-                        <button class="page_set">
-                            <div class="page_set_play">
-                                <span class="_left"></span>
-                                <span class="_bottom"></span>
-                                <span class="_top"></span>
-                            </div>
-                            <div class="page_set_pause">
-                                <span class="pause_left"></span>
-                                <span class="pause_right"></span>
-                            </div>
-                        </button>
-                    </div>
-                    
-                </div>
-                <div class="visual_pager_btn">
-                    <button class="pager prev" ><div></div></button>
-                    <button class="pager next" ><div></div></button>
-                </div>
-                
+                    <ul class="slide_pagination">
+                        <li class="pagin prev"><a href=""></a></li>
+                        <li class="pagin next"><a href=""></a></li>
+                    </ul>
+                </div> 
             </div>
-            <div class="main_contents" style="display: none;"
+        <!-- main_contents -->
+            <div class="main_contents" >
                 <div>
-                    <div>
+                    <div class="section_list">
                         <section class="contents_sec">
                             <img src="images/RWfbJT.webp">
                             <h3>Surface Book 2</h3>
@@ -197,10 +203,9 @@
                                     <span></span>
                                 </a>
                             </div>
-                            
                         </section>
                     </div>
-                    <div>
+                    <div class="section_list right">
                         <section class="contents_sec">
                             <img src="images/RE37bh1.webp">
                             <h3>Xbox Game Pass Ultimate</h3>
@@ -212,7 +217,7 @@
                                 </a>
                             </div>
                         </section>
-                        <section class="contents_sec">
+                        <section class="contents_sec ">
                             <img src="images/RE1uWfh.webp">
                             <h3>Xbox One S</h3>
                             <p>최고의 게임 시스템이자 4K 엔터테이먼트 시스템.</p>
@@ -226,6 +231,7 @@
                     </div>
                 </div>
             </div>
+        <!-- main_hero store -->
             <div class="main_hero store" style="display: none;">
                 <div class="store_photo"></div>
                 <div class="store_contents">
@@ -237,6 +243,7 @@
                     </div>
                 </div>
             </div>
+        <!-- main_contents user -->
             <div class="main_contents user" style="display: none;"
                 <h2>기업 사용자</h2>
                 <div>
@@ -290,6 +297,7 @@
                     </div>
                 </div>
             </div>
+        <!-- main_social -->
             <div class="main_social" style="display: none;">
                 <p>Microsoft 팔로우</p>
                 <ul class="social_btn">
