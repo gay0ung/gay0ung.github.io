@@ -389,37 +389,37 @@ header {padding: 0 5%; margin-bottom: 2px;}
     background-color: lightsteelblue;
 }
 .main_contents > div {
-
     background-color: gold;
 }
 .section_list { 
     outline: 1px solid red;
-    /* width: clac(50%+12px); */
-    width: 50%;
-    float: left;
-    margin-left: -12px;
+    padding-left: 0;
+    padding-right: 0;
 }
-.section_list.right {
-    margin: 0 -12px 0 0;
-    background-color: lightsteelblue
+.section_list:nth-child(1) {
+    margin-left: -12px;
 }
 .contents_sec {
     outline: 1px solid blue;
-    width: 50%;
+    width: 25%;
     float: left;
-    padding: 0 12px;
     box-sizing: border-box;
     cursor: pointer;
+    padding: 0 12px;
 }
-.contents_sec > * {outline: 1px solid red;}
-.contents_sec > img {
+.contents_sec > div {
+    background-color: yellowgreen;
+    
+}
+.contents_sec > div > * {outline: 1px solid red;}
+.contents_sec > div >  img {
     width: 100%;
     margin-bottom: 37px;
 }
-.contents_sec:hover > img {
+.contents_sec:hover > div > img {
     opacity: .9;
 }
-.contents_sec > h3 {
+.contents_sec > div > h3 {
     font-size: 20px;
     line-height: 24px;
     padding: 1px 12px 4px 0;
@@ -498,6 +498,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
 }
 .sotre_buy_btn {
     background-color: blue;
+    position: relative;
 }
 .sotre_buy_btn:hover  {
     background-color: #e6e6e6;
