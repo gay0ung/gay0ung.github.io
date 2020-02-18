@@ -103,7 +103,8 @@ header {padding: 0 5%; margin-bottom: 2px;}
     display: table;
     border:1px solid #e6e6e6;
     box-sizing:border-box;
-    display: none;
+    z-index:10;
+    /* display: none; */
 }
 .site_map.open {display: block;}
 .site_map > li {
@@ -199,7 +200,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     margin: 0 auto;
     position: relative;
 }
-.main_inner> div >.visual_slide_wrap{padding: 0;}
+.main_inner > div >.visual_slide_wrap{padding: 0; margin-top: 0;}
 .slide_box {
     width: 100%;
     outline: 1px solid lime;
@@ -428,7 +429,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     padding-right: 12px;
     word-break: break-all;
 }
-.section_btn, .sotre_buy_btn {
+.section_btn, .sotre_buy_btn > div {
     padding: 10px 3px 7px 0;
     border: 2px solid transparent;
     outline: 1px solid transparent;
@@ -443,7 +444,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     line-height: 18.5px;
     transition: all 200ms ease;
 }
-.section_btn > a > span , .sotre_buy_btn > span{
+.section_btn > a > span {
     position: absolute;
     width: 18px; height: 18px;
     top: 50%; right: -26px;
@@ -456,7 +457,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
 .section_btn:hover > a {
     border-bottom: 2px solid #0067b8;;
 }
-.section_btn span::after, .sotre_buy_btn > span::after{
+.section_btn span::after, .sotre_buy_btn > a::after {
     content: "";
     position: absolute;
     width: 8px; height: 8px;
@@ -497,35 +498,29 @@ header {padding: 0 5%; margin-bottom: 2px;}
     margin:12px 0 24px
 }
 .sotre_buy_btn {
-    background-color: blue;
     position: relative;
 }
-.sotre_buy_btn:hover  {
-    background-color: #e6e6e6;
-}
-.sotre_buy_btn {
-    display: inline-block;
-    padding: 10px 20px 6px 22px;
-    font-size: 15px;
-    background-color: #fff;
-}
+.sotre_buy_btn > * {display: inline-block;}
 .sotre_buy_btn > a {
-    display: inline-block;
     font-size: 15px;
     font-weight: 600;
     position: absolute;
-    left: 0;
+    padding: 10px 20px 6px 22px;
+    background-color: #fff;
 }
-.sotre_buy_btn > span {
-    right: 0;
+.sotre_buy_btn:hover > a{
+    background-color: #e6e6e6;
+    text-decoration-line: underline;
 }
-.sotre_buy_btn:hover > a {
-    left: -4px;
+.sotre_buy_btn > div > span {
+    outline: 1px solid red;
+    width: 10px; height: 10px;
+    position: relative;
 }
-.sotre_buy_btn > span::after{
-    display: inline-block;
+.sotre_buy_btn > a::after {
     border-color: #000;
-    top: 8px;
+    top: 5px;
+    transition: all 200ms ease-in-out
 }
 /* main_contents user */
 .main_contents.user > h2 {
@@ -539,7 +534,6 @@ header {padding: 0 5%; margin-bottom: 2px;}
 /* main_social ------ */
 .main_social_inner {
     background-color: coral;
-   
 }
 .main_social_inner > * {
     float: left;
@@ -576,4 +570,16 @@ header {padding: 0 5%; margin-bottom: 2px;}
 }
 
 /* footer ------------------------------------------------------------------ */
+.footer_inner{
+    background-color: aqua;
+}
+.footer_nav_inner > .site_map {
+    background-color: #f2f2f2;
+    display: block;
+    position: static;
+}
+.footer_nav_inner > .site_map > li:last-child {
+    position: static;
+}
 /* site_map ------------- */
+
