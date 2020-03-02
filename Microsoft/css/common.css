@@ -194,26 +194,30 @@ header {padding: 0 5%; margin-bottom: 2px;}
 /* main_hero -----*/
 .main_hero {
     outline: 1px solid red;
-    max-width:1600px;
+    width:1600px;
     padding:0 5% ;
     margin: 0 auto;
     position: relative;
 }
-.main_inner > div >.visual_slide_wrap{padding: 0; margin-top: 0;}
+
+/* slider */
+.main_inner > div >.visual_slide_wrap{
+    padding: 0;
+    margin-top: 0;
+}
 .slide_box {
     width: 100%;
     outline: 1px solid lime;
     overflow-x: hidden;
 }
 .slide_list {
-    width: 3200px;
-    transform: translate3d();
+    background-color: olive;
 }
 .list_sub {
     display: table;
     margin: 0 auto;
     overflow-x: hidden;
-    width: 1600px; height: auto;
+    width: 1600px;
     float: left;
 }
 .slide_photo a {
@@ -222,9 +226,10 @@ header {padding: 0 5%; margin-bottom: 2px;}
 }
 .slide_photo a > img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
+/* slide_content */
 .slide01 .slide_content {
     position: absolute; 
     bottom: 60px; left: 50%;
@@ -253,20 +258,22 @@ header {padding: 0 5%; margin-bottom: 2px;}
 .slide01 .content_more {
     margin-right: 24px;
 }
-
 .content_btn > div > a > span {
     color: #fff; 
     font-weight:600;
     line-height: 19.5px;
     font-size: 15px;
-    vertical-align: middle;
+    vertical-align: top;
     display: inline-block;
     transition: all 200ms ease-in-out;
+    position: relative;
+}
+.content_btn > div:hover > a > span {
+    text-decoration-line: underline;
 }
 .content_btn > div > a.content_more::after {
     border-color: #fff;
     position: relative;
-    transition: all 200ms ease-in-out;
 }
 .content_btn > div:hover > a::after {
     right: -4px;
@@ -276,7 +283,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
 }
 .content_btn > div > .blan {
     background-color: transparent;
-    padding:10px 57px 7px 25px;
+    padding:12px 57px 7px 25px;
     border: 0;
 }
 .content_btn > div > a.blan > span {
@@ -289,6 +296,52 @@ header {padding: 0 5%; margin-bottom: 2px;}
 
 /* slide_btn_box */
 .slide_btn_box {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 5%; right: 5%;
+    height: 44px;
+}
+.slide_btn_box > .slide_btn {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    opacity:0;
+    background-color: transparent;
+}
+.visual_slide_wrap:hover .slide_btn_box > .slide_btn {
+    opacity: 1;
+}
+.slide_btn.prev { left: 4px; }
+.slide_btn.next { right: 4px; }
+.slide_btn_box > .slide_btn > a {
+    border: 1px solid #dbdbdb;
+    border-radius: 50%;
+    width: 42px; height: 42px;
+    background-color: #fafafa;
+    display: block;
+}
+.slide_btn_box > .slide_btn > a:hover{
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+}
+.slide_btn_box > .slide_btn > a::after {
+    content: '';
+    width: 10px;height: 10px;
+    border-top: 0.5px solid #000;
+    border-right: 0.5px solid #000;
+    position: absolute;
+    left: 20px; top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%) rotate(-135deg);
+}
+.slide_btn_box > .slide_btn.next > a::after {
+    transform: translateY(-50%) rotate(45deg);
+    left: 15px;
+}
+
+/* slide_pagination */
+.slide_pagination {
     position: absolute; 
     left: 5%; right: 5%; bottom: 8px;
     text-align: center;
@@ -357,55 +410,9 @@ header {padding: 0 5%; margin-bottom: 2px;}
     right: 1px;
 }
 
-/* slide_pagination */
-.slide_pagination {
-    background-color: white;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 5%; right: 5%;
-    height: 44px;
-}
-.slide_pagination > .pagin {
-    position: absolute;
-    border: 0;
-    padding: 0;
-    opacity:0;
-    background-color: transparent;
-}
-.visual_slide_wrap:hover .slide_pagination > .pagin {
-    opacity: 1;
-}
-.pagin.prev { left: 4px; }
-.pagin.next { right: 4px; }
-.slide_pagination > .pagin > a {
-    border: 1px solid #dbdbdb;
-    border-radius: 50%;
-    width: 42px; height: 42px;
-    background-color: #fafafa;
-    display: block;
-}
-.slide_pagination > .pagin > a:hover{
-    box-shadow: 0 4px 8px rgba(0,0,0,.2);
-}
-.slide_pagination > .pagin > a::after {
-    content: '';
-    width: 10px;height: 10px;
-    border-top: 0.5px solid #000;
-    border-right: 0.5px solid #000;
-    position: absolute;
-    left: 20px; top: 50%;
-    background-color: transparent;
-    transform: translateY(-50%) rotate(-135deg);
-}
-.slide_pagination > .pagin.next > a::after {
-    transform: translateY(-50%) rotate(45deg);
-    left: 15px;
-}
 
 /* main_contents ---- */
 .section_list { 
-    outline: 1px solid red;
     padding-left: 0;
     padding-right: 0;
     width:calc(100% + 24px);
@@ -447,7 +454,6 @@ header {padding: 0 5%; margin-bottom: 2px;}
     color: #0067b8;
     font-weight: 600;
     line-height: 18.5px;
-    transition: all 200ms ease;
 }
 .section_btn > a > span {
     position: absolute;
@@ -470,6 +476,7 @@ header {padding: 0 5%; margin-bottom: 2px;}
     border-right: 1px solid #0067b8;
     transform: rotate(45deg);
     vertical-align: middle;
+    transition: all 200ms ease-in-out;
 }
 /* main_hero store -- */
 .main_hero.store > .store_photo , .main_hero.store > .store_contents {
@@ -500,13 +507,10 @@ header {padding: 0 5%; margin-bottom: 2px;}
 .store_contents_inner > p {
     margin:12px 0 24px
 }
-.sotre_buy_btn {
-    position: relative;
-}
 .sotre_buy_btn > a {
     font-size: 15px;
     font-weight: 600;
-    padding: 10px 20px 6px 22px;
+    padding: 10px 20px 8px 22px;
     background-color: #fff;
     display: inline-block;
 }
