@@ -9,7 +9,8 @@ body {
 	min-width: 320px;
 	margin:0;
 	padding:0;
-    word-break: keep-all;background-color: #fff;
+    word-break: keep-all;
+    background-color: #fff;
     color: #000;
     margin: 0 auto;
 }
