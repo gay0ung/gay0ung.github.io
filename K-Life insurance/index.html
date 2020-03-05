@@ -4,25 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>생명보험협회</title>
-    <link rel="stylesheet" media="all" type="text/css" href="css/common.css">
-    <link rel="stylesheet" media="all" type="text/css" href="css/header.css">
-    <link rel="stylesheet" media="all" type="text/css" href="css/main.css">
-    <link rel="stylesheet" media="all" type="text/css" href="css/footer.css">
+    <link rel="stylesheet" media="all" type="text/css" href="css/style.css">
     <script type="text/javascript" src="./js/index.js"></script>
 </head>
 <body>
     <div class="k-insurance-wrap">
     <!-- header -->
         <header>
-            <div class="header-inner">
+            <div class="header-inner clear inwrap ">
                 <h1 class="header-logo">
                     <a href=""><img src="images/t_logo.jpg" alt="생명보험협회로고"></a>
                 </h1>
+            <!-- header-nav -->
                 <div class="header-nav">
-                    <ul class="nav-group1">
+                    <ul class="nav-group1 clear">
                         <li>
                             <a href="">소비자</a>
-                            <ul class="nav-group2">
+                            <ul class="nav-group2 on inwrap">
                                 <li>
                                     <ul class="nav-group3">
                                         <li><a href="">소비자포털</a></li>
@@ -34,7 +32,7 @@
                                                 <li><a href="">-월간생명보험통계</a></li>
                                                 <li><a href="">-통계연보</a></li>
                                                 <li><a href="">-50년통계</a></li>
-                                                <li><a href="">-FactBook)</a></li>
+                                                <li><a href="">-FactBook</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -231,19 +229,19 @@
                 </div>
                 <div class="header-util">
                     <div class="util-search">
-                        <fieldset>
-                            <legend>통합검색</legend>
-                            <input type="text" placeholder="검색하기">
-                            <input type="button" class="search-btn">
-                        </fieldset>
+                        <div>
+                            <input type="text" placeholder="검색하기" class="search-txt">
+                            <span class="h-btn search">
+                        </div>
                     </div>
+                    <!-- header-sitemap -->
                     <div class="header-sitemap">
                         <a href="">
                             사이트맵
-                            <span class="smap-icon"></span>
+                            <span class="h-btn sitemap">
                         </a>
                         <!-- 사이트맵 확장 -->
-                        <div class="hero-sitemap">
+                        <div class="hero-sitemap" style="display: none;">
                             <h1 class="header-logo">
                                 <a href=""><img src="images/logo03.png" alt="생명보험협회로고"></a>
                             </h1>
@@ -263,7 +261,7 @@
                                                             <li><a href="">-월간생명보험통계</a></li>
                                                             <li><a href="">-통계연보</a></li>
                                                             <li><a href="">-50년통계</a></li>
-                                                            <li><a href="">-FactBook)</a></li>
+                                                            <li><a href="">-FactBook</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
@@ -457,12 +455,14 @@
                                         </ul>
                                     </li>
                                 </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="header-lan">
+                    <!-- hader-lang -->
+                    <div class="header-lang">
                         <ul>
-                            <li><a href="">EN</a></li>
-                            <li><a href="">KR</a></li>
+                            <li class="lan-en"><a href="">EN</a></li>
+                            <li class="lan-kr"><a href="">KR</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,0 +1,212 @@
+@import "./reset.css";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700&display=swap&subset=korean');
+@font-face{
+    font-family: "NanumSquare";
+    src: url('../font/NanumSquareB.woff') format("woff");
+    font-weight: 700;
+}
+@font-face{
+    font-family: "NanumSquare";
+    src: url('../font/NanumSquareR.woff') format("woff");
+    font-weight: 400;
+}
+
+/* common */
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.k-insurance-wrap {
+    min-width: 320px;
+    /* overflow: hidden; */
+}
+.inwrap {
+    max-width: 1260px;
+    min-width: 340px;
+    margin: 0 auto;
+}
+
+/*  header ------------------------------------------------------------------------------- */
+header {
+    height: 80px;
+    background-color: rgba(149, 107, 149, 0.192);
+    position: fixed;
+    width: 100%;
+}
+.header-inner {
+    width: 95%;
+    background-color: #fff;
+    display: flex;
+    overflow: hidden;
+}
+.header-inner > * {
+    box-sizing: border-box;
+}
+
+/*  */
+.header-logo {
+    height: 80px;
+}
+.header-logo > a > img {
+    width: 155px;
+    display: block;
+    margin-top: 25px;
+}
+/* header-nav */
+.header-nav {
+    flex-grow: 1;
+    margin: 0 30px;
+}
+.header-nav .nav-group1 {
+    line-height: 80px;
+}
+.header-nav .nav-group1 > li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.header-nav .nav-group1 > li > a {
+    background-color: white;
+    display: block;
+    font-size: 21px;
+    font-weight: 700;
+    color: #131313;
+    transition: color 0.4s;
+}
+.header-nav .nav-group1 > li > a:hover {
+    color: #108ad3;
+}
+/* ---------------------- js적용 시키기 */
+.nav-group2.on {
+    display: block;
+}
+.nav-group2{
+    display: none;
+}
+/* --------------------- */
+.nav-group2.on {
+    background-color: #e8e9eb;
+    display: flex;
+    position: absolute;
+    top: 80px;
+    left: 0; right: 0;
+}
+.nav-group2 > li {
+    outline: 1px solid red;
+    width: 25%;
+}
+
+/* header-util */
+.header-util > * {
+    font-family: 'Noto Sans KR';
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    line-height: 39px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* util-search */
+.util-search {
+    background-color: #e8e9eb;
+    width: 172px; height: 39px;
+    font-family: 'Noto Sans KR';
+    padding: 0 39px 0 23px ;
+}
+.h-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image:url('../images/icon_g.png');
+    background-repeat: no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+.util-search input:focus{outline: none;}
+.util-search input::placeholder{color: #000; font-size: 16px;}
+.util-search input:focus::-webkit-input-placeholder { color: transparent; }        
+.util-search input:focus::-moz-placeholder { color: transparent; } 
+.util-search input:focus:-ms-input-placeholder { color: transparent; } 
+.util-search input:focus::-ms-input-placeholder { color: transparent; }
+
+/*  */
+.search-txt {
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #575a61;
+    width: 100%;
+    height: 38px;
+}
+.h-btn.search {
+    width: 25px; height: 37px;
+    background-position: -27px 11px;
+    right: 10px;
+}
+/* header-sitemap */
+.header-sitemap {
+    margin-left: 5px;
+    border: 1px solid #cdcecf;
+}
+.header-sitemap > a {
+    display: block;
+    padding: 0 38px 0 21px;
+    font-size: 15px;
+    line-height: 37px;
+}
+.h-btn.sitemap {
+    width: 16px; height: 16px;
+    background-position: -52px 2px;
+    right: 14px;
+}
+/* header-lang */
+.header-lang {
+    margin-left: 5px;
+    width: 39px; height: 39px;
+}
+.header-lang > ul > li {
+   float: left; 
+}
+.header-lang > ul > li > a {
+    background-color: #0d2d4f;
+    display: block;
+    width: 39px; 
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    
+}
+.lan-kr {display: none;}
+
+/* header-btn */
+.header-btn {
+    position: absolute;
+    right: 30px; top: 22px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* main----------------------------------------------------------------------------------- */
+
+
+/* footer--------------------------------------------------------------------------------- */
+
+
+/* pagenav-------------------------------------------------------------------------------- */ 
+
+
+/* pagecontroller------------------------------------------------------------------------- */
+
