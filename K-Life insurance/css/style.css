@@ -58,7 +58,7 @@ header {
     flex-grow: 1;
     margin: 0 30px;
 }
-.header-nav .nav-group1 {
+.header-nav  .nav-group1 {
     line-height: 80px;
 }
 .header-nav .nav-group1 > li {
@@ -81,10 +81,10 @@ header {
 .nav-group2.on {
     display: block;
 }
-.nav-group2{
+.nav-group2 {
     display: none;
 }
-/* --------------------- */
+/* --------------------- headernav 부분 다시 해보기! nav에 line-height를 주지않고 position으로 띄운뒤 overflow:hidden을 해서 다시 시도해본다. */
 .nav-group2.on {
     background-color: #e8e9eb;
     display: flex;
@@ -96,6 +96,33 @@ header {
     outline: 1px solid red;
     width: 25%;
 }
+.nav-group3 {
+    background-color: #108ad3;
+}
+.nav-group3 > li {
+    outline: 1px solid lime;
+    padding:2.45% 3% 0 ;
+}
+
+.nav-group3 > li > a {
+    color: #000;
+    font-size: 19px;
+    font-weight: 700;
+    display: block;
+    background-color: lightblue;
+}
+.nav-group4 {
+    background-color: #575a61;
+}
+.nav-group4 > li {
+    outline: 1px solid orange;
+}
+.nav-group4 > li > a {
+    display: block;
+    font-weight: 400;
+    background-color: palegoldenrod;
+}
+
 
 /* header-util */
 .header-util > * {
@@ -126,8 +153,8 @@ header {
     overflow: hidden;
     cursor: pointer;
 }
-.util-search input:focus{outline: none;}
-.util-search input::placeholder{color: #000; font-size: 16px;}
+.util-search input:focus { outline: none; }
+.util-search input::placeholder { color: #000; font-size: 16px; }
 .util-search input:focus::-webkit-input-placeholder { color: transparent; }        
 .util-search input:focus::-moz-placeholder { color: transparent; } 
 .util-search input:focus:-ms-input-placeholder { color: transparent; } 
@@ -195,12 +222,17 @@ header {
 
 
 
-
-
-
-
 /* main----------------------------------------------------------------------------------- */
-
+#section02,#section03,#section04,#section05{ display: none;}
+/* secton1_home */
+section {
+    width: 100%; height: 100%;
+    outline: 1px solid brown;
+}
+/* secton2_ 생명보험협회 */
+/* secton3_ 소비자 */
+/* secton4_ 모집종사자 */
+/* secton5_ 회원사 */
 
 /* footer--------------------------------------------------------------------------------- */
 
