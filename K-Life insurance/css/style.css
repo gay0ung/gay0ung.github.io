@@ -224,11 +224,90 @@ header {
 
 /* main----------------------------------------------------------------------------------- */
 #section02,#section03,#section04,#section05{ display: none;}
-/* secton1_home */
+.section-inner {
+    padding-top: 40px;
+}
+.section-wrap {
+    padding-top: 80px;
+    background-color: burlywood;
+}
 section {
     width: 100%; height: 100%;
     outline: 1px solid brown;
 }
+section .title {
+    text-align: center;
+    outline: 1px solid blue;
+    margin-bottom: 45px;
+    color: #fff;
+    
+}
+section .title > p {
+    font-weight: 500;
+    font-size: 18px;
+}
+section .title > h2 {
+    font-weight: 700;
+    font-size: 48px;
+}
+section .section-contents {
+    outline: 1px solid lime;
+}
+/* secton1_home */
+section#section01 {
+    background-image: url('../images/main_visual01.jpg');
+}
+.col4 {
+    background-color: cyan;
+}
+.col {
+   
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+.col > * {
+    text-align: center;
+}
+.col > a {
+    background-color: #fff;
+    display: block;
+    padding:38px 10px 62px ;
+    border-radius: 16px;
+}
+.col > a > i {
+    margin: 0 auto;
+    display: block;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background-color: #edf1f5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+.col4 > .col:nth-child(2) i { background-image: url('../images/icon_s0101.png');}
+.col4 > .col:nth-child(3) i { background-image: url('../images/icon_s0102.png');}
+.col4 > .col:nth-child(4) i { background-image: url('../images/icon_s0103.png');}
+.col > a > h3 {
+    margin-top: 20px; 
+    font-size: 32px; 
+    font-weight: 700;
+    color: #121212;
+}
+.col > a > p {
+    margin-top: 5px;
+    font-size: 17px;
+    color:#999999
+}
+.col.col2 {padding: 0; }
+.col.col2 >  .col {
+    background-color: cadetblue;
+    display: block;
+    width: 100%;
+    padding:20px 28px 23px;
+}
+
 /* secton2_ 생명보험협회 */
 /* secton3_ 소비자 */
 /* secton4_ 모집종사자 */
