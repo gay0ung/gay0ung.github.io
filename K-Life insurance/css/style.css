@@ -33,10 +33,11 @@ header {
     background-color: rgba(149, 107, 149, 0.192);
     position: fixed;
     width: 100%;
+    z-index: 100;
+    background-color: #fff;
 }
 .header-inner {
-    width: 95%;
-    background-color: #fff;
+    width: 95%; 
     display: flex;
     overflow: hidden;
 }
@@ -217,24 +218,19 @@ header {
 }
 
 
-
-
-
-
-
 /* main----------------------------------------------------------------------------------- */
-#section02,#section03,#section04,#section05{ display: none;}
-.section-inner {
-    padding-top: 40px;
-}
-.section-wrap {
-    padding-top: 80px;
-    background-color: burlywood;
-}
+#section03,#section04,#section05{ display: none;}
+
 section {
     width: 100%; height: 100%;
     outline: 1px solid brown;
+    background-size: cover;
+    padding-top: 80px;
 }
+.section-inner {
+    padding-top: 40px;
+}
+.section-inner-wrap { background-color: wheat;}
 section .title {
     text-align: center;
     outline: 1px solid blue;
@@ -246,25 +242,29 @@ section .title > p {
     font-weight: 500;
     font-size: 18px;
 }
-section .title > h2 {
+
+section h2 {
     font-weight: 700;
     font-size: 48px;
+    color: #1c1c1c;
+    padding-top:27px ;
+    margin-bottom: 50px;
+    line-height: 1;
+    text-align: center;
 }
-section .section-contents {
-    outline: 1px solid lime;
-}
-/* secton1_home */
-section#section01 {
-    background-image: url('../images/main_visual01.jpg');
-}
-.col4 {
-    background-color: cyan;
+section h2::before {
+    display: block;
+    content: '';
+    width: 35px; height: 4px;
+    background-color: #272727;
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%);
 }
 .col {
-   
     box-sizing: border-box;
     float: left;
-    width: 25%;
     padding: 10px;
 }
 .col > * {
@@ -279,36 +279,239 @@ section#section01 {
 .col > a > i {
     margin: 0 auto;
     display: block;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background-color: #edf1f5;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
-.col4 > .col:nth-child(2) i { background-image: url('../images/icon_s0101.png');}
-.col4 > .col:nth-child(3) i { background-image: url('../images/icon_s0102.png');}
-.col4 > .col:nth-child(4) i { background-image: url('../images/icon_s0103.png');}
+.btn-go  {
+    display: inline-block;
+    background-color: #0d2d4f;
+    color: #fff;
+    border-radius: 15px;
+    line-height: 30px;
+    padding: 0 25px;
+    font-size: 15px;
+    margin-top: 17px;
+}
+.col4 { outline: 1px solid green; }
+/* secton1_home */
+#section01 {  
+    background-image: url('../images/main_visual01.jpg');
+}
+#section01 .title > h2 {
+    color:#fff ;
+}
+#section01 .title > h2::before{display: none;}
+#section01 .col { width: 25%; }
+#section01 .col2 > .col > a {
+    text-align: left;
+    padding: 20px 28px 23px;
+}
+#section01 .col2 > .col > a > h3 {
+    margin-top: 0;
+    font-size: 28px;
+}
+#section01 .col2 > .col.on > a {
+    background-color: #108ad3;
+}
+
+/* mouseover .col.on 일경우 */
+#section01 .col.on > a {
+    background-color: #108ad3;
+}
+#section01 .col.on > a > h3 ,
+#section01 .col.on > a > h4 ,
+#section01 .col.on > a > p { color: #fff; }
+
+/* div.col.on.favmenu > a  --> 자식들을 포함하지 않고 자식들 각각에 a를 줬다 왜..?---------- */
+/* sectoin1 */
+#section01 .col.on.fav-menu > a {
+    outline: 1px solid blue;
+    display: block;
+}
+.fav-menu-contents > li {
+    outline: 1px solid yellow;
+    float: left;
+    width: 33.333%;
+}
+.fav-menu-contents > li > a {
+    display: block;
+}
+.fav-menu-contents > li > a > i {
+    display: block;
+    width: 69px; height: 69px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+.fav-menu-contents > li:nth-child(1) i {background-image: url('../images/icon_s0105.png');}
+.fav-menu-contents > li:nth-child(2) i {background-image: url('../images/icon_s0106.png');}
+.fav-menu-contents > li:nth-child(3) i {background-image: url('../images/icon_s0107.png');}
+
+/*  ---------------------------------------------------------------수정해야한다.*/
+
+#section01 .col > a > i {
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background-color: #edf1f5;
+}
+#section01 .col4 > .col:nth-child(2) i { background-image: url('../images/icon_s0101.png');}
+#section01 .col4 > .col:nth-child(3) i { background-image: url('../images/icon_s0102.png');}
+#section01 .col4 > .col:nth-child(4) i { background-image: url('../images/icon_s0103.png');}
+
 .col > a > h3 {
     margin-top: 20px; 
     font-size: 32px; 
     font-weight: 700;
     color: #121212;
 }
-.col > a > p {
+.col > a > p.show {
     margin-top: 5px;
     font-size: 17px;
-    color:#999999
-}
-.col.col2 {padding: 0; }
-.col.col2 >  .col {
-    background-color: cadetblue;
+    color:#999999;
+    line-height: 1.29;
+    font-family: "Noto Sans KR";
     display: block;
+}
+.col > a > p {
+    display: none;
+}
+
+#section01  .col2 > .col {
     width: 100%;
-    padding:20px 28px 23px;
+    display: block;
+}
+.col2 > .col > a > p.show {font-size: 15px;}
+.col2 > .col > a { position: relative; }
+#section01 .col2 > .col > a > i {
+    position: absolute;
+    background-image: url('../images/icon_s0205.png');
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 78px; height: 87px;
+    right: 28px; bottom: 23px;
+    border-radius: 0;
 }
 
 /* secton2_ 생명보험협회 */
+#section02 { background-image: url('../images//section02_bg.jpg'); }
+#section02 .col4 > .col,
+#section02 .col2 > div {
+    width: 50%;
+    padding:10px;
+    overflow: hidden;
+}
+#section02 .col4 > .col > div, 
+.col2 >.col > ul,
+.col2 >.col > div {  
+    border-radius: 15px; 
+    background-color: #fff;
+    overflow: hidden;
+}
+#section02 .col4 > .col > div.tab-wrap {
+    background-color: #edf1f5;
+}
+.tab-wrap {
+    border: 1px solid #d4d5d8;
+}
+.tab {
+    line-height: 50px;
+    border-bottom: 1px solid #d4d5d8;
+}
+.tab > a {
+    background-color: #fff;
+    border-right: 1px solid #d4d5d8;
+    display: block;
+    float: left;
+    max-width: 140px;
+    font-size: 18px;
+    font-weight: 700;
+    width: 33.333%;
+}
+.more-btn {
+    
+}
+.tab > a.hide {display: none;}
+.tab-contents {
+    padding:28px 38px;
+    background-color: #fff;
+}
+.tab-contents > ul {
+    outline: 1px solid red;
+    display: none;
+}
+.tab-contents > ul > li {
+    text-align: left; 
+    font-family: "Noto Sans KR";
+    color: #6d6d6d;
+    font-size: 15px;
+}
+.tab-contents > ul.on  {
+    display: block;
+}
+.tab-contents > ul > li > a  {
+    display: block;
+    outline: 1px solid lime;
+    overflow: hidden;
+    max-width: 335px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.3s;
+    color: #6d6d6d;
+}
+.tab-contents > ul > li > span {
+
+}
+/* col2 > col */
+#section02 .col4 > .col2 > .col { background-color: transparent ;}
+#section02 .col.col2 { padding:0;}
+.sec02-inner {
+    background-color: #108ad3 !important;
+    padding: 10px;
+}
+.sec02-inner > li {
+    outline: 1px solid lime;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.sec02-inner > li > a {
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-family: "Noto Sans KR";
+}
+.sec02-inner > li > a > i {
+    display: block;
+    width: 82px; height: 82px;
+    margin: 0 auto 7px;
+    background: #fff no-repeat center;
+    border-radius: 50%;
+}
+.sec02-inner > li:nth-child(1) i {background-image: url('../images/icon_s0201.png');}
+.sec02-inner > li:nth-child(2) i {background-image: url('../images/icon_s0202.png');}
+.sec02-inner > li:nth-child(3) i {background-image: url('../images/icon_s0203.png');}
+.sec02-inner > li:nth-child(4) i {background-image: url('../images/icon_s0204.png');}
+
+/*  slider */
+.slide-img-wrap {outline: 1px solid lime;}
+.slide {float: left;}
+.slide > a {
+    display: block;
+    background: no-repeat center;
+    outline: 1px solid lime;
+    overflow: hidden;
+}
+.slid > a >img {
+    display: block;
+    width: 100%;
+}
+
+/*  */
+.col-notice{
+    outline: 1px solid red;
+}
 /* secton3_ 소비자 */
 /* secton4_ 모집종사자 */
 /* secton5_ 회원사 */
