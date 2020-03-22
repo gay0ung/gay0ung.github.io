@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +9,9 @@ body {
     font-weight: 400;
     word-break: keep-all;
     letter-spacing: -0.04em;
-
+}
+body::-webkit-scrollbar { 
+    display: none; 
 }
 img,fieldset {border:0 none;}
 h1,h2,h3,h4,h5,dl,dt,dd,ul,li,ol,th,td,p,blockquote,form,fieldset,legend {margin:0;padding:0;}

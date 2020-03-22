@@ -19,15 +19,13 @@
 }
 .k-insurance-wrap {
     min-width: 320px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 .inwrap {
     max-width: 1260px;
     min-width: 340px;
     margin: 0 auto;
     width: 96%;
-    line-height: 1.4285;
-    position: relative;
 }
 
 /*  header ------------------------------------------------------------------------------- */
@@ -222,14 +220,33 @@ header {
 
 
 /* main----------------------------------------------------------------------------------- */
+.section-wrap {
+    transform: translate3d(0px, 0px, 0px);
+    transition: none 0s ease 0s;
+    height: 100%;
+    position: relative;
+   
+}
 section {
-    width: 100%; height: 100%;
-    background: cover no-repeat center;
-    padding: 80px 0;
+    width: 100%; height: 100vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+section .inwrap {
+    max-width: 1280px;
 }
 .section-inner {
-    padding-top: 40px;
+    width: 100%; height: 100%;
     position: relative;
+    padding-top: 80px;
+}
+.section-inner-wrap {
+    position: absolute;
+    padding-top: 40px;
+    width: 100%;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
 }
 section .title {
     text-align: center;
@@ -240,15 +257,14 @@ section .title > p {
     font-weight: 500;
     font-size: 18px;
 }
-
 section h2 {
     font-weight: 700;
     font-size: 48px;
     color: #1c1c1c;
-    padding-top:27px ;
+    padding-top: 27px;
     margin-bottom: 50px;
-    line-height: 1;
     text-align: center;
+    line-height: 1;
     position: relative;
 }
 section h2::before {
@@ -266,14 +282,17 @@ section h2::before {
     float: left;
     padding: 10px;
 }
+.col.col2 {padding: 0;}
 .col > * {
     text-align: center;
+    border-radius: 16px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
-.col > a {
+.col > a  {
     background-color: #fff;
     display: block;
     padding:38px 10px 62px ;
-    border-radius: 16px;
 }
 .col > a > i {
     margin: 0 auto;
@@ -290,18 +309,21 @@ section h2::before {
     line-height: 30px;
     padding: 0 25px;
     font-size: 15px;
-    margin-top: 17px;
 }
-/* secton1_home */
+
+/* sectoin01_home ---*/
 #section01 {  
     background-image: url('../images/main_visual01.jpg');
+    background-size: cover;
 }
 #section01 .title > h2 {
     color:#fff ;
+    line-height: 1.66;
+    padding-top: 0;
 }
 #section01 .title > h2::before{display: none;}
 #section01 .col { width: 25%; }
-#section01 .col2 > .col > a {
+#section01 .col2 > .col > a , .col2 > .col.on > div {
     text-align: left;
     padding: 20px 28px 23px;
 }
@@ -309,44 +331,45 @@ section h2::before {
     margin-top: 0;
     font-size: 28px;
 }
-#section01 .col2 > .col.on > a {
-    background-color: #108ad3;
-}
 
 /* mouseover .col.on 일경우 */
-#section01 .col.on > a {
-    background-color: #108ad3;
+#section01 .col.on > * {
+    background-color: #108ad3; 
 }
-#section01 .col.on > a > h3 ,
-#section01 .col.on > a > h4 ,
-#section01 .col.on > a > p { color: #fff; }
+#section01 .col.on  h3 ,
+#section01 .col.on  h4 ,
+#section01 .col.on p ,
+#section01 .col.on span { color: #fff; }
+#section01 .col.on > div  {
+    padding:20px 5% ;
+}
 
-/* div.col.on.favmenu > a  --> 자식들을 포함하지 않고 자식들 각각에 a를 줬다 왜..?---------- */
-/* sectoin1 */
-#section01 .col.on.fav-menu > a {
-    outline: 1px solid blue;
-    display: block;
+/*  */
+.fav-menu h4 {
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-size: 18px;
 }
 .fav-menu-contents > li {
-    outline: 1px solid yellow;
     float: left;
     width: 33.333%;
 }
 .fav-menu-contents > li > a {
     display: block;
+    text-align: center;
+    font-size: 15px;
 }
 .fav-menu-contents > li > a > i {
     display: block;
     width: 69px; height: 69px;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 .fav-menu-contents > li:nth-child(1) i {background-image: url('../images/icon_s0105.png');}
 .fav-menu-contents > li:nth-child(2) i {background-image: url('../images/icon_s0106.png');}
 .fav-menu-contents > li:nth-child(3) i {background-image: url('../images/icon_s0107.png');}
-
-/*  ---------------------------------------------------------------수정해야한다.*/
+.fav-menu-contents > li > a > span {line-height: 1.2; display: block;}
 
 #section01 .col > a > i {
     width: 180px; height: 180px;
@@ -358,13 +381,12 @@ section h2::before {
 #section01 .col4 > .col:nth-child(4) i { background-image: url('../images/icon_s0103.png');}
 
 .col > a > h3 {
-    margin-top: 20px; 
+    margin: 20px 0 5px; 
     font-size: 32px; 
     font-weight: 700;
     color: #121212;
 }
 .col > a > p.show {
-    margin-top: 5px;
     font-size: 17px;
     color:#999999;
     line-height: 1.29;
@@ -379,7 +401,7 @@ section h2::before {
     width: 100%;
     display: block;
 }
-.col2 > .col > a > p.show {font-size: 15px;}
+.col2 > .col > a > p.show {font-size: 15px; height: 65px; line-height: unset;}
 .col2 > .col > a { position: relative; }
 #section01 .col2 > .col > a > i {
     position: absolute;
@@ -391,7 +413,62 @@ section h2::before {
     border-radius: 0;
 }
 
-/* section2_ 생명보험협회 */
+/* board */
+.board {
+    position: absolute;
+    bottom: 80px; left: 0; right: 0;
+    color: #fff;
+    height: 60px;
+    background-color: rgba(11,38,67,.7);
+    
+    
+}
+.board h3 {
+    padding: 0 20px 0 77px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    line-height: 60px;
+    position: absolute;
+    left: 0;top: 0;
+    background: url('../images/icon_notice.png') no-repeat 40px center;
+}
+.board h3 > a {
+    display: block;
+
+}
+.news > h3 {
+    background-image: url('../images/icon_news.png');
+}
+.board-inner a {   
+    font-size: 16px;
+    font-family: "Noto Sans KR";
+    color: #fff; 
+    display: block;
+    line-height: 60px
+}
+.board-inner > div {
+    float: left;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0 70px 0 170px;
+    height: 60px;
+
+}
+.board-swipe {
+    position: relative;
+}
+.swiper-btn {
+    position: absolute;
+    right: 20px;top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: maroon;
+    width: 32px; height: 29px;
+    background: url('../images/icon_arrow02.png') no-repeat center;
+}
+
+/* section2_ 생명보험협회 ---*/
 #section02 { background-image: url('../images//section02_bg.jpg'); }
 #section02 .col4 > .col {
     width: 50%;
@@ -400,15 +477,7 @@ section h2::before {
     box-sizing: border-box;
     
 }
-#section02 .col4 > .col > div, 
-#section02 .col4 > .col > ul,
-#section02 .col2 >.col > ul,
-#section02 .col2 >.col > div {  
-    border-radius: 15px; 
-    background-color: #fff;
-    overflow: hidden;
-    box-sizing: border-box;
-}
+
 #section02 .col4 > .col > div.tab-wrap {
     background-color: #edf1f5;
 }
@@ -500,9 +569,8 @@ span.more-btn {
     display: block;
     background: url('../images/icon_more.png') no-repeat center;
 }
-/* col2 > col ----*/
+
 #section02 .col4 > .col2 > .col { background-color: transparent ;  width: 50%;}
-#section02 .col.col2 { padding:0;}
 #section02 .sec02-inner,
 #section02 .col-slide-container { padding: 15px 10px ; }
 
@@ -596,14 +664,13 @@ span.more-btn {
     line-height: 20px;
 }
 .more-info-wrap .btn-go {
-    margin-top: 0;
     background-color: #92989b;
     color: #fff;
     font-size: 14px;
     line-height: 26px;
 }
 
-/* section3_ 소비자 */
+/* section3_ 소비자 ---*/
 #section03 .col3 > .col {
     width: 100%;
 }
@@ -698,9 +765,6 @@ span.more-btn {
     height: 75px;
     font-family: "Noto Sans KR";
 }
-.custom-go  .btn-go {
-    margin-top: 0;
-}
 .custom-go > li:hover > a {
     background-color:#108ad3;
 }
@@ -722,8 +786,12 @@ span.more-btn {
 .custom-go > li:nth-child(3) i {background-image: url('../images/icon_s0303.png');}
 .custom-go > li:nth-child(4) i {background-image: url('../images/icon_s0304.png');}
 
-/* section04_ 모집종사자 */
-#section04 { background-image: url('../images/section04_bg.jpg'); }
+/* section04_ 모집종사자 ---*/
+#section04 { 
+    background-image: url('../images/section04_bg.jpg');
+    background-repeat: repeat;
+    background-size: unset;
+ }
 #section04 h2 {color: #fff;}
 #section04 h2::before {background-color: #fff;}
 #section04 .col4 > .col {
@@ -739,7 +807,6 @@ span.more-btn {
 .col-text {
     position: absolute;
     top:43px; left: 35px; right: 35px;
-    outline: 1px solid lightcoral;
 }
 .col-text > strong {
     font-size: 30px;
@@ -751,6 +818,7 @@ span.more-btn {
     font-size: 18px;
     color: #838383;
     line-height: 1.33;
+    margin-top: 16px;
 }
 
 /*  */
@@ -763,10 +831,12 @@ span.more-btn {
     position: absolute;
     bottom: 0;
 }
-/* section05_ 회원사 */
+
+/* section05_ 회원사 ---*/
 #section05 {
     background-image: url('../images/section05_bg.jpg');
     background-repeat: repeat;
+    background-size: unset;
 }
 #section05 .col5 > .col {padding:2% 2% 2%; width: 20%;}
 #section05 .col5 > .col > a {padding: 0; background-color: transparent;}
@@ -802,20 +872,24 @@ span.more-btn {
 
 .col5 > .col strong {
     display: block;
-    margin: 15px 0 12px;
+    margin: 28px 0 25px;
     font-size: 22px;
     color:#101010 ;
     font-weight: 700;
     line-height:1.2;
+}
+.col5 > .col strong.r2 {
+    margin: 15px 0 12px;
 }
 .col5 > .col p.show {
     font-size: 15px;
     line-height: 1.33;
     color: #666666;
 }
+
+
 /* footer--------------------------------------------------------------------------------- */
 footer {background-color: #f3f4f5; position: relative;}
-.footer-inner {position: relative;}
 
 /* footer-swipe --- */
 .footer-swipe {
@@ -848,7 +922,7 @@ footer {background-color: #f3f4f5; position: relative;}
     right: 0;
 }
 
-/**/
+/* */
 .swipe-slide-wrap {
     position: relative;
     background-color: #92989b;
@@ -872,11 +946,16 @@ footer {background-color: #f3f4f5; position: relative;}
 .footer-info {
     padding: 40px 0 60px;
     text-align: left;
+    position: relative;
+}
+.footer-info-wrap {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 250px 0 180px;
 }
 .footer-logo {
-    background-color: palegreen;
     position: absolute;
-    left: 0; top: 40px;
+    left: 0; top:0;
 }
 .footer-logo > * {display: block;} 
 .footer-logo > a {
@@ -885,9 +964,7 @@ footer {background-color: #f3f4f5; position: relative;}
 /* */
 .footer-contents {
     font-family: 'Noto Sans KR';
-    position: absolute;
-    left: 186px; top: 40px;
-    outline: 1px solid lime;
+    width: auto;
 }
 .footer-contents > a {
     display: block;
@@ -907,11 +984,10 @@ footer {background-color: #f3f4f5; position: relative;}
     outline: 1px solid red;
     display: flex;
     position: absolute;
-    top:40px; right: 0;
+    top:40px; right: 30px;
 }
 .accessibility > a {
     display: block;
-    background-color: lime;
 }
 .webaward > img {
     max-width: 57px;
