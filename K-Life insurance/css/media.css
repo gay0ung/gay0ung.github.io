@@ -1,0 +1,69 @@
+/* 1600px 이하 */
+@media screen and (max-width: 1600px) {
+  .header-btn {
+    top: 100px;
+    right: 2.5%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body::-webkit-scrollbar {
+    display: block;
+  }
+  .header-util,
+  .page-nav,
+  .page-control {
+    display: none;
+  }
+}
+/* @media screen and (max-width: ) and (min-width: ) {
+} */
+@media screen and (max-width: 770px) {
+  section {
+  }
+  .section-inner-wrap {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* header ---------------------------------------- */
+  .header-logo {
+    display: none;
+  }
+  .header-nav {
+    margin: 0;
+  }
+  .header-inner.inwrap {
+    margin: 0;
+    width: 100%;
+  }
+  .header-nav .nav-group1 > li > a {
+    margin: 0;
+    font-size: 17px;
+  }
+  /* header nav */
+  .h-nav01 > .on .nav-group2.on {
+    display: block;
+    padding: 20px 0 47px;
+  }
+  .header-nav .nav-group2 > li {
+    width: 100%;
+    padding: 0;
+  }
+  .nav-group2.inwrap {
+    width: 100%;
+  }
+  .header-nav .nav-group3 > li {
+    padding: 2.45% 3% 0;
+  }
+  .header-nav .nav-group3 > li + li {
+    padding-top: 2.45%;
+  }
+  .header-nav .nav-group3 > li > a {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+  .header-nav .nav-group4 {
+    margin-top: 2.45%;
+  }
+}

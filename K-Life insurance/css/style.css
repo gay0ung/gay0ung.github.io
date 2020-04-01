@@ -27,7 +27,9 @@
   margin: 0 auto;
   width: 96%;
 }
-
+.k-insurance-wrap > * {
+  box-sizing: border-box;
+}
 /*  header ------------------------------------------------------------------------------- */
 header {
   height: 80px;
@@ -35,12 +37,16 @@ header {
   width: 100%;
   z-index: 100;
   background-color: #fff;
-  border-bottom: 1px solid #dddddd !important;
+  border-bottom: 1px solid #dddddd;
+}
+header.on::before {
+  border-bottom: 2px solid #0d2d4f;
+}
+header::before {
 }
 .header-inner {
   width: 95%;
   display: flex;
-  overflow: hidden;
 }
 .header-inner > * {
   box-sizing: border-box;
@@ -61,7 +67,8 @@ header {
   margin: 0 30px;
 }
 .header-nav .nav-group1 {
-  line-height: 80px;
+  line-height: 79px;
+  overflow: hidden;
 }
 .header-nav .nav-group1 > li {
   float: left;
@@ -80,17 +87,17 @@ header {
   color: #108ad3;
 }
 /* ---------------------- js적용 시키기 */
-.header-nav .nav-group2.on,
-.sitemap-nav.on {
+.h-nav01 > .on > .nav-group2.on,
+.hero-sitemap.on {
   display: block;
 }
-.header-nav .nav-group2,
-.sitemap-nav {
+.header-nav > ul > li > .nav-group2,
+.hero-sitemap {
   display: none;
 }
+/* ------------------------------------------ */
 
-/* --------------------- headernav 부분 다시 해보기! nav에 line-height를 주지않고 position으로 띄운뒤 overflow:hidden을 해서 다시 시도해본다. */
-.header-nav .nav-group2 {
+.h-nav01 > .on .nav-group2.on {
   background-color: #e8e9eb;
   display: flex;
   position: absolute;
@@ -98,37 +105,55 @@ header {
   left: 0;
   right: 0;
 }
+/* .h-nav01 > .on .nav-group2.on::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background-color: #e8e9eb;
+} */
 .header-nav .nav-group2 > li {
-  outline: 1px solid red;
   width: 25%;
+  font-size: 19px;
+  font-weight: 700;
+  text-align: left;
+  padding: 2.45% 3% 47px;
+  border-right: 1px solid #dddee0;
 }
-.header-nav .nav-group3 {
-  background-color: #108ad3;
+.header-nav .nav-group2 > li:first-child {
+  border-left: 1px solid #dddee0;
 }
 .header-nav .nav-group3 > li {
-  outline: 1px solid lime;
-  padding: 2.45% 3% 0;
+  line-height: 19px;
 }
-
+.header-nav .nav-group3 > li + li {
+  padding-top: 53px;
+}
 .header-nav .nav-group3 > li > a {
   color: #000;
   font-size: 19px;
   font-weight: 700;
   display: block;
-  background-color: lightblue;
 }
 .header-nav .nav-group4 {
-  background-color: #575a61;
+  margin-top: 24px;
 }
 .header-nav .nav-group4 > li {
-  outline: 1px solid orange;
+  line-height: 15px;
+}
+.header-nav .nav-group4 > li + li {
+  margin-top: 17px;
 }
 .header-nav .nav-group4 > li > a {
   display: block;
   font-weight: 400;
-  background-color: palegoldenrod;
+  color: #666666;
+  font-size: 15px;
 }
-
+.header-nav .nav-group4 > li > a:hover {
+  color: #000;
+}
 /* header-util */
 .header-util > * {
   font-family: "Noto Sans KR";
@@ -140,6 +165,7 @@ header {
   line-height: 39px;
   overflow: hidden;
   box-sizing: border-box;
+  align-content: center;
 }
 
 /* util-search */
@@ -194,6 +220,7 @@ header {
   background-position: -27px 11px;
   right: 10px;
 }
+
 /* header-sitemap */
 .header-sitemap {
   margin-left: 5px;
@@ -211,14 +238,90 @@ header {
   background-position: -52px 2px;
   right: 14px;
 }
-.hero-sitemap {
-  background-color: lightgreen;
+.header-util.on > * {
+  transform: none;
 }
-.sitemap-nav {
+.header-util > .header-sitemap.on > .hero-sitemap.on {
   position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
+  background-color: #0d2d4f;
+  z-index: 100;
+  overflow-y: scroll;
+}
+.hero-sitemap.on > div > * {
+  box-sizing: border-box;
+}
+.hero-sitemap.on h1 {
+  padding: 60px 0 50px;
+  position: relative;
+  border-bottom: 3px solid #ffffff;
+}
+.hero-sitemap.on h1 a img {
+  display: block;
+  margin: 0 auto;
+}
+.hero-sitemap.on h1 a::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  right: 45px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url("../images/btn_sitemap_close.png");
+}
+.hero-sitemap.on .nav-group1 > li {
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid #3d5772;
+  padding: 50px 0;
+}
+.hero-sitemap.on .nav-group1 li {
+  box-sizing: border-box;
+}
+.hero-sitemap.on .nav-group1 > li > a {
+  font-size: 26px;
+  line-height: 50px;
+  float: left;
+}
+.hero-sitemap.on .nav-group1 a {
+  color: #fff;
+  display: block;
+}
+.hero-sitemap.on .nav-group2 {
+  overflow: hidden;
+  padding-top: 10px;
+  margin-left: 200px;
+}
+.hero-sitemap.on .nav-group2 > li {
+  float: left;
+  width: 25%;
+}
+.hero-sitemap.on .nav-group2 > li:nth-child(4n + 1) {
+  clear: both;
+}
+.hero-sitemap.on .nav-group2 > li:nth-child(4n + 1) > a {
+  padding: 5px 0;
+  line-height: 25px;
+  font-size: 17px;
+}
+.hero-sitemap.on .nav-group3 > li > a {
+  padding: 5px 0;
+  line-height: 25px;
+  font-size: 17px;
+}
+.hero-sitemap.on .nav-group4 {
+  margin-left: 12px;
+  padding: 5px 0;
+}
+.hero-sitemap.on .nav-group4 > li > a {
+  font-size: 14px;
+  color: #6e8195;
+  line-height: 23px;
 }
 /* header-lang */
 .header-lang {
@@ -246,6 +349,7 @@ header {
   position: absolute;
   right: 30px;
   top: 22px;
+  z-index: 200;
 }
 
 /* main----------------------------------------------------------------------------------- */
@@ -350,6 +454,9 @@ section h2::before {
 #section01 {
   background-image: url("../images/main_visual01.jpg");
   background-size: cover;
+}
+#section01 .section-inner {
+  padding-top: 0;
 }
 #section01 .title > h2 {
   color: #fff;
@@ -483,7 +590,7 @@ section h2::before {
 /* board */
 .board {
   position: absolute;
-  bottom: 80px;
+  bottom: 0;
   left: 0;
   right: 0;
   color: #fff;
@@ -1223,6 +1330,10 @@ footer {
   right: 29px;
   margin-top: -90px;
 }
+.page-nav li a {
+  display: block;
+  text-align: right;
+}
 .page-nav li {
   position: relative;
 }
@@ -1230,8 +1341,7 @@ footer {
   margin-top: 5px;
 }
 .page-nav span {
-  display: block;
-  text-align: right;
+  display: inline-block;
   padding: 0 26px 0 17px;
   line-height: 30px;
   color: #646768;
@@ -1241,6 +1351,14 @@ footer {
 }
 .page-nav.on span {
   color: #fff;
+}
+.page-nav span.on {
+  background-color: #d82744;
+  border-radius: 15px;
+  color: #fff;
+}
+.page-nav span.on::after {
+  background-color: #fff;
 }
 .page-nav span::after {
   content: "";
