@@ -1,4 +1,4 @@
-/* 1600px 이하 */
+/* 1600px 이하------------------------------------------------------------------ */
 @media screen and (max-width: 1600px) {
   .header-btn {
     top: 100px;
@@ -18,13 +18,117 @@
 }
 /* @media screen and (max-width: ) and (min-width: ) {
 } */
-@media screen and (max-width: 770px) {
-  section {
+
+/* 1190이하 ---------------------------------------------------------------------*/
+@media screen and (max-width: 1198px) {
+  /* header ----- */
+  .header-nav {
+    margin-left: 36px;
+    margin-right: 0;
   }
+
+  /* main -------- */
+  section {
+    padding: 80px 0;
+  }
+  /* section01 */
+  .board {
+    display: none;
+  }
+
+  .section-inner {
+    padding-top: 0;
+    height: auto;
+  }
+  .section-inner-wrap {
+    width: 96%;
+    padding-top: 0;
+    transform: translate(-50%, 0);
+  }
+  #section01 .col3 {
+    float: none;
+    width: 100%;
+  }
+  #section01 .col3 .col {
+    width: 33.33333%;
+  }
+  #section01 .col4 > .col2 {
+    width: 100%;
+  }
+  #section01 .col4 > .col2 > .col {
+    float: left;
+    width: 33.33333%;
+  }
+  #section01 .col4 > .col2 > .col.fav-menu {
+    width: 66.66666667%;
+  }
+
+  /* section02 */
+  #section02 .col4 > .col:nth-child(1),
+  #section02 .col.col2 {
+    width: 100%;
+  }
+  #section02 .col.col2 > .col {
+    height: auto;
+  }
+  #section02 .col4 > .col:nth-child(3),
+  #section02 .col4 > .col:nth-child(4) {
+    display: none;
+  }
+
+  /* #section02 .tab > a{display: block}
+  --> .hide를 없애야함.
+  */
+
+  /*  section03 */
+  #section03 .col2 > .col {
+    width: 100%;
+  }
+  .custom-img {
+    display: none;
+  }
+  .custom-go > li p,
+  .custom-go > li .btn-go {
+    display: none;
+  }
+  .custom-go > li i {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+  }
+  .custom-go > li h3 {
+    min-height: 55px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* section04  */
+  #section04 .col4 > .col {
+    width: 50%;
+  }
+  #section04 .col4 > .col > a {
+    padding: 0 0 107% 0;
+  }
+
+  /* section05  */
+  #section05 .col5 {
+    text-align: center;
+  }
+  #section05 .col5 > .col {
+    width: 33.33333%;
+  }
+}
+
+/* 770px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 770px) {
   .section-inner-wrap {
     width: 96%;
   }
 }
+
+/* 600px 이하 ----------------------------------------------------------------------- */
 @media screen and (max-width: 600px) {
   /* header ---------------------------------------- */
   .header-logo {
