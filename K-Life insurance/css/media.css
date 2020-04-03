@@ -12,12 +12,43 @@
   }
   .header-util,
   .page-nav,
-  .page-control {
+  .page-control .btn-up,
+  .page-control .btn-down {
     display: none;
   }
 }
-/* @media screen and (max-width: ) and (min-width: ) {
-} */
+/* 1280px 이하 ---------------------------------------------------------------- */
+@media screen and (max-width: 1280px) {
+  .footer-info-wrap {
+    padding: 0;
+  }
+  .footer-info-wrap > * {
+    position: static;
+  }
+  .footer-logo > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .footer-logo > a {
+    margin: 0 0 0 10px;
+  }
+  .footer-logo > a > img {
+    display: block;
+  }
+  .footer-contents > a {
+    margin: 0 0 10px 0;
+  }
+  .accessibility {
+    margin: 20px auto 0;
+    position: static;
+    max-width: 1260px;
+    min-width: 340px;
+    width: 96%;
+  }
+  .page-control {
+    bottom: 27px;
+  }
+}
 
 /* 1190이하 ---------------------------------------------------------------------*/
 @media screen and (max-width: 1198px) {
@@ -148,11 +179,68 @@
   #section05 .col5 > .col {
     width: 33.33333%;
   }
+  #section05 .col5 > .col {
+    padding: 2% 2% 2% !important;
+  }
+  .col-text {
+    top: 18px;
+    left: 15px;
+  }
+  .col-text > strong {
+    font-size: 15px;
+  }
+  .col-text > p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
 }
 /* 983px 이하 ---------------------------------------------------------------------- */
 @media screen and (max-width: 983px) {
   #section01 .col2 > .col > a > i {
     display: none;
+  }
+}
+
+/* 933px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 933px) {
+  /* section5 */
+  #section05 .col5 > .col strong {
+    font-size: 13px;
+    margin: 18px 0 10px;
+  }
+  #section05 .col5 > .col strong.r2 {
+    margin: 10px 0 10px;
+  }
+  #section05 .col5 > .col p.show {
+    display: none;
+  }
+  #section05 .col-icon {
+    padding: 3px;
+  }
+  #section05 .col-icon::after {
+    border: 3px solid #fff;
+  }
+
+  /* footer */
+}
+
+/* 766px 이하 --------------------------------------------------------------------- */
+@media screen and (max-width: 766px) {
+  /* footer */
+  .footer-info {
+    padding: 20px 15px;
+  }
+  .footer-contents > a {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .footer-contents > p {
+    line-height: 15px;
+    font-size: 11px;
+    margin-left: -4px;
+  }
+  .copyright {
+    margin-top: 5px;
   }
 }
 
@@ -261,7 +349,7 @@
     background-size: cover;
     margin-bottom: 3px;
   }
-  .col-icon::after {
+  #section02 .col-icon::after {
     border: none;
   }
 

@@ -42,8 +42,6 @@ header {
 header.on::before {
   border-bottom: 2px solid #0d2d4f;
 }
-header::before {
-}
 .header-inner {
   width: 95%;
   display: flex;
@@ -516,6 +514,10 @@ section h2::before {
   text-align: center;
   font-size: 15px;
 }
+.fav-menu-contents > li > a:hover > i {
+  transform: scale(1.1);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.7);
+}
 .fav-menu-contents > li > a > i {
   display: block;
   width: 69px;
@@ -523,6 +525,8 @@ section h2::before {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0 auto 10px;
+  border-radius: 50%;
+  transition: all 0.3s;
 }
 .fav-menu-contents > li:nth-child(1) i {
   background-image: url("../images/icon_s0105.png");
@@ -649,6 +653,7 @@ section h2::before {
   width: 32px;
   height: 29px;
   background: url("../images/icon_arrow02.png") no-repeat center;
+  transition: background 0.4s;
 }
 
 /* section2_ 생명보험협회 ---*/
@@ -801,6 +806,10 @@ span.more-btn::after {
   color: #fff;
   font-family: "Noto Sans KR";
 }
+.sec02-inner > li > a:hover > i {
+  transform: scale(1.1);
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.7);
+}
 .sec02-inner > li > a > i {
   display: block;
   width: 82px;
@@ -808,6 +817,7 @@ span.more-btn::after {
   margin: 0 auto 7px;
   background: #fff no-repeat center;
   border-radius: 50%;
+  transition: all 0.3s;
 }
 .sec02-inner > li:nth-child(1) i {
   background-image: url("../images/icon_s0201.png");
@@ -915,6 +925,9 @@ span.more-btn::after {
 .more-info-wrap > li > a {
   display: block;
 }
+.more-info-wrap > li > a:hover .btn-go {
+  background-color: #108ad3;
+}
 
 .more-info-wrap i {
   display: block;
@@ -947,6 +960,7 @@ span.more-btn::after {
   color: #fff;
   font-size: 14px;
   line-height: 26px;
+  transition: background 0.4s;
 }
 
 /* section3_ 소비자 ---*/
@@ -1035,6 +1049,7 @@ span.more-btn::after {
   display: block;
   padding: 30px;
   border: 1px solid #d4d5d8;
+  transition: background 0.4s;
 }
 .custom-go > li h3 {
   line-height: 1.15;
@@ -1149,10 +1164,15 @@ span.more-btn::after {
   width: 20%;
   float: none;
   display: inline-block;
+  vertical-align: top;
 }
 #section05 .col5 > .col > a {
   padding: 0;
   background-color: transparent;
+  overflow: visible;
+}
+#section05 .col5 > .col > a:hover > .col-icon {
+  transform: scale(1.15);
 }
 .col-icon {
   display: block;
@@ -1219,7 +1239,9 @@ footer {
   background-color: #f3f4f5;
   position: relative;
 }
-
+footer > section {
+  height: auto;
+}
 /* footer-swipe --- */
 .footer-swipe {
   width: 100%;
@@ -1303,14 +1325,18 @@ footer {
 }
 .footer-contents > a {
   display: block;
-  margin: 5px 0 15px 6px;
   font-size: 15px;
   font-weight: 500;
   color: #141313;
 }
-.footer-contents > p {
+.footer-contents > p,
+.footer-contents > p > a {
   font-size: 14px;
   color: #828282;
+  line-height: 19px;
+}
+.footer-contents > p {
+  margin-left: -6px;
 }
 .copyright {
   margin-top: 10px;
@@ -1343,12 +1369,9 @@ footer {
   right: 29px;
   margin-top: -90px;
 }
-.page-nav li a {
-  display: block;
-  text-align: right;
-}
 .page-nav li {
   position: relative;
+  text-align: right;
 }
 .page-nav li + li {
   margin-top: 5px;
@@ -1358,16 +1381,17 @@ footer {
   padding: 0 26px 0 17px;
   line-height: 30px;
   color: #646768;
-  transition: all 0.5s;
+  transition: all 0.4s;
   font-size: 15px;
   font-family: "Noto Sans KR";
+  cursor: pointer;
+  border-radius: 15px;
 }
 .page-nav.on span {
   color: #fff;
 }
 .page-nav span.on {
   background-color: #d82744;
-  border-radius: 15px;
   color: #fff;
 }
 .page-nav span.on::after {
@@ -1389,11 +1413,9 @@ footer {
 .page-control {
   bottom: 100px;
   right: 27px;
+  width: 35px;
 }
-.page-control a {
-  display: block;
-}
-.page-control div + div {
+.page-control button + button {
   margin-top: 10px;
 }
 .page-control img {
