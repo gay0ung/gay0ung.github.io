@@ -30,6 +30,7 @@
   /* main -------- */
   section {
     padding: 80px 0;
+    height: auto;
   }
   /* section01 */
   .board {
@@ -43,7 +44,11 @@
   .section-inner-wrap {
     width: 96%;
     padding-top: 0;
-    transform: translate(-50%, 0);
+    position: static;
+    transform: none;
+  }
+  #section01 {
+    padding-top: 200px;
   }
   #section01 .col3 {
     float: none;
@@ -75,7 +80,31 @@
   #section02 .col4 > .col:nth-child(4) {
     display: none;
   }
-
+  #section02 .sec02-inner {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .sec02-inner > li {
+    padding: 8%;
+  }
+  .slide-img-wrap {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide {
+    position: relative;
+    padding-bottom: 100%;
+  }
+  .slide a {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: lawngreen;
+  }
   /* #section02 .tab > a{display: block}
   --> .hide를 없애야함.
   */
@@ -120,11 +149,147 @@
     width: 33.33333%;
   }
 }
+/* 983px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 983px) {
+  #section01 .col2 > .col > a > i {
+    display: none;
+  }
+}
 
 /* 770px 이하 ---------------------------------------------------------------------- */
 @media screen and (max-width: 770px) {
   .section-inner-wrap {
     width: 96%;
+  }
+  section {
+    padding: 35px 0;
+  }
+  section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 14px;
+  }
+  section h2::before {
+    width: 17px;
+    height: 2px;
+  }
+  section .title > p {
+    font-size: 13px;
+  }
+  .col {
+    padding: 4px !important;
+  }
+  .col > *,
+  .custom-img > div,
+  .custom-go > li > a {
+    border-radius: 8px;
+  }
+  #section01 {
+    padding-top: 150px;
+  }
+  #section01 .title h2 {
+    font-size: 22px;
+  }
+  #section01 .col > a > i {
+    width: 70px;
+    height: 70px;
+  }
+
+  #section01 .col2 > .col > a {
+    padding: 13px 5px 12px;
+  }
+  #section01 .col2 > .col > a > i {
+    display: block;
+    position: relative;
+    width: 39px;
+    height: 44px;
+    left: 0;
+    top: 0;
+  }
+  #section01 h3 {
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  #section01 .col2 > .col > a > p.show {
+    display: none;
+  }
+  #section01 .col2 > .col .btn-go {
+    display: none;
+  }
+
+  .fav-menu h4 {
+    display: none;
+  }
+  .fav-menu-contents > li > a > i {
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+  }
+  #section01 .col.on > div {
+    padding: 12px 4% 13px;
+  }
+  .fav-menu-contents > li > a > span {
+    font-size: 13px;
+  }
+
+  /* section02 */
+  .tab-wrap {
+    min-height: 180px;
+  }
+  .tab {
+    line-height: 30px;
+  }
+  .tab > a {
+    font-size: 13px;
+  }
+  .tab-contents {
+    top: 30px;
+    padding: 15px 18px;
+  }
+  .tab-contents > ul > li,
+  .notice-ext-contents > li {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .sec02-inner > li > a {
+    font-size: 11px;
+  }
+  .sec02-inner > li > a > i {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    margin-bottom: 3px;
+  }
+  .col-icon::after {
+    border: none;
+  }
+
+  /* section03 */
+  .custom-go > li {
+    padding: 4px;
+  }
+  .custom-go > li > a {
+    padding: 13px 5px;
+  }
+  .custom-go > li i {
+    height: 40px;
+    background-size: cover;
+    width: 72px;
+    margin: 0 auto;
+  }
+  .custom-go > li h3 {
+    font-size: 13px;
+    min-height: 31px;
+    margin-top: 10px;
+  }
+}
+/* / */
+
+/* 757px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 757px) {
+  #section01 .col > a {
+    padding: 13px;
   }
 }
 
@@ -169,5 +334,16 @@
   }
   .header-nav .nav-group4 {
     margin-top: 2.45%;
+  }
+
+  /* main */
+  .col > a > p.show {
+    font-size: 12px;
+  }
+}
+/* 576px이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 576px) {
+  .sec02-inner > li {
+    padding: 0 0 5px;
   }
 }

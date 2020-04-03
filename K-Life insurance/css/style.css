@@ -466,11 +466,16 @@ section h2::before {
 #section01 .title > h2::before {
   display: none;
 }
-#section01 .col {
+#section01 .col2.col {
+  float: left;
   width: 25%;
 }
-#section01 .col3 > .col {
+#section01 .col3 {
   float: right;
+  width: 75%;
+}
+#section01 .col3 > .col {
+  width: 33.33333%;
 }
 #section01 .col2 > .col > a,
 .col2 > .col.on > div {
@@ -717,7 +722,7 @@ section h2::before {
   right: 0;
   padding: 28px 38px;
   background-color: #fff;
-  height: 100%;
+  height: auto;
   border-top: 1px solid #d4d5d8;
 }
 .tab-contents > ul {
