@@ -1,0 +1,65 @@
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 15px;
+  font-family: "Nanum Gothic", Gulim, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+  background-color: #fff;
+  color: #000;
+  margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+form,
+fieldset,
+blockquote,
+address,
+table,
+thead,
+tbody,
+tfoot,
+tr,
+td,
+caption {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a:link,
+a:visited {
+  color: #000;
+  text-decoration: none;
+  font-size: 13px;
+}
+nav {
+  white-space: nowrap;
+}
