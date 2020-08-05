@@ -1,11 +1,9 @@
 @import "./reset.css";
 
-
 /* common */
-/* .sr-only {} */
-
-
-/* header */
+.sr-only {
+  margin: -999999px !important;
+}
 .page-wrap {
   display: grid;
   grid-template-columns: 30% 1fr;
@@ -13,4 +11,93 @@
 }
 .page-wrap > * {outline: 1px solid grey;}
 
+header,main {position: relative;}
+/* header */
+header {background-color: khaki;}
+.logo {
+  font-family:'Lalezar';
+  font-size: 1.8em;
+  outline: 1px solid red;
+  padding: 10px 0 0 60px;
+}
+
+.h-nav,
+.contents-detail{position: absolute;}
+
+.h-nav {
+  left: 60px;
+  bottom: 20%;
+  background-color: hotpink;
+}
+/* js */
+.page-wrap.h-on .h-nav{
+  display: none;
+}
+
+.h-nav button {
+  font-size: 1em;
+  padding: 10px 0 5px;
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  position: relative; 
+}
+
+.h-nav button::before {
+  position: absolute;
+  content: '';
+  height: 50%;
+  border-left: 0 solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  top: 50%;
+  left: -57px;
+  transform: translateY(-50%) ;
+  transition:  ease-in-out  .4s;
+}
+/* js click했을때 남아 있어야 함. */
+.h-nav button.click:hover::before {
+  border-left: 13px solid #164b6d;
+}
+.h-nav button:hover {
+  color: #164b6d;
+}
+
+/* detail을 클릭 했을때 headr의 넓이는 길어지고 nav는 없어진다. contents-detail 내용이 보이게 된다. */
+.page-wrap.h-on  {grid-template-columns:38% 1fr;}
+.contents-detail {
+  /* display: none; */
+  outline: 1px solid grey;
+  width: 80%;
+  height: 60%;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+.page-wrap.h-on .contents-detail {display: block; }
+.contents-detail > h2 {background-color: honeydew;}
+
+.contents-detail ul {
+  background-color: lightcoral; 
+  width: 100%; 
+  height: 100%;
+  position: relative;
+  display: none;
+}
+/* js  클릭했을때 해당 내용에 click이란 클래스명을 부여*/
+ul.click {
+  display: block;
+}
+.contents-detail ul > li {
+  display: none;
+  width: 100%;
+  background-color: lightseagreen;
+  position: absolute;
+  left: 0; 
+  top: 0;
+  bottom: 0;
+}
+/* js ul.click이 붙어 있을경우   */
+ul.click > li.show {
+  display: block;
+}
 /* main */
