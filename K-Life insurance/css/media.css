@@ -1,0 +1,437 @@
+/* 1600px 이하------------------------------------------------------------------ */
+@media screen and (max-width: 1600px) {
+  .header-btn {
+    top: 100px;
+    right: 2.5%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  body::-webkit-scrollbar {
+    display: block;
+  }
+  .header-util,
+  .page-nav,
+  .page-control .btn-up,
+  .page-control .btn-down {
+    display: none;
+  }
+}
+/* 1280px 이하 ---------------------------------------------------------------- */
+@media screen and (max-width: 1280px) {
+  .footer-info-wrap {
+    padding: 0;
+  }
+  .footer-info-wrap > * {
+    position: static;
+  }
+  .footer-logo > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .footer-logo > a {
+    margin: 0 0 0 10px;
+  }
+  .footer-logo > a > img {
+    display: block;
+  }
+  .footer-contents > a {
+    margin: 0 0 10px 0;
+  }
+  .accessibility {
+    margin: 20px auto 0;
+    position: static;
+    max-width: 1260px;
+    min-width: 340px;
+    width: 96%;
+  }
+  .page-control {
+    bottom: 27px;
+  }
+}
+
+/* 1190이하 ---------------------------------------------------------------------*/
+@media screen and (max-width: 1198px) {
+  /* header ----- */
+  .header-nav {
+    margin-left: 36px;
+    margin-right: 0;
+  }
+
+  /* main -------- */
+  section {
+    padding: 80px 0;
+    height: auto;
+  }
+  /* section01 */
+  .board {
+    display: none;
+  }
+
+  .section-inner {
+    padding-top: 0;
+    height: auto;
+  }
+  .section-inner-wrap {
+    width: 96%;
+    padding-top: 0;
+    position: static;
+    transform: none;
+  }
+  #section01 {
+    padding-top: 200px;
+  }
+  #section01 .col3 {
+    float: none;
+    width: 100%;
+  }
+  #section01 .col3 .col {
+    width: 33.33333%;
+  }
+  #section01 .col4 > .col2 {
+    width: 100%;
+  }
+  #section01 .col4 > .col2 > .col {
+    float: left;
+    width: 33.33333%;
+  }
+  #section01 .col4 > .col2 > .col.fav-menu {
+    width: 66.66666667%;
+  }
+
+  /* section02 */
+  #section02 .col4 > .col:nth-child(1),
+  #section02 .col.col2 {
+    width: 100%;
+  }
+  #section02 .col.col2 > .col {
+    height: auto;
+  }
+  #section02 .col4 > .col:nth-child(3),
+  #section02 .col4 > .col:nth-child(4) {
+    display: none;
+  }
+  #section02 .sec02-inner {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  .sec02-inner > li {
+    padding: 8%;
+  }
+  .slide-img-wrap {
+    height: auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide {
+    position: relative;
+    padding-bottom: 100%;
+  }
+  .slide a {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: lawngreen;
+  }
+  /* #section02 .tab > a{display: block}
+  --> .hide를 없애야함.
+  */
+
+  /*  section03 */
+  #section03 .col2 > .col {
+    width: 100%;
+  }
+  .custom-img {
+    display: none;
+  }
+  .custom-go > li p,
+  .custom-go > li .btn-go {
+    display: none;
+  }
+  .custom-go > li i {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+  }
+  .custom-go > li h3 {
+    min-height: 55px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* section04  */
+  #section04 .col4 > .col {
+    width: 50%;
+  }
+  #section04 .col4 > .col > a {
+    padding: 0 0 107% 0;
+  }
+
+  /* section05  */
+  #section05 .col5 {
+    text-align: center;
+  }
+  #section05 .col5 > .col {
+    width: 33.33333%;
+  }
+  #section05 .col5 > .col {
+    padding: 2% 2% 2% !important;
+  }
+  .col-text {
+    top: 18px;
+    left: 15px;
+  }
+  .col-text > strong {
+    font-size: 15px;
+  }
+  .col-text > p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+}
+/* 983px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 983px) {
+  #section01 .col2 > .col > a > i {
+    display: none;
+  }
+}
+
+/* 933px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 933px) {
+  /* section5 */
+  #section05 .col5 > .col strong {
+    font-size: 13px;
+    margin: 18px 0 10px;
+  }
+  #section05 .col5 > .col strong.r2 {
+    margin: 10px 0 10px;
+  }
+  #section05 .col5 > .col p.show {
+    display: none;
+  }
+  #section05 .col-icon {
+    padding: 3px;
+  }
+  #section05 .col-icon::after {
+    border: 3px solid #fff;
+  }
+
+  /* footer */
+}
+
+/* 766px 이하 --------------------------------------------------------------------- */
+@media screen and (max-width: 766px) {
+  /* footer */
+  .footer-info {
+    padding: 20px 15px;
+  }
+  .footer-contents > a {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .footer-contents > p {
+    line-height: 15px;
+    font-size: 11px;
+    margin-left: -4px;
+  }
+  .copyright {
+    margin-top: 5px;
+  }
+}
+
+/* 770px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 770px) {
+  .section-inner-wrap {
+    width: 96%;
+  }
+  section {
+    padding: 35px 0;
+  }
+  section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-top: 14px;
+  }
+  section h2::before {
+    width: 17px;
+    height: 2px;
+  }
+  section .title > p {
+    font-size: 13px;
+  }
+  .col {
+    padding: 4px !important;
+  }
+  .col > *,
+  .custom-img > div,
+  .custom-go > li > a {
+    border-radius: 8px;
+  }
+  #section01 {
+    padding-top: 150px;
+  }
+  #section01 .title h2 {
+    font-size: 22px;
+  }
+  #section01 .col > a > i {
+    width: 70px;
+    height: 70px;
+  }
+
+  #section01 .col2 > .col > a {
+    padding: 13px 5px 12px;
+  }
+  #section01 .col2 > .col > a > i {
+    display: block;
+    position: relative;
+    width: 39px;
+    height: 44px;
+    left: 0;
+    top: 0;
+  }
+  #section01 h3 {
+    margin-top: 10px !important;
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  #section01 .col2 > .col > a > p.show {
+    display: none;
+  }
+  #section01 .col2 > .col .btn-go {
+    display: none;
+  }
+
+  .fav-menu h4 {
+    display: none;
+  }
+  .fav-menu-contents > li > a > i {
+    width: 42px;
+    height: 42px;
+    background-size: cover;
+  }
+  #section01 .col.on > div {
+    padding: 12px 4% 13px;
+  }
+  .fav-menu-contents > li > a > span {
+    font-size: 13px;
+  }
+
+  /* section02 */
+  .tab-wrap {
+    min-height: 180px;
+  }
+  .tab {
+    line-height: 30px;
+  }
+  .tab > a {
+    font-size: 13px;
+  }
+  .tab-contents {
+    top: 30px;
+    padding: 15px 18px;
+  }
+  .tab-contents > ul > li,
+  .notice-ext-contents > li {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .sec02-inner > li > a {
+    font-size: 11px;
+  }
+  .sec02-inner > li > a > i {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    margin-bottom: 3px;
+  }
+  #section02 .col-icon::after {
+    border: none;
+  }
+
+  /* section03 */
+  .custom-go > li {
+    padding: 4px;
+  }
+  .custom-go > li > a {
+    padding: 13px 5px;
+  }
+  .custom-go > li i {
+    height: 40px;
+    background-size: cover;
+    width: 72px;
+    margin: 0 auto;
+  }
+  .custom-go > li h3 {
+    font-size: 13px;
+    min-height: 31px;
+    margin-top: 10px;
+  }
+}
+/* / */
+
+/* 757px 이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 757px) {
+  #section01 .col > a {
+    padding: 13px;
+  }
+}
+
+/* 600px 이하 ----------------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  /* header ---------------------------------------- */
+  .header-logo {
+    display: none;
+  }
+  .header-nav {
+    margin: 0;
+  }
+  .header-inner.inwrap {
+    margin: 0;
+    width: 100%;
+  }
+  .header-nav .nav-group1 > li > a {
+    margin: 0;
+    font-size: 17px;
+  }
+  /* header nav */
+  .h-nav01 > .on .nav-group2.on {
+    display: block;
+    padding: 20px 0 47px;
+  }
+  .header-nav .nav-group2 > li {
+    width: 100%;
+    padding: 0;
+  }
+  .nav-group2.inwrap {
+    width: 100%;
+  }
+  .header-nav .nav-group3 > li {
+    padding: 2.45% 3% 0;
+  }
+  .header-nav .nav-group3 > li + li {
+    padding-top: 2.45%;
+  }
+  .header-nav .nav-group3 > li > a {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+  .header-nav .nav-group4 {
+    margin-top: 2.45%;
+  }
+
+  /* main */
+  .col > a > p.show {
+    font-size: 12px;
+  }
+}
+/* 576px이하 ---------------------------------------------------------------------- */
+@media screen and (max-width: 576px) {
+  .sec02-inner > li {
+    padding: 0 0 5px;
+  }
+}
