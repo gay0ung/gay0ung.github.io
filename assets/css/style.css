@@ -1,0 +1,16 @@
+@import "./reset.css";
+
+
+/* common */
+/* .sr-only {} */
+
+
+/* header */
+.page-wrap {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  height: 100%;
+}
+.page-wrap > * {outline: 1px solid grey;}
+
+/* main */
