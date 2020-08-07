@@ -9,11 +9,21 @@
   grid-template-columns: 30% 1fr;
   height: 100%;
 }
-.page-wrap > * {outline: 1px solid grey;}
+/* .page-wrap > * { outline: 1px solid grey; } */
 
-header,main {position: relative;}
-/* header */
-header {background-color: khaki;}
+header, 
+main,
+.sections-container,
+section { position: relative; }
+
+.h-nav,
+.contents-detail,
+footer,
+.m-header > ul > li
+{ position: absolute; }
+
+
+/* header -------------------------------------------------------------- */
 .logo {
   font-family:'Lalezar';
   font-size: 1.8em;
@@ -21,13 +31,9 @@ header {background-color: khaki;}
   padding: 10px 0 0 60px;
 }
 
-.h-nav,
-.contents-detail{position: absolute;}
-
 .h-nav {
   left: 60px;
   bottom: 20%;
-  background-color: hotpink;
 }
 /* js */
 .page-wrap.h-on .h-nav{
@@ -66,7 +72,7 @@ header {background-color: khaki;}
 /* detail을 클릭 했을때 headr의 넓이는 길어지고 nav는 없어진다. contents-detail 내용이 보이게 된다. */
 .page-wrap.h-on  {grid-template-columns:38% 1fr;}
 .contents-detail {
-  /* display: none; */
+  display: none;
   outline: 1px solid grey;
   width: 80%;
   height: 60%;
@@ -74,10 +80,8 @@ header {background-color: khaki;}
   transform: translate(-50%,-50%);
 }
 .page-wrap.h-on .contents-detail {display: block; }
-.contents-detail > h2 {background-color: honeydew;}
 
 .contents-detail ul {
-  background-color: lightcoral; 
   width: 100%; 
   height: 100%;
   position: relative;
@@ -100,4 +104,166 @@ ul.click {
 ul.click > li.show {
   display: block;
 }
-/* main */
+
+footer {
+  left: 0; right: 0; bottom: 0;
+  height: 40px;
+  background-color: #164b6d;
+}
+footer > p {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: white;
+  font-weight: bold;
+}
+
+
+/* main ---------------------------------------------------------------- */
+main {
+  /* background-color: wheat;  */
+  overflow:hidden}
+main > header {
+  background-color: #0f344b;
+  position: fixed;
+  top: 50px; 
+  width: 300px;
+  height: 25px;
+  z-index: 1000;
+}
+.m-header,
+ul {height: inherit; width: inherit;}
+
+.m-header > ul > li {
+  display: none;
+  left: 20px; bottom: 3px;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 200;
+  line-height: 1em;
+}
+/* js m-on일때 보이게 된다.  */
+.m-header > ul > li.m-on {
+  display: block;
+}
+
+.sections-container,section {
+  width: 100%;
+  height: 100%;
+}
+.sections-container section {
+  outline: 1px solid red;
+  overflow: hidden;
+  display: none;
+  box-sizing: border-box;
+}
+/* js s-on붙을때 보여진다. */
+.sections-container section.s-on {
+  display: block;
+}
+/* contact */
+.center {  
+  left: 50%; top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.s-contact > * { position: absolute;}
+.s-contact > h1 {
+  text-align: center;
+  width: fit-content;
+  font-size: 10em;
+  line-height: 1.7em;
+  color: rgba(31, 28, 77, 0.041);
+}
+.profile {
+height: 50%;
+width: 100%;
+}
+.p-image {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  background-color: rgba(255, 255, 255, 0.678);
+  border-radius: 50%;
+  left: 17%;top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  background-image: url('../images/profileImg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+address { 
+  position: absolute;
+  right: 20px; top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  display: grid;
+  gap: 20px;
+  grid-template-rows: repeat(3,1fr);
+}
+address > a {
+  font-style: normal;
+  height: fit-content;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: fit-content;
+  color: #0f344b;
+}
+address > a:nth-child(1):hover{
+  color:#4c00b8 ;
+}
+address > a:nth-child(2):hover{
+  color:#d36d24 ;
+}
+address > a:nth-child(3):hover{
+  color:#007a70 ;
+}
+
+/* portfolio */
+.sections-container .s-portfolio > ul {
+  height: 400vh;
+  grid-template-rows: repeat(4,100vh);
+  overflow-y: scroll;
+}
+.sections-container section ul {
+  display: grid;
+
+
+  padding-bottom:25px;
+
+}
+section ul > li {
+  background-color: lightskyblue;
+  outline: 1px solid gold;
+  position: relative;
+  border: 1px solid goldenrod;
+  padding: 25px 0;
+}
+a.result-img,
+.detail{
+    left: 50%; 
+  transform: translateX(-50%);
+}
+
+ a.result-img {
+  position: absolute;
+  top: 53px;
+  background-color: rgb(116, 129, 0);
+  width: 55%;
+  height: 300px
+}
+.detail {
+  position: absolute;
+  background-color:#0f344b7e;;
+  font-size: 1.3em;
+  bottom: 0;
+  padding: 6px 10px;
+  border-radius: 30px;
+  color: white;
+
+}
+.detail:hover {
+  background-color: #0f344b;
+  transition:ease-out .4s;
+}

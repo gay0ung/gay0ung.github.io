@@ -15,10 +15,10 @@
       <nav class="h-nav" id="h-nav">
         <h1 class="sr-only">네비게이션</h1>
         <ul>
-          <li><button type="button" id="pf-btn" class="click">PORTFOLIO</button></li>
-          <li><button type="button" id="pj-btn" class="">PROJECT</button></li>
-          <li><button type="button" id="mw-btn" class="">MINI WORK</button></li>
-          <li><button type="button" id="cont-btn" class="">CONTACT</button></li>
+          <li><button type="button" id="cont-btn" class="cont-btn">CONTACT</button></li>
+          <li><button type="button" id="pf-btn" class="pf-btn click">PORTFOLIO</button></li>
+          <li><button type="button" id="pj-btn" class="pj-btn">PROJECT</button></li>
+          <li><button type="button" id="mw-btn" class="mw-btn">MINI WORK</button></li>
         </ul>
       </nav>
 
@@ -119,135 +119,135 @@
           </li>
         </ul>
       </div>
+
+      <footer>
+        <p class="">ⓒ L E E . G A . Y O U N G</p>
+      </footer>
     </header>
     <main>
       <header>
         <div class="m-header">
           <ul>
-            <li>PORTFOLIO</li>
-            <li>PROJECT</li>
-            <li>WORK</li>
-            <li>CONTACT</li>
+            <li class="cont m-on">CONTACT</li>
+            <li class="pf">PORTFOLIO</li>
+            <li class="pj">PROJECT</li>
+            <li class="mw">MINI WORK</li>
           </ul>
         </div>
       </header>
       <div class="sections-container">
-        <section class="s-portfolio">
+        <!-- contact -->
+        <section class="s-contact s-on" >
+          <h2 class="sr-only">contact</h2>
+          <h1 class="center">LEE GA YOUNG</h1>
+          <div class="profile center">
+            <div class="p-image"></div>
+            <address>
+              <a href="https://github.com/gay0ung" target="_blank">
+                <i class="fab fa-github"></i>
+                GITHUB
+              </a>
+
+              <a href="tel:01092438180" class="p-number" aria-label="phone number">
+                <i class="fas fa-phone"></i>
+                010-9243-8180
+              </a>
+
+              <a href="mailto:6and_end9@naver.com" aria-label="mail address">
+                <i class="fas fa-envelope"></i>
+                6and_end9@naver.com
+              </a>
+            </address>
+          </div>
+        </section>
+        <!-- portfolio -->
+        <section class="s-portfolio ">
           <h1 class="sr-only">about portfolio</h1>
           <ul>
             <li>
-              <a href="./kakao/index.html" target="_blank">
-                <div class="result-img">
+              <a href="./kakao/index.html" target="_blank" class="result-img">
+                  결과 이미지
                   <span class="sr-only">kakao page</span>
-                </div>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="./jenniferSoft/index.html" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only">jenniferSoft page</span>
-                </div>
+              <a href="./kakao/index.html" target="_blank" class="result-img">
+                결과 이미지
+                <span class="sr-only">kakao page</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="./Microsoft/index.html" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only">microsoft page</span>
-                </div>
+              <a href="./kakao/index.html" target="_blank" class="result-img">
+                결과 이미지
+                <span class="sr-only">kakao page</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="./K-Life insurance/index.html" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only">korea life insurance association page</span>
-                </div>
+              <a href="./kakao/index.html" target="_blank" class="result-img">
+                결과 이미지
+                <span class="sr-only">kakao page</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
           </ul>
         </section>
-
+        <!-- project -->
         <section class="s-project">
           <h1 class="sr-only">about project</h1>
           <ul>
             <li>
-              <a href="" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only" lang="ko">머니부</span>
-                </div>
+              <a href="./kakao/index.html" target="_blank" class="result-img">
+                결과 이미지
+                <span class="sr-only" lang="ko">머니부 페이지</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
           </ul>
         </section>
-
+        <!-- mini-work -->
         <section class="s-mini-work">
           <h1 class="sr-only">about mini-work</h1>
           <ul>
             <!-- vanilla javascript -->
             <li>
-              <a href="./mini works/javascript/paint-JS/index.html" target="_blank">
-                <div class="result-img">
+              <a href="./mini works/javascript/paint-JS/index.html" target="_blank" class="result-img">
                   <span class="sr-only">painting page</span>
-                </div>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="./mini works/javascript/Vanilla-JS/index.html" target="_blank">
-                <div class="result-img">
+              <a href="./mini works/javascript/Vanilla-JS/index.html" target="_blank" class="result-img">
                   <span class="sr-only">user page(googel)</span>
-                </div>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
 
             <!-- vue.js -->
             <li>
-              <a href="#" target="_blank">
-                <div class="result-img">
+              <a href="#" target="_blank" class="result-img">
                   <span class="sr-only">search movie</span>
-                </div>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="#" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only">hacker news</span>
-                </div>
+              <a href="#" target="_blank" class="result-img">
+                <span class="sr-only">hacker news</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
             <li>
-              <a href="#" target="_blank">
-                <div class="result-img">
-                  <span class="sr-only">weather page</span>
-                </div>
+              <a href="#" target="_blank" class="result-img">
+                <span class="sr-only">weather page</span>
               </a>
+              <button type="button" class="detail">detail</button>
             </li>
           </ul>
-        </section>
-
-        <section class="s-contact">
-          <h2 class="sr-only">contact</h2>
-          <h1>LEE GA YOUNG</h1>
-          <div class="profile">
-            <div class="p-image">
-              프로필 사진이 들어갈 자리
-            </div>
-            <div>
-              <a href="https://github.com/gay0ung" target="_blank">
-                <i class="fab fa-github"></i>
-                GITHUB
-              </a>
-            </div>
-            <address>
-              <div>
-                <span></span>
-                <a href="tel:01092438180" class="p-number" aria-label="phone number">010-9243-8180</a>
-              </div>
-           
-              <a href="mailto:6and_end9@naver.com" aria-label="mail address">6and_end9@naver.com</a>
-            </address>
-          </div>
         </section>
       </div>
     </main>
   </div>
-</body>
+</body> 
 </html>
