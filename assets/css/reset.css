@@ -24,9 +24,9 @@ time, mark, audio, video {
 body {
     font-style: normal;
     font-size: 1em;
-    font-family:'Noto Sans KR','Lalezar', cursive,  sans-serif,'Nanum Gothic', AppleGothic, "돋움", dotum, Arial, ;
+    font-family:'Noto Sans KR','Lalezar', cursive, sans-serif,'Nanum Gothic', "돋움", dotum, Arial ;
     font-weight: 100;
-    line-height:1.7;
+    line-height:1.6;
     box-sizing: border-box;
     letter-spacing: normal;
     width: 100%;
