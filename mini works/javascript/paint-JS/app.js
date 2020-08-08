@@ -6,14 +6,15 @@ const mode = document.getElementById('jsMode')
 const saveBtn = document.getElementById('jsSave')
 
 const INITIAL_COLOR = "#2c2c2c";
-const CANVAS_SIZE = 700;
+const CANVAS_SIZE_W = 1200;
+const CANVAS_SIZE_H = 800;
 
 // canvas에도 (css말고 js도) 따로 사이즈를 줘야 한다. pixel로 그림이 그려지기때문이다.
-canvas.width = CANVAS_SIZE;
-canvas.height = CANVAS_SIZE;
+canvas.width = CANVAS_SIZE_W;
+canvas.height = CANVAS_SIZE_H;
 
 ctx.fillStyle = "white";
-ctx.fillRect(0 , 0, CANVAS_SIZE, CANVAS_SIZE )
+ctx.fillRect(0, 0, CANVAS_SIZE_W, CANVAS_SIZE_H)
 
 ctx.strokeStyle = INITIAL_COLOR
 ctx.fillStyle = INITIAL_COLOR
@@ -56,7 +57,6 @@ function onMouseDown(e){
 // 색상변경
 function handleColorClick(e){
     const color = e.target.style.backgroundColor
-    console.log(color);
     ctx.strokeStyle = color
     ctx.fillStyle = color
 }
@@ -81,8 +81,8 @@ function handleModeClick(e){
 
 function handleCanvasClick(){
     if(filling) {
-        ctx.fillRect(0 , 0, CANVAS_SIZE, CANVAS_SIZE )
-    }
+        ctx.fillRect(0, 0, CANVAS_SIZE_W, CANVAS_SIZE_H )
+    } 
     
 }
 
