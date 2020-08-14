@@ -33,6 +33,9 @@ button::after{
 button:hover::after {
   background-color:#66191980 ;
 }
+button:focus{
+  outline: none;
+}
 .form,
 .greetings {
   display: none;

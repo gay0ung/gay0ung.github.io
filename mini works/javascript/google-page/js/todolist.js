@@ -74,7 +74,6 @@ function loadToDos(){
     console.log(parsedToDos);
     parsedToDos.forEach((toDo)=>{
       paintToDo(toDo.text)
-      
     })
   } 
 }
