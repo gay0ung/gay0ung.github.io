@@ -2,49 +2,51 @@
   <div>
     <div class="main list-container contents">
       <h1 class="page-header">Today I Learned</h1>
-      <LoadingSpinner v-if="isLoading"></LoadingSpinner>
+      <div v-if="isLoading">
+        <LoadingSpinner></LoadingSpinner>
+      </div>
       <ul v-else>
         <PostListItem
-          v-for="(postItem, i) in postsItems"
-          :key="i"
-          :postItem="postsItems"
+          v-for="postItem in postItems"
+          :key="postItem._id"
+          :postItem="postItem"
+          @refresh="fetchData"
         ></PostListItem>
-        <!-- :key="postItem._id" -->
       </ul>
     </div>
     <router-link to="/add" class="create-button">
-      <ion-icon name="add-outline"></ion-icon
-    ></router-link>
+      <i class="ion-md-add"></i>
+    </router-link>
   </div>
 </template>
 
 <script>
 import PostListItem from '@/components/posts/PostListItem.vue';
-import { fetchPosts } from '@/api/index';
 import LoadingSpinner from '@/components/common/LoadingSpinner.vue';
+import { fetchPosts } from '@/api/posts.js';
 
 export default {
+  data() {
+    return {
+      postItems: [],
+      isLoading: false,
+    };
+  },
   components: {
     PostListItem,
     LoadingSpinner,
-  },
-  data() {
-    return {
-      postsItems: [],
-      isLoading: false,
-    };
   },
   methods: {
     async fetchData() {
       this.isLoading = true;
       const { data } = await fetchPosts();
       this.isLoading = false;
-      console.log(data.posts);
-
       this.postItems = data.posts;
+      console.log(data.posts);
     },
   },
   created() {
+    // 컴포넌트가 생성되자마자 실행
     this.fetchData();
   },
 };

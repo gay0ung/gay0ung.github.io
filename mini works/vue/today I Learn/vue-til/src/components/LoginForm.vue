@@ -19,6 +19,7 @@
           :disabled="!isUsernameValid || !password"
           type="submit"
           class="btn"
+          :class="!isUsernameValid || !password ? 'disabled' : null"
         >
           로그인
         </button>
@@ -29,9 +30,9 @@
 </template>
 
 <script>
-// import { loginUser } from '@/api/index';
 import { validateEmail } from '@/utils/validation';
 // import { saveAuthToCookie, saveUserToCookie } from '@/utils/cookies.js';
+
 export default {
   data() {
     return {
@@ -43,7 +44,6 @@ export default {
     };
   },
   computed: {
-    // 매번 자동으로 연산된다.
     isUsernameValid() {
       return validateEmail(this.username);
     },
@@ -56,26 +56,14 @@ export default {
           username: this.username,
           password: this.password,
         };
-        // sotre의 actions 값으로 불러오기
         await this.$store.dispatch('LOGIN', userData);
-        // 비동기 처리를 해야 한다.
 
-        // const { data } = await loginUser(userData);
-
-        // console.log(data.token);
-
-        // this.$store.commit('setToken', data.token);
-        // this.$store.commit('setUsername', data.user.username);
-
-        // // cookie값 설정
-        // saveAuthToCookie(data.token);
-        // saveUserToCookie(data.user.username);
-        // mainPage로 이동
         this.$router.push('/main');
       } catch (error) {
         // 에러 핸들링할 코드
         console.log(error.response.data);
         this.logMessage = error.response.data;
+        // this.initForm();
       } finally {
         this.initForm();
       }

@@ -1,18 +1,19 @@
 <template>
   <header>
     <div>
-      <router-link to="/" class="logo">
+      <router-link :to="logoLink" class="logo">
         TIL
         <span v-if="isUserLogin">by {{ $store.state.username }}</span>
       </router-link>
     </div>
     <div class="navigations">
-      <!-- 1 로그인 됐을 경우-->
+      <!-- 1 -->
       <template v-if="isUserLogin">
-        <a href="javascript:;" @click="logoutUser">Logout</a>
+        <a href="javascript:;" @click="logoutUser" class="logout-button">
+          Logout👋
+        </a>
       </template>
-
-      <!-- 2 로그인이 안됐을경우-->
+      <!-- 2 -->
       <template v-else>
         <router-link to="/login">로그인</router-link>
         <router-link to="/signup">회원가입</router-link>
@@ -22,15 +23,24 @@
 </template>
 
 <script>
+import { deleteCookie } from '@/utils/cookies.js';
 export default {
   computed: {
     isUserLogin() {
       return this.$store.getters.isLogin;
     },
+    // 로고를 눌렀을경우 페이지 이동(상황에 따른)
+    logoLink() {
+      return this.$store.getters.isLogin ? '/main' : '/login';
+    },
   },
   methods: {
     logoutUser() {
       this.$store.commit('clearUsername');
+      this.$store.commit('clearToken');
+      // 쿠키를 지워야 한다.
+      deleteCookie('til_auth');
+      deleteCookie('til_user');
       this.$router.push('/login');
     },
   },
@@ -40,7 +50,6 @@ export default {
 <style scoped>
 .username {
   color: white;
-  font-weight: bold;
 }
 header {
   display: flex;

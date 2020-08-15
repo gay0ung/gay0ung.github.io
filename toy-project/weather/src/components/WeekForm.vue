@@ -1,6 +1,6 @@
 <template>
-  <div>
-    Page is not found
+  <div class="week-wrap">
+    <h2>weeks weather</h2>
   </div>
 </template>
 

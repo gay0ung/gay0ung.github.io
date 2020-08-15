@@ -1,12 +1,12 @@
-import store from '@/store/index';
+import store from '@/store/index.js';
 
 export function setInterceptors(instance) {
   // Add a request interceptor
   instance.interceptors.request.use(
     function(config) {
       // Do something before request is sent
-      // config.headers.Authorizaiton = "토큰값 "
-      config.headers.Authorizaiton = store.state.token;
+      console.log(config);
+      config.headers.Authorization = store.state.token;
       return config;
     },
     function(error) {
