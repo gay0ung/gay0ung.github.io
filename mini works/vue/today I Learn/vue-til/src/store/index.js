@@ -5,6 +5,7 @@ import {
   getUserFromCookie,
   saveAuthToCookie,
   saveUserToCookie,
+  weatherIcon,
 } from '../utils/cookies.js';
 import { loginUser } from '@/api/auth.js';
 Vue.use(Vuex);
