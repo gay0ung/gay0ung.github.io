@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,44 +9,162 @@
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <title>y0u&g.e</title>
 </head>
+
 <body>
   <div class="page-wrap">
-    <header style="outline: 1px solid green;">
-      <h1 class="pw-logo">y0u&g.e</h1>
+    <header>
+      <h1 class="pw-logo">LEE GA YOUNG</h1>
       <nav class="h-nav">
-        <button type="button">TECHNIQUE</button>
-        <button type="button">PROJECT</button>
-        <button type="button">TOY-PROJECT</button>
-      </nav>
-      <address class="contact">
-        <a href="https://github.com/gay0ung" target="_blank"><i class="fab fa-github"></i>github</a>
-        <a href="mailto:6and_end9@naver.com"><i class="far fa-envelope"></i>email address</a>
-        <a href="tel:01092438180"><i class="fas fa-mobile-alt"></i>phone number</a>
-
-      </address>
+        <button type="button" id="tq" class="on">CONTACT</button>
+        <button type="button" id="tq">TECHNIQUE</button>
+        <button type="button" id="pj">PROJECT</button>
+        <button type="button" id="van">VANILLA.JS</button>
+        <button type="button" id="vue">VUE.JS</button>
+      </nav> 
     </header>
-    <main style="outline: 1px solid orange;">
-      <div class="main-inr">
-        <section class="technique">
+    <main>
+      <div class="main-inner">
+        <section class="contact" id="main-ct">
+          <h3>CONTACT</h3>
+          <div class="contact-img"></div>
+          <address class="contact">
+            <a href="https://github.com/gay0ung" target="_blank"><i class="fab fa-github"></i>github</a>
+            <a href="mailto:6and_end9@naver.com"><i class="far fa-envelope"></i>email address</a>
+            <a href="tel:01092438180"><i class="fas fa-phone-alt"></i>phone number</a>
+          </address>
+        </section>
+        <section class="technique" id="main-tq">
           <h3>TECHNIQUE</h3>
           <ul>
             <li>
-              <h4>Vue.js</h4>
-              <i>https://vuejs.org/images/logo.png</i>
+              <strong><i class="t-logo"></i>JavaScript</strong>
+              <span>content</span>
+            </li>
+            <li>
+              <strong><i class="t-logo"></i>HTML</strong>
+              <span>content</span>
+            </li>
+            <li>
+              <strong><i class="t-logo"></i>CSS</strong>
+              <span>content</span>
+            </li>
+            <li>
+              <strong><i class="t-logo"></i>Vue.js</strong>
+              <span>content</span>
+            </li>
+            <li>
+              <strong><i class="t-logo"></i>git</strong>
+              <span>content</span>
+            </li>
+            
+            <!-- <li>
+              <strong><i class="t-logo"></i>node.js</strong>
+              <span>content</span>
+            </li> -->
+          </ul>
+        </section>
+        <section class="project on" id="main-pj">
+          <h3>PROJECT</h3>
+          <ul class="sec pro">
+            <li>
+              <strong>머니부</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
             </li>
           </ul>
         </section>
-        <section class="project">
-          <h3>PROJECT</h3>
-          <ul>
-            <li></li>
+        <section class="vanilla-js" id="main-van">
+          <h3>VANILLA.JS</h3>
+          <ul class="sec pro">
+            <li>
+              <strong>todolist</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>그림판</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>구글페이지</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>js-challenge</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>생명보험</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>제니퍼</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>마이크로소프트</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>카카오페이지</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>카카오
+          </ul>
+        </section>
+        <section class="vue-js" id="main-vue">
+          <h3>VUE.JS</h3>
+          <ul class="sec pro">
+            <li>
+              <strong>todolist</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>weather</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>movie</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>hacke-news</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
+            <li>
+              <strong>game</strong>
+              <div class="sec-img">스크린샷이 나올자리</div>
+              <p class="sec-explain">해당 내용 설명</p>
+              <a href="#">결과물 주소</a>
+            </li>
           </ul>
         </section>
       </div>
     </main>
-    <!-- <footer style="outline: 1px solid blueviolet;">
-      <div class="footer-inr"></div>
-    </footer> -->
   </div>
-</body> 
+</body>
+
 </html>
