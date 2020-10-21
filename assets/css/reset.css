@@ -24,7 +24,7 @@ time, mark, audio, video {
 body {
     font-style: normal;
     font-size: 1em;
-    font-family:'Noto Sans KR','Raleway', sans-serif,'Nanum Gothic', "돋움", dotum, Arial ;
+    font-family:'Raleway', sans-serif,'Noto Sans KR','Nanum Gothic', "돋움", dotum, Arial ;
     font-weight: 100;
     line-height:1.6;
     box-sizing: border-box;
@@ -34,18 +34,20 @@ body {
     padding:25px 40px;
     max-width: 1471px;
     margin:0 auto;
-    background-color: #e7e7e7;
+    color: #404040;
 }
 
-nav ul {
+nav ,
+ul,
+li {
     list-style:none;
 }
 
-blockquote, q {
-    quotes:none;
-}
 
-blockquote:before, blockquote:after,
+blockquote, q {quotes:none;}
+
+blockquote:before, 
+blockquote:after,
 q:before, q:after {
     content:'';
     content:none;
@@ -58,6 +60,7 @@ a {
     vertical-align:baseline;
     background:transparent;
     text-decoration: none;
+    color: #404040;
 }
 
 table {
@@ -69,23 +72,26 @@ hr {
     display:block;
     height:1px;
     border:0;  
-    border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
 }
 
-input, select {
+input, 
+select {
     vertical-align:middle;
 }
-ul, ol {list-style:none;}
 
 button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+    font-family: 'Raleway';
+    font-weight: 400;
 }
 
-textarea:focus,button:focus ,input:focus {
+textarea:focus,
+button:focus ,
+input:focus {
   outline: none;
 }
 
@@ -99,7 +105,7 @@ textarea:focus,button:focus ,input:focus {
 *::-webkit-scrollbar-thumb {
 	border-radius: 9px;
 	width: auto;
-  background-color: #0f344b93;
+  background-color:#585858
 }
 *::-webkit-scrollbar-button {
   width: 0;
