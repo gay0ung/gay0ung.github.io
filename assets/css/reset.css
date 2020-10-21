@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
 
 * { box-sizing: border-box; }
 html, body, div, span, object, iframe,
@@ -24,7 +24,7 @@ time, mark, audio, video {
 body {
     font-style: normal;
     font-size: 1em;
-    font-family:'Noto Sans KR','Lalezar', cursive, sans-serif,'Nanum Gothic', "돋움", dotum, Arial ;
+    font-family:'Noto Sans KR','Raleway', sans-serif,'Nanum Gothic', "돋움", dotum, Arial ;
     font-weight: 100;
     line-height:1.6;
     box-sizing: border-box;
@@ -34,12 +34,8 @@ body {
     padding:25px 40px;
     max-width: 1471px;
     margin:0 auto;
+    background-color: #e7e7e7;
 }
-
-/* article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
-} */
 
 nav ul {
     list-style:none;
