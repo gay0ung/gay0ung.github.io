@@ -7,38 +7,42 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <!-- <a href='https://pngtree.com/so/줄자'>줄자 png from pngtree.com</a> -->
   <title>y0u&g.e</title>
 </head>
 
 <body>
+  <div class="loading">loading...</div>
   <div class="page-wrap">
     <header>
       <h1 class="pw-logo">LEE GA YOUNG</h1>
       <nav class="h-nav">
-        <button type="button" id="tq" class="on">CONTACT</button>
-        <button type="button" id="tq">TECHNIQUE</button>
-        <button type="button" id="pj">PROJECT</button>
-        <button type="button" id="van">VANILLA.JS</button>
-        <button type="button" id="vue">VUE.JS</button>
+        <button type="button" class="on">CONTACT</button>
+        <button type="button">TECHNIQUE</button>
+        <button type="button">PROJECT</button>
+        <button type="button">VANILLA.JS</button>
+        <button type="button">VUE.JS</button>
       </nav> 
     </header>
     <main>
       <div class="main-inner">
-        <section class="contact" id="main-ct">
+        <section class="contact on" id="main-ct">
           <h3>CONTACT</h3>
-          <div class="contact-img"></div>
-          <address class="contact">
-            <a href="https://github.com/gay0ung" target="_blank"><i class="fab fa-github"></i>github</a>
-            <a href="mailto:6and_end9@naver.com"><i class="far fa-envelope"></i>email address</a>
-            <a href="tel:01092438180"><i class="fas fa-phone-alt"></i>phone number</a>
-          </address>
+          <div class="sec">
+            <div class="contact-img"></div>
+            <address class="contact">
+              <a href="https://github.com/gay0ung" target="_blank"><i class="fab fa-github"></i>github</a>
+              <a href="mailto:6and_end9@naver.com"><i class="far fa-envelope"></i>email address</a>
+              <a href="tel:01092438180"><i class="fas fa-phone-alt"></i>phone number</a>
+            </address>
+          </div>
         </section>
         <section class="technique" id="main-tq">
           <h3>TECHNIQUE</h3>
-          <ul>
+          <ul class="sec">
             <li>
               <strong><i class="t-logo"></i>JavaScript</strong>
-              <span>content</span>
+                <span>content</span>
             </li>
             <li>
               <strong><i class="t-logo"></i>HTML</strong>
@@ -56,115 +60,241 @@
               <strong><i class="t-logo"></i>git</strong>
               <span>content</span>
             </li>
-            
-            <!-- <li>
-              <strong><i class="t-logo"></i>node.js</strong>
-              <span>content</span>
-            </li> -->
           </ul>
         </section>
-        <section class="project on" id="main-pj">
+        <section class="project" id="main-pj">
           <h3>PROJECT</h3>
-          <ul class="sec pro">
+          <ul class="sec list">
             <li>
               <strong>머니부</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
           </ul>
+          <i  class="scroll" href="#"><span></span><span></span><span></span></i>
         </section>
         <section class="vanilla-js" id="main-van">
           <h3>VANILLA.JS</h3>
-          <ul class="sec pro">
+          <ul class="sec list">
             <li>
               <strong>todolist</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content ">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>그림판</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>구글페이지</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>js-challenge</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>생명보험</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>제니퍼</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>마이크로소프트</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="./Microsoft/index.html" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>카카오페이지</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
-            </li>카카오
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="./kakao/index.html" target="_blank">결과물 주소</a>
+                </div>
+              </div>
+            </li>
           </ul>
+          <i  class="scroll"><span></span><span></span><span></span></i>
         </section>
         <section class="vue-js" id="main-vue">
           <h3>VUE.JS</h3>
-          <ul class="sec pro">
-            <li>
-              <strong>todolist</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
-            </li>
+          <ul class="sec list">      
             <li>
               <strong>weather</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>movie</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>hacke-news</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
             <li>
               <strong>game</strong>
-              <div class="sec-img">스크린샷이 나올자리</div>
-              <p class="sec-explain">해당 내용 설명</p>
-              <a href="#">결과물 주소</a>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <strong>todolist</strong>
+              <div class="close-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </div>
+              <div class="sec-container">
+                <div class="sec-img">스크린샷이 나올자리</div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="#" target="_blank">결과물 주소</a>
+                </div>
+              </div>
             </li>
           </ul>
+          <i  class="scroll" href="#"><span></span><span></span><span></span></i>
         </section>
       </div>
     </main>
   </div>
+  <script src="./js/loading.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
