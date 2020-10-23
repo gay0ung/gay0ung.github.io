@@ -6,18 +6,26 @@
 }
 .page-wrap {
   display: grid;
-  grid-template-columns: 30% auto ;
-  grid-template-rows: repeat(1fr);
+  grid-template-columns: 40% 1fr ;
   height: 100%;
   position: relative;
 }
+.page-wrap.click{
+  grid-template-columns: 130px auto;
+
+}
+.page-wrap.click > header {
+  padding: 0 3px;
+}
 /* HEADER ----------------------------------------------- */
 header {
-  background-color: #e7e7e7fd;
+/* background-image: linear-gradient(90deg, #e7e7e7 0%, #e7e7e703 100%); */
+  background-color: #e7e7e767;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 300px;
   padding: 0 10px;
+  gap: 50px;
 }
 
 h1 {
@@ -28,21 +36,45 @@ h1 {
   display: grid;
 }
 .h-nav > button {
-  outline: 1px solid lime;
   font-size: 20px;
   text-align: left;
   height: fit-content;
+  width: fit-content;
   font-weight: 600;
   color: #b7b7b7;
-  padding: 10px 0;
+
+  --uiTextUnderlinedLineHeight: var(--textUnderlinedLineHeight, 3px);
+  --uiTextUnderlinedLineGap: var(--textUnderlinedLineGap, .5rem);
+  --uiTextUnderlinedPaddingBottom: calc(var(--uiTextUnderlinedLineHeight) + var(--uiTextUnderlinedLineGap));
+
+  padding-bottom: var(--uiTextUnderlinedPaddingBottom) !important;
+  position: var(--textUnderlinedPosition, relative) !important;
 }
-.h-nav > button:hover{
- color: #585858
-}
+
 .h-nav > button.on{
   color:#404040 ;
 }
+.h-nav > button.on::after{opacity: 1; transform: none;}
 
+.h-nav > button:hover{color: #585858}
+.h-nav > button:hover::after{
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.h-nav > button::after{
+  opacity: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform .3s ease-out, opacity .3s ease-out;
+   content: "";
+  width: var(--textUnderlinedLineWidht, 100%) !important;
+  height: var(--uiTextUnderlinedLineHeight) !important;
+
+  background-color: var(--textUnderlinedLineColor, currentColor) !important;
+
+  position: absolute;
+  left: var(--textUnderlinedLineLeft, 0) !important;
+  bottom: var(--textUnderlinedLineBottom, 0) !important;
+}
 
 
 /* MAIN ------------------------------------------------- */
@@ -52,17 +84,17 @@ h1 {
 .main-inner > section {
   display: none;
   height: 100%;
-  background-color: lavender;
-  grid-template-columns: 80%;
-  justify-content: center;
-  align-items: flex-end;
-  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+/* animation: .2s ease-in ; */
 }
-.main-inner > section:nth-child(1){
-  grid-template-rows: repeat(55%,auto);
+.main-inner > section.contact{
+  grid-template-rows: repeat(55%, auto);
 }
 .main-inner > section.on{
-  display: grid;
+  display: block;
+  /* animation: display 500ms ease-in-out ; */
 }
 
 section > h3 {
@@ -70,13 +102,15 @@ section > h3 {
   width: fit-content;
   height: fit-content;
   position: absolute;
-  right: -20px;
+  /* right: -20px; */
+  right: 0;
   top: 40px;
   background-color: #e7e7e7;
   line-height: 30px;
 }
 
 /* contect */
+.contact > .sec {gap: 0; height: 60%;}
 .contact-img {
   background-image: url('../images/contact.png');
   background-repeat:  no-repeat;
@@ -84,7 +118,7 @@ section > h3 {
   background-size:  contain ;
   width: 300px;
   height: 300px;
-  align-self: flex-end;
+  place-self: center;
 }
 
 .contact {
@@ -100,27 +134,28 @@ section > h3 {
   font-style: normal;
   font-weight: 600;
 }
-.contact a:hover{
-  color: #707070;
-}
+.contact a:nth-child(1):hover{color:  #ab98b8}
+.contact a:nth-child(2):hover{color:  #98b8b1}
+.contact a:nth-child(3):hover{color:  #b1b898}
 .contact  i {
   font-size: 30px;
 }
 
 /* technique */
-/* section.technique{
- 
+/* .technique > h3 {
+  background-color: transparent;
 } */
-.technique > ul {
-  height: 90%;
-  display: grid;
-  /* grid-template-rows: minmax(200px 400px); */
+section.technique > ul {
+  width: 70%;
 }
 .technique > ul > li {
   display: grid;
   height: fit-content;
   gap: 10px;
-  border-bottom: 2px solid;
+  /* border-bottom: 2px ridge  #83857a60; */
+  justify-content: flex-start;
+  /* background-color: #b3b89810; */
+
 }
 .technique strong {
   display: grid;
@@ -138,18 +173,165 @@ section > h3 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.technique li:nth-child(1){border-color: #b3b898;}
-.technique li:nth-child(2){border-color: #b8ad98;}
-.technique li:nth-child(3){border-color: #98b3b8;}
-.technique li:nth-child(4){border-color: #98b89d;}
-.technique li:nth-child(5){border-color: #a0a0a0;}
+
+/* .technique li:nth-child(1){background-color: #b3b89807;}
+.technique li:nth-child(2){background-color: #b8ad982f;}
+.technique li:nth-child(3){background-color: #98b3b828;}
+.technique li:nth-child(4){background-color: #98b89d3b;}
+.technique li:nth-child(5){background-color: #a0a0a031;} */
 
 .technique li:nth-child(1) .t-logo {background-image: url('../images/js_logo.png');}
 .technique li:nth-child(2) .t-logo {background-image: url('../images/html_logo.png');}
 .technique li:nth-child(3) .t-logo {background-image: url('../images/css_logo.png');}
 .technique li:nth-child(4) .t-logo {background-image: url('../images/vue.png');}
 .technique li:nth-child(5) .t-logo {background-image: url('../images/github.png'); width: 50px; height: 50px; justify-self: center;}
-/* .technique li:nth-child(6) > .t-logo {background-image: url('');} */
-/* project */
-/* vanilla-js */
-/* vue-js */
+
+/* project & vanilla-js & vue-js ------------------- */
+section > .sec {
+  position: absolute;
+  display: grid;
+  top: 130px;
+  height: 80%;
+  overflow-y: scroll;
+  width: 100%;
+  gap: 40px;
+  padding: 0 50px;
+}
+.page-wrap.click > section > .sec {
+  grid-template-rows: 100%;
+}
+.sec > li {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* .sec-img클릭시  ul > li.click 이 붙으면 .sec-container 보여 지고  page-wrap 에도 click이 붙어 헤더 너비가  좁아진다.  클릭을 하지 않은 나머지 아이들에게는 hide클래스명을 부여해준다.*/ 
+.sec > li.click {
+  grid-template-columns: 100%;
+  grid-template-rows: 100px auto;
+}
+
+li.hide { display: none; }
+.sec strong {
+  font-size: 1.8em;
+  height: fit-content;  
+  line-height: initial;
+  place-self: center;
+
+}
+.sec > li.click > strong {
+  font-size: 2.5em;
+  place-self: end start;
+  margin-left: 50px;
+}
+/* 닫기 버튼 */
+.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 52px;
+}
+.close-btn .line {
+  width: 50px;
+  height: 5px;
+  background-color:transparent;
+  display: block;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin: 8px auto;
+}
+li.click .close-btn:hover{
+  cursor: pointer;
+}
+li.click .close-btn .line {
+  background-color: #888888;
+}
+li.click .close-btn .line:nth-child(2){
+  opacity: 0;
+}
+
+li.click .close-btn .line:nth-child(1){
+  -webkit-transform: translateY(13px) rotate(45deg);
+  -ms-transform: translateY(13px) rotate(45deg);
+  -o-transform: translateY(13px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
+}
+
+li.click .close-btn .line:nth-child(3){
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+/* content */
+.sec-container {
+  display: grid;
+  grid-template-rows: 80%;
+  place-content: center;
+  place-items: center center;
+}
+li.click .sec-container {
+  grid-template-columns: repeat(2,1fr);
+}
+.content {display: none;}
+li.click .sec-container > .content{ 
+  display: grid; 
+  justify-self: flex-start;
+  height: 360px;
+  grid-template-rows: 1fr 60px;
+}
+.content > a {
+  font-size: 1.5em;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 5px;
+}
+
+.sec-img {
+  background-color: cadetblue;
+  width: 420px;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+}
+li.click .sec-container > .sec-img {
+  width:calc( 420px * 1.2);
+  height: calc( 300px * 1.2);
+}
+.sec-img:hover::after{
+  position: absolute;
+  content: '상세설명';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: .5;
+  color: #404040;
+}
+li.click .sec-container > .sec-img::before{
+  /* content: '';
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30px;
+  background-image: url('../images/—Pngtree—silver\ gray\ transparent\ polarized\ pleated_5487102.png');
+  background-position: center; */
+}
+li.click .sec-container > .sec-img:hover::after{
+  content: '';
+  background-color: transparent;
+}
+
+.project > h3 {background-color: #98b3b881;}
+.vanilla-js > h3 {background-color:#b8b1987e ;}
+.vue-js > h3 {background-color:#98b8a27c ;}
+
