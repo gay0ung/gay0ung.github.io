@@ -110,7 +110,16 @@ section > h3 {
 }
 
 /* contect */
-.contact > .sec {gap: 0; height: 60%;}
+.contact > .sec {gap: 0; height: 70%;}
+/* .contact > h3::after {
+  position: absolute;
+  content: "lee ga young";
+  color: #e7e7e7;
+  line-height: normal;
+  width: 100%;
+  left: 0;
+  top: 30px;
+} */
 .contact-img {
   background-image: url('../images/contact.png');
   background-repeat:  no-repeat;
@@ -187,6 +196,10 @@ section.technique > ul {
 .technique li:nth-child(5) .t-logo {background-image: url('../images/github.png'); width: 50px; height: 50px; justify-self: center;}
 
 /* project & vanilla-js & vue-js ------------------- */
+.project > h3 {background-color: #98b3b881;}
+.vanilla-js > h3 {background-color:#b8b1987e ;}
+.vue-js > h3 {background-color:#98b8a27c ;}
+
 section > .sec {
   position: absolute;
   display: grid;
@@ -207,13 +220,12 @@ section > .sec {
   gap: 10px;
 }
 
-/* .sec-img클릭시  ul > li.click 이 붙으면 .sec-container 보여 지고  page-wrap 에도 click이 붙어 헤더 너비가  좁아진다.  클릭을 하지 않은 나머지 아이들에게는 hide클래스명을 부여해준다.*/ 
 .sec > li.click {
   grid-template-columns: 100%;
   grid-template-rows: 100px auto;
 }
+.sec > li.hide { display: none; };
 
-li.hide { display: none; }
 .sec strong {
   font-size: 1.8em;
   height: fit-content;  
@@ -229,44 +241,33 @@ li.hide { display: none; }
 /* 닫기 버튼 */
 .close-btn {
   position: absolute;
-  right: 30px;
-  top: 52px;
+  right: 84px;
+  top: 172px;
 }
 .close-btn .line {
   width: 50px;
   height: 5px;
   background-color:transparent;
   display: block;
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   margin: 8px auto;
 }
-li.click .close-btn:hover{
+.close-btn.active:hover{
   cursor: pointer;
 }
-li.click .close-btn .line {
+.close-btn.active .line {
   background-color: #888888;
 }
-li.click .close-btn .line:nth-child(2){
-  opacity: 0;
+
+.close-btn.active .line:nth-child(1){
+  transform: translateY(1px) rotate(45deg);
 }
 
-li.click .close-btn .line:nth-child(1){
-  -webkit-transform: translateY(13px) rotate(45deg);
-  -ms-transform: translateY(13px) rotate(45deg);
-  -o-transform: translateY(13px) rotate(45deg);
-  transform: translateY(13px) rotate(45deg);
-}
-
-li.click .close-btn .line:nth-child(3){
-  -webkit-transform: translateY(-13px) rotate(-45deg);
-  -ms-transform: translateY(-13px) rotate(-45deg);
-  -o-transform: translateY(-13px) rotate(-45deg);
+.close-btn.active .line:nth-child(2){
   transform: translateY(-13px) rotate(-45deg);
 }
 
-/* content */
+
 .sec-container {
   display: grid;
   grid-template-rows: 80%;
@@ -276,30 +277,38 @@ li.click .close-btn .line:nth-child(3){
 li.click .sec-container {
   grid-template-columns: repeat(2,1fr);
 }
-.content {display: none;}
-li.click .sec-container > .content{ 
-  display: grid; 
-  justify-self: flex-start;
-  height: 360px;
-  grid-template-rows: 1fr 60px;
-}
-.content > a {
-  font-size: 1.5em;
-  width: fit-content;
-  height: fit-content;
-  padding: 10px 5px;
-}
 
+
+/* 스크린샷  */
 .sec-img {
   background-color: cadetblue;
   width: 420px;
   height: 300px;
   position: relative;
   cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-li.click .sec-container > .sec-img {
-  width:calc( 420px * 1.2);
-  height: calc( 300px * 1.2);
+
+.project .sec-img {background-image: url('../images/머니부.gif');};
+
+.vanilla-js .line:nth-child(1) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(2) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(3) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(4) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(5) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(6) .sec-img{background-image: url('');}; 
+.vanilla-js .line:nth-child(7) .sec-img{background-image: url('');}; 
+
+.vue-js .line:nth-child(1) .sec-img{background-image: url('');}; 
+.vue-js .line:nth-child(2) .sec-img{background-image: url('');}; 
+.vue-js .line:nth-child(3) .sec-img{background-image: url('');}; 
+.vue-js .line:nth-child(4) .sec-img{background-image: url('');}; 
+
+li.click > .sec-container > .sec-img {
+  width:500px;
+  height:360px;;
 }
 .sec-img:hover::after{
   position: absolute;
@@ -315,23 +324,37 @@ li.click .sec-container > .sec-img {
   opacity: .5;
   color: #404040;
 }
-li.click .sec-container > .sec-img::before{
-  /* content: '';
+/* li.click .sec-container > .sec-img::before{
+  content: '';
   position: absolute;
   width: 300px;
   height: 60px;
   left: 50%;
   transform: translateX(-50%);
   top: -30px;
-  background-image: url('../images/—Pngtree—silver\ gray\ transparent\ polarized\ pleated_5487102.png');
-  background-position: center; */
-}
+  background-image: url('../images/siverGray.png');
+  background-position: center;
+} */
+
 li.click .sec-container > .sec-img:hover::after{
   content: '';
   background-color: transparent;
 }
 
-.project > h3 {background-color: #98b3b881;}
-.vanilla-js > h3 {background-color:#b8b1987e ;}
-.vue-js > h3 {background-color:#98b8a27c ;}
+/* content */
+.content {display: none;}
+li.click .sec-container > .content { 
+  display: grid; 
+  justify-self: flex-start;
+  height: 360px;
+  grid-template-rows: 1fr 60px;
+}
+.content > a {
+  font-size: 1.5em;
+  width: fit-content;
+  height: fit-content;
+  padding: 10px 5px;
+}
+
+
 
