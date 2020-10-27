@@ -1,81 +1,111 @@
 const pageWrap = document.querySelector('.page-wrap');
-const buttons = document.querySelectorAll('.h-nav > button')
-const sections = document.querySelectorAll('.main-inner > section');
+
+const hNav = document.querySelector('.h-nav'),
+      buttons = hNav.querySelectorAll('li > button');
+  
+const mainInn = document.querySelector('.main-inner')
+  sections = mainInn.querySelectorAll('.main-inner > section'),
+  section = mainInn.querySelector('section'),
+  secLis = mainInn.querySelectorAll('.list > li');
+
+
 const scrollIcon = document.querySelector('.scroll');
-// const section = document.querySelector('section');
+
 const closeBtn = document.querySelectorAll('.close-btn');
-console.log(closeBtn);
-headerNavBtn()
-function headerNavBtn(){
-  for(let i = 0; i < buttons.length; i++){
-    buttons[i].onclick = ((clickNum)=>{
-      return (e)=>{
-        e.preventDefault();
 
-        Array.from(buttons).map((el, idx) => {
-          el.classList.remove("on");
-          sections[idx].classList.remove("on")
-        })
 
-        buttons[i].classList.add("on")
-        sections[i].classList.add("on")
-      }
+init();
 
-    })(i)
+/* header ------------------------------------------------------------------- */
+function headerNavBtn() {
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].num = i
   }
-  checkedUl()
+
+  hNav.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
+
+    const btnNum = e.target.num;
+
+    Array.from(buttons).map((btn, idx) => {
+      btn.classList.remove('on');
+      sections[idx].classList.remove('on')
+      resetClass()
+    })
+
+    buttons[btnNum].classList.add('on');
+    sections[btnNum].classList.add('on');
+  });
 };
 
 
-
-function checkedUl(id){
-  const ul = document.querySelectorAll("ul.sec"),
-        li = document.querySelectorAll('.list > li');
-  
-  Array.from(ul).map((el,idx) => {
-    if(el.classList.contains("list")){
-      let liLen = el.children.length;
-      let lis = el.children;
-
-      // 길이가 1이고 li에 클릭이 없어야 한다.
- if (!pageWrap.classList.contains('click') && liLen === 1) {
-        // el.children[0].style.height = "400px";
-        // scrollIcon.style.opacity = '0';
-      } 
-
-      listClickHandler(lis)
-    }
-  })  
-}
+/* main --------------------------------------------------------------------- */
 
 // 리스트 클릭했을때 상세내용 보이게 하기
-function listClickHandler(list){
+function listClickHandler() {
+  const secUls = document.querySelectorAll('.list');
+
   const CLICK = "click",
-        ACTIVE = "active",
-        HIDE = "hide"
+    ACTIVE = "active",
+    HIDE = "hide";
 
-  for(let i = 0; i < list.length; i++){
-    list[i].onclick = ((targetNum)=>{
-      return (e)=>{
-        let target = e.target.classList;
-        console.log(e.target);
-        if (!target.contains('sec-img')) return
+  return Array.from(secUls).map((ul, idx) => {
+     Array.from(ul.children).map((li, num) => {
+      li.num = num;
+      const clickNum = li.num;
+      const lis = ul.children;
 
-          Array.from(list).forEach(el => {
-              el.className = HIDE
-          });
-
-          list[targetNum].className = CLICK;
+      li.addEventListener('click', (e) => {
+        const targetCL = e.target.classList;
+  
+        if (targetCL.contains('sec-img')){
+          for(let i = 0 ; i < lis.length; i++){
+            lis[i].className = HIDE;
+          }
+  
+          lis[clickNum].className = CLICK;
           pageWrap.classList.add(CLICK);
-          // scrollIcon.style.opacity = "0";
-          closeBtn[targetNum].classList.add(ACTIVE)
-          console.log(closeBtn[targetNum]);
-        
-      }
-    })(i)
-  }
+          closeBtn[idx].classList.add(ACTIVE);
+          
+          closeBtn[idx].addEventListener('click', (e)=> {
+            for (let i = 0; i < lis.length; i++) {lis[i].className = ""; }
+              closeBtn[idx].classList.remove(ACTIVE);
+              pageWrap.classList.remove(CLICK);
+            }
+          )
+        } 
+      })
+    })
+  })
 }
 
-function clsoeBtn(){
+function paintHeadColor(){
+  const h3 = document.querySelectorAll('h3')
+  const mainColor = [
+    '#e7e7e7', 
+    '#cfcfcf', 
+    '#98b3b881', 
+    '#b8b1987e', 
+    '#98b8a27c'
+  ];
 
+  Array.from(h3).map((h,idx) => {
+    h.style.backgroundColor = mainColor[idx]
+  })
+
+
+}
+
+// nav메뉴를 클릭 할때 리셋.
+function resetClass(){
+  Array.from(secLis).forEach(el => {el.className = ""});
+  Array.from(closeBtn).forEach(el => {el.classList.remove("active")})
+
+  pageWrap.classList.remove("click");
+}
+
+function init(){
+  headerNavBtn();
+  paintHeadColor()
+  listClickHandler()
 }

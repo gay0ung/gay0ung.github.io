@@ -12,22 +12,37 @@
 </head>
 
 <body>
-  <div class="loading">loading...</div>
+  <div class="loading-container">
+    <div id="loading">
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <div class="stick"></div>
+      <h1>Loading.....</h1>
+    </div>
+  </div>
+  
   <div class="page-wrap">
     <header>
-      <h1 class="pw-logo">LEE GA YOUNG</h1>
-      <nav class="h-nav">
-        <button type="button" class="on">CONTACT</button>
-        <button type="button">TECHNIQUE</button>
-        <button type="button">PROJECT</button>
-        <button type="button">VANILLA.JS</button>
-        <button type="button">VUE.JS</button>
-      </nav> 
+      <h1 class="pw-logo">lee ga gyoung.</h1>
+      <nav>
+        <ul class="h-nav">
+          <li><button type="button" class="on">contact</button></li>
+          <li><button type="button">technique</button></li>
+          <li><button type="button">project</button></li>
+          <li><button type="button">vanilla.js</button></li>
+          <li><button type="button">vue.js</button></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <div class="main-inner">
         <section class="contact on" id="main-ct">
-          <h3>CONTACT</h3>
+          <h3>contact</h3>
           <!-- <h3>이가영</h3> -->
           <div class="sec">
             <div class="contact-img"></div>
@@ -39,32 +54,41 @@
           </div>
         </section>
         <section class="technique" id="main-tq">
-          <h3>TECHNIQUE</h3>
+          <h3>technique</h3>
           <ul class="sec">
             <li>
               <strong><i class="t-logo"></i>JavaScript</strong>
-                <span>content</span>
+              <b>ES6</b>
+              <span>contetn</span>
+              <b>Vanilla Javascript</b>
+              <span>contetn</span>
             </li>
             <li>
               <strong><i class="t-logo"></i>HTML</strong>
+              <b>HTML5</b>
               <span>content</span>
             </li>
             <li>
               <strong><i class="t-logo"></i>CSS</strong>
+              <b>CSS3</b>
+              <span>content</span>
+              <b>SCSS</b>
               <span>content</span>
             </li>
             <li>
               <strong><i class="t-logo"></i>Vue.js</strong>
+              <b>Vue.js</b>
               <span>content</span>
             </li>
             <li>
               <strong><i class="t-logo"></i>git</strong>
+              <b>Git/Github</b>
               <span>content</span>
             </li>
           </ul>
         </section>
         <section class="project" id="main-pj">
-          <h3>PROJECT</h3>
+          <h3>project</h3>
           <ul class="sec list">
             <li>
               <strong>머니부</strong>       
@@ -73,7 +97,7 @@
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
                   <a href="https://elated-albattani-035181.netlify.app" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -85,7 +109,7 @@
           <!-- <i  class="scroll" href="#"><span></span><span></span><span></span></i> -->
         </section>
         <section class="vanilla-js" id="main-van">
-          <h3>VANILLA.JS</h3>
+          <h3>vanilla.js</h3>
           <ul class="sec list">
             <li>
               <strong>todolist</strong>
@@ -93,8 +117,12 @@
                 <div class="sec-img"></div>
                 <div class="content ">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="#" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="#" target="_blank">#html</a>
+                    <a href="#" target="_blank">#js</a>
+                    <a href="#" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -104,30 +132,57 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="./vanilla//paint-JS/index.html" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/vanilla/paint-JS/index.html" target="_blank">#html</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/vanilla/paint-JS/app.js" target="_blank">#js</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/vanilla/paint-JS/css/style.css" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
             <li>
-              <strong>구글페이지</strong>
+              <strong>calculator</strong>
               <div class="sec-container">
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="#" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="#" target="_blank">#html</a>
+                    <a href="#" target="_blank">#js</a>
+                    <a href="#" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
             <li>
-              <strong>js-challenge</strong>
+              <strong>random number game</strong>
               <div class="sec-container">
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="#" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="#" target="_blank">#html</a>
+                    <a href="#" target="_blank">#js</a>
+                    <a href="#" target="_blank">#css</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <strong>LEE GA YOUNG PAGE</strong>
+              <div class="sec-container">
+                <div class="sec-img"></div>
+                <div class="content">
+                  <p class="sec-explain">해당 내용 설명</p>
+                  <a href="https://gay0ung.github.io/" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="#" target="_blank">#html</a>
+                    <a href="#" target="_blank">#js</a>
+                    <a href="#" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -137,8 +192,12 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="./K-Life insurance/" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="./K-Life insurance/" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/K-Life%20insurance/index.html" target="_blank">#html</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/K-Life%20insurance/js/index.js" target="_blank">#js</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/tree/master/K-Life%20insurance/css" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -148,8 +207,12 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="./jenniferSoft/index.html" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="./jenniferSoft/index.html" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/jenniferSoft/index.html" target="_blank">#html</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/jenniferSoft/js/main.js" target="_blank">#js</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/jenniferSoft/css/common.css" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -159,8 +222,12 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="./Microsoft/index.html" type ="" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="./Microsoft/index.html" type ="" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/Microsoft/index.html" target="_blank">#html</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/Microsoft/js/index.js" target="_blank">#js</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/tree/master/Microsoft/css" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -170,8 +237,12 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="./kakao/index.html" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.js</a>
+                  <a href="./kakao/index.html" target="_blank">구경하기</a>
+                  <div class="code-box">
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/kakao/index.html" target="_blank">#html</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/kakao/js/kakao_main_js.js" target="_blank">#js</a>
+                    <a href="https://github.com/gay0ung/gay0ung.github.io/blob/master/kakao/css/common.css" target="_blank">#css</a>
+                  </div>
                 </div>
               </div>
             </li>
@@ -183,7 +254,7 @@
           <!-- <i  class="scroll"><span></span><span></span><span></span></i> -->
         </section>
         <section class="vue-js" id="main-vue">
-          <h3>VUE.JS</h3>
+          <h3>vue.js</h3>
           <ul class="sec list">      
             <li>
               <strong>weather</strong>
@@ -191,8 +262,8 @@
                 <div class="sec-img"></div>
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
-                  <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.vue</a>
+                  <a href="https://eloquent-lumiere-dd3402.netlify.app/#/" target="_blank">결과물 주소</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -203,7 +274,7 @@
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
                   <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.vue</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -214,7 +285,7 @@
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
                   <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.vue</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -225,7 +296,7 @@
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
                   <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.vue</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -236,7 +307,7 @@
                 <div class="content">
                   <p class="sec-explain">해당 내용 설명</p>
                   <a href="#" target="_blank">결과물 주소</a>
-                  <a href="#" target="_blank">code.vue</a>
+                  <a href="#" target="_blank">#code.vue</a>
                 </div>
               </div>
             </li>
@@ -250,7 +321,14 @@
       </div>
       <!-- <i  class="scroll" href="#"><span></span><span></span><span></span></i> -->
     </main>
+    <!-- body배경화면 -->
+    <span class="b1"></span>
+    <span class="b2"></span>
+    <span class="b3"></span>
+    <span class="b4"></span>
   </div>
+
+
   <script src="./js/loading.js"></script>
   <script src="./js/index.js"></script>
 </body>
