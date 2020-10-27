@@ -40,7 +40,7 @@ h1 {
   text-align: center;
   align-self: center;
 }
-.pw-logo::after,.pw-logo::before {
+h1::after,h1::before {
   position: absolute;
   content: '';
   width: 10px;
@@ -50,7 +50,7 @@ h1 {
   top: 0;
   left: 0;
 }
-.pw-logo::after {
+h1::after {
   transform: rotateZ(-180deg);
   bottom: 0;
   right: 0;
@@ -350,24 +350,41 @@ li.click .sec-container > .sec-img::before{
 li.click .content { 
   display: grid; 
   justify-self: flex-start;
-  height: 360px;
+  height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 60px;
+  grid-template-rows: 1fr repeat(2,60px);
   width: 100%;
 }
 .sec-explain {
   overflow-y: scroll;
 }
-.content  a {
+.content a {
   font-size: 1.5em;
   width: fit-content;
   height: fit-content;
   padding: 10px 5px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   border-radius: 30px;
-  padding: 4px 13px;
+  padding: 7px 13px;
+  font-weight: 600;
 }
 
+.code-box {
+   grid-template-rows: 1fr;
+   align-self: center;
+}
+.code-box > a+a {
+  margin-left: 10px;
+}
 
+.vanilla-js .content > .code-box a:nth-child(1){background-color:#99684854 ;}
+.vanilla-js .content > .code-box a:nth-child(2){background-color:#9992484f ;}
+.vanilla-js .content > .code-box a:nth-child(3){background-color: #48999260;}
 
+/* #996948
+#999248
+#789948
+#509948
+#489969
+#489992 */
 
