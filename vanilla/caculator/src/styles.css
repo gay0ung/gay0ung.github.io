@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  background-color: black;
+  place-content: center;
+}
+
+input:focus,button:focus{ outline: none;}
+
+
+.calculator-wrap {
+  grid-template-columns: 3fr 1fr;
+  padding: 10px;
+  height: 40vh;
+  max-width: 630px;
+  min-width: 629px;
+}
+
+.calculator-wrap,
+.cal-number,
+.cal-symbol,
+.number-box,
+.number-box > div{
+  display: grid;
+  gap: 5px;
+}
+.inputNumber { display: flex; justify-content: space-between; flex-direction: row-reverse;}
+
+.calIng {
+  font-size: 1em;
+  color: rgba(137, 139, 137, 0.226);
+}
+p { 
+  font-size: 2.5em; 
+  text-align: right; 
+  color: white; 
+  align-self: center;
+  padding-right: 10px;
+}
+
+
+
+/* cal-number */
+.cal-number {grid-template-rows: 1fr 4fr; gap: 0;}
+.number-box  {grid-template-rows: repeat(4,1fr);}
+.number-box > div {grid-template-columns: repeat(3,1fr);}
+
+/* cal-symbol */
+.cal-symbol{grid-template-rows: repeat(5,1fr);}
+.cal-symbol > button:first-child{background-color: mediumturquoise;}
+.cal-symbol > button {background-color: mediumslateblue;}
+
+#zero { grid-column:1 / 3;}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: grey;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.4em;
+}
+button:active {
+  background-color: rgb(174, 199, 65);
+}

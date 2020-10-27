@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+}
+.showing {
+  font-size: 100px;
+  color: white;
+  background-color: gray;
+  margin: 20px;
+  text-align: center;
+}
+button {
+  cursor: pointer;
+  margin: 4px 2px;
+}
+.num,
+.opr,
+.eqkey,
+.rskey {
+  font-size: 40px;
+}
+.numkey,
+.oprkey,
+.eqkey {
+  margin: 0 40px;
+  display: inline;
+  text-align: center;
+}
+.oprkey {
+  margin: 0 40px;
+}

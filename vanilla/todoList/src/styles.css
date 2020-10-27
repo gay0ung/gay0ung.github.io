@@ -1,0 +1,71 @@
+*{margin: 0; padding: 0;}
+body {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 20px;
+  height: 60vh;
+}
+
+form {
+  padding-bottom: 20px;
+}
+input {
+  border: none;
+  background-color: rgba(83, 83, 83, 0.597);
+  width: 500px;
+  padding: 10px 20px;
+  font-size: 1.6em;
+  color: white;
+}
+input::placeholder {
+  color: white;
+}
+.todo-wrap {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.todo-wrap > div {
+  padding: 20px;
+}
+h2 {
+  padding-bottom: 30px;
+}
+.todo-wrap > div li {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr repeat(2,40px);
+  text-align: left;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.329);
+  padding: 0 0 7px 3px;
+}
+.todo-wrap > div li + li {
+  margin-top: 10px;
+}
+button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: .5;
+  color: white;
+}
+button:focus,input:focus{
+  outline: none;
+}
+button:hover {
+  opacity: 1;
+}
+.del {
+  background-color: rgba(221, 25, 25, 0.561);
+}
+.finish {
+  background-color: rgba(25, 133, 221, 0.561);
+}
+.return {
+  background-color: rgba(111, 139, 46, 0.705);
+}
+.todo-wrap  > div + div {border-left: 1px solid rgba(128, 128, 128, 0.199);}

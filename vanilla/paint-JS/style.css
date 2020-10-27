@@ -1,0 +1,77 @@
+@import "reset.css";
+
+.canvas-wrap {
+    position: relative;
+    width: 100%;   height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 15%;
+    max-width: 1336px;
+    min-width: 1157px;
+}
+.canvas-wrap > * {
+    box-sizing: border-box;
+    position: relative;
+}
+.center {
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+.canvas {
+    /* width: 100%; height: 80%; */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba( 0, 0, 0, 0.08);
+}
+.controls {
+    height: 80%;
+}
+.controls > * {
+    position: absolute;     
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* controls__range */
+.controls .controls__range {
+    bottom: 70px;
+    width: 80%;
+}
+.controls .controls__range input {width: 100%;}
+/* controls__btns */
+.controls .controls__btns {
+    bottom: 10px;
+    width: fit-content;
+}
+.controls__btns button {
+    all: unset;
+    cursor: pointer;
+    background-color: white;
+    padding: 5px 0px;
+    width: 80px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba( 0, 0, 0, 0.08);
+    border: 2px solid rgba( 0, 0, 0, 0.2);
+    color: rgba( 0, 0, 0, 0.8);
+    font-weight: 800;
+    font-size: 12px;
+}
+.controls__btns button:active {
+    transform: scale(0.98);
+}
+
+/* controls__colors */
+.controls .controls__colors_wrap {
+
+}
+.controls__colors .controls__color {
+    width: 65px;
+    height: 65px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba( 0, 0, 0, 0.08);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.controls__colors > div + div {
+    margin-top: 5px;
+}

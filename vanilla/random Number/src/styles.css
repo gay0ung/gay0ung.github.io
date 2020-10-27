@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;900&family=Poor+Story&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Overpass', sans-serif,'Poor Story', cursive;
+  height: 50vh;
+  padding: 30px;
+  text-align: center;
+}
+h1 {
+  font-size: 3em;
+}
+
+h3{
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+#js-range-form {
+  padding: 30px 0;
+}
+
+#rangeInput{
+  width: 300px;
+}
+#js-num-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 10px 0 30px;
+}
+
+#userNum {
+  margin-right: 4px;
+}
+#numInput {
+  border: none;
+  background-color: rgba(100, 100, 100, 0.322);
+  width: 70px;
+  height: 30px;
+  padding-left:5px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+  width: 70px;
+  height: 30px;
+  border: 0;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(63, 172, 205);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+button:hover {
+  background-color:  rgb(63, 205, 110);
+}
+input:focus,
+button:focus{
+  outline: none;
+}
+
+.warn {
+  color: rgba(196, 92, 7, 0.774);
+  font-weight: bold;
+  font-size:2em ;
+  font-family: 'Poor Story';
+}
+
+.playing,
+.result{
+  font-size: 3em;
+}
+
+.won {
+  color: rgb(1, 192, 192);
+}
