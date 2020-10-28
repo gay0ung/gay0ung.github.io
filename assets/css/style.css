@@ -40,7 +40,7 @@ h1 {
   text-align: center;
   align-self: center;
 }
-h1::after,h1::before {
+.pw-logo::after,.pw-logo::before {
   position: absolute;
   content: '';
   width: 10px;
@@ -50,7 +50,7 @@ h1::after,h1::before {
   top: 0;
   left: 0;
 }
-h1::after {
+.pw-logo::after {
   transform: rotateZ(-180deg);
   bottom: 0;
   right: 0;
@@ -113,7 +113,7 @@ h1::after {
   height: 100%;
   width: 100%;
   position: relative;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .main-inner > section.on{
@@ -164,7 +164,8 @@ section > h3 {
 
 /* technique */
 section.technique > ul {
-  width: 70%;
+  width: 100%;
+  overflow-y: scroll;
 }
 .technique > ul > li {
   display: grid;
@@ -220,7 +221,7 @@ section > .sec {
   grid-template-columns: 100%;
   grid-template-rows: 100px auto;
   place-content: start;
-  margin-top: 25px;
+  margin-top: 58px;
 }
 .sec > li.hide { display: none; };
 
@@ -240,7 +241,7 @@ section > .sec {
 .close-btn {
   position: absolute;
   right: 84px;
-  top: 180px;
+  top: 195px;
 }
 .close-btn .line {
   width: 50px;
@@ -265,11 +266,13 @@ section > .sec {
 
 /* sec-container */
 .sec-container {
+  position: relative;
   display: grid;
   gap:38px;
   place-content: center;
   place-items: center center;
 }
+
 li.click .sec-container {
   grid-template-columns: repeat(2,1fr);
 }
@@ -352,39 +355,57 @@ li.click .content {
   justify-self: flex-start;
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr repeat(2,60px);
+  grid-template-rows: 1fr repeat(2,70px);
   width: 100%;
 }
 .sec-explain {
   overflow-y: scroll;
 }
+.content::before {
+  content: '← code';
+  position: absolute;
+  right: 0;
+  bottom: 110px;
+  font-weight: 600;
+  color: #b7b7b7;
+}
 .content a {
   font-size: 1.5em;
   width: fit-content;
   height: fit-content;
-  padding: 10px 5px;
-  /* background-color: aquamarine; */
-  border-radius: 30px;
-  padding: 7px 13px;
+  border-radius: 40px;
   font-weight: 600;
+  padding: 3px 7px;
+  background: center;
+  background-repeat:  no-repeat ;
+  background-size:  contain;
 }
 
+.content a.sec-btn {
+  background-color: #b7b7b7;
+  border-color:#b7b7b7; 
+  box-shadow: 0 3px 0 #818181;
+  color: white;
+  font-size: 2em;
+  transition: border .25s linear, color .25s linear, background-color .25s linear; 
+  position:relative; 
+  padding: 5px 12px ;
+  margin-left: 0;
+}
+.content a.sec-btn:hover {background-color:#d3d2d2 ;}
+.content a.sec-btn:active {top: 3px; outline: none; box-shadow: none;}
 .code-box {
-   grid-template-rows: 1fr;
-   align-self: center;
+  grid-template-rows: 1fr;
+  align-self: start;
 }
-.code-box > a+a {
-  margin-left: 10px;
-}
+.content  a + a { margin-left: 7px;}
 
-.vanilla-js .content > .code-box a:nth-child(1){background-color:#99684854 ;}
-.vanilla-js .content > .code-box a:nth-child(2){background-color:#9992484f ;}
-.vanilla-js .content > .code-box a:nth-child(3){background-color: #48999260;}
+.vanilla-js .content > .code-box a:nth-child(1){background-image:url('../images/paint-red.png')}
+.vanilla-js .content > .code-box a:nth-child(2){background-image:url('../images/paint-yellow.png');}
+.vanilla-js .content > .code-box a:nth-child(3){background-image: url('../images/paint-blue.png')}
+.vue-js .content > a:nth-child(2), .project .content > a:nth-child(2){background-image: url('../images/paint-green.png'); line-height: initial;}
 
-/* #996948
-#999248
-#789948
-#509948
-#489969
-#489992 */
-
+#99684854 
+#9992484f 
+#48999260
+#48996760
