@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;700&display=swap');
+
 * { box-sizing: border-box; }
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -24,7 +26,7 @@ time, mark, audio, video {
 body {
     font-style: normal;
     font-size: 1em;
-    font-family:'Raleway', sans-serif,'Noto Sans KR','Nanum Gothic', "돋움", dotum, Arial ;
+    font-family:'Raleway', 'Sunflower', Arial ;
     font-weight: 100;
     line-height:1.6;
     box-sizing: border-box;
@@ -109,17 +111,16 @@ input:focus {
   display: block;
 }
 #loading {
-position: absolute;
-left: 50%;
-top: 50%;
-transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
 }
 #loading > h1 {
   color:#ffff;
   text-transform: uppercase;
   font-size:1em;
   letter-spacing:1.5px;
-  /* text-align:center; */
   width:155px;
   margin-top:20px;
   animation: fade 2s infinite;

@@ -16,6 +16,7 @@
 }
 .page-wrap.click > header {
   padding: 0 6px;
+  border: none;
 }
 /* HEADER ----------------------------------------------- */
 header {
@@ -25,22 +26,23 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: 100px 300px;
   padding: 0 30px;
-  gap: 50px;
-  border: 2px solid #e7e7e767;
+  gap: 120px;
+  border: 2px solid #e7e7e74f;
   border-radius: 10px;
 }
 
 h1 {
-  font-family: 'Josefin Slab';
+  font-family: 'Homemade Apple';
   color: #888888c7;
   height: fit-content;
   position: relative;
-  padding: 10px;
+  /* padding: 10px; */
   line-height: initial;
   text-align: center;
   align-self: center;
+  font-weight: 300;
 }
-.pw-logo::after,.pw-logo::before {
+/* .pw-logo::after,.pw-logo::before {
   position: absolute;
   content: '';
   width: 10px;
@@ -56,7 +58,7 @@ h1 {
   right: 0;
   top: auto;
   left: auto;
-}
+} */
 
 .h-nav {
   display: grid;
@@ -163,10 +165,6 @@ section > h3 {
 }
 
 /* technique */
-section.technique > ul {
-  width: 100%;
-  overflow-y: scroll;
-}
 .technique > ul > li {
   display: grid;
   height: fit-content;
@@ -177,7 +175,6 @@ section.technique > ul {
   display: grid;
   grid-template-columns: 70px 1fr;
   font-size: 30px;
-  line-height:fit-content ;
   gap: 4px;
   align-items: center;
 }
@@ -196,16 +193,44 @@ section.technique > ul {
 .technique li:nth-child(4) .t-logo {background-image: url('../images/vue.png');}
 .technique li:nth-child(5) .t-logo {background-image: url('../images/github.png'); width: 50px; height: 50px; justify-self: center;}
 
+.technique b {
+  font-size: 1.2em;
+  width: fit-content;
+  /* background-image: url(); */
+  color: #707070c0;
+
+}
+.technique li:nth-child(1) span::before {background-color:#b3b898 ;}
+.technique li:nth-child(2) span::before {background-color:#b8ad98 ;}
+.technique li:nth-child(3) span::before {background-color: #98b3b8;}
+.technique li:nth-child(4) span::before {background-color: #98b8ad;}
+.technique li:nth-child(5) span::before {background-color:#a0a0a0 ;}
+
+.technique span {
+  position: relative;
+  font-size: 1.5em;
+  padding-left: 20px;
+}
+.technique span::before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
 /* project & vanilla-js & vue-js ------------------- */
 section > .sec {
   position: absolute;
   display: grid;
-  top: 130px;
-  height: 90%;
+  top: 53%;
+  height: 80%;
   overflow-y: scroll;
   width: 100%;
-  gap: 40px;
-  padding: 0 50px;
+  gap: 50px;
+  transform: translateY(-50%);
+  padding:0 60px;
+
 }
 .page-wrap.click > section > .sec {
   grid-template-rows: 100%;
@@ -237,6 +262,7 @@ section > .sec {
   place-self: start;
   margin-left: 40px;
 }
+
 /* 닫기 버튼 */
 .close-btn {
   position: absolute;
@@ -405,7 +431,3 @@ li.click .content {
 .vanilla-js .content > .code-box a:nth-child(3){background-image: url('../images/paint-blue.png')}
 .vue-js .content > a:nth-child(2), .project .content > a:nth-child(2){background-image: url('../images/paint-green.png'); line-height: initial;}
 
-#99684854 
-#9992484f 
-#48999260
-#48996760
