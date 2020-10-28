@@ -11,7 +11,7 @@
   position: relative;
 }
 .page-wrap.click{
-  grid-template-columns: 150px auto;
+  grid-template-columns: 160px auto;
 
 }
 .page-wrap.click > header {
@@ -122,10 +122,10 @@ h1 {
   display: block;
 }
 
-section > h3 {
+section  h3 {
   font-size: 4.3em;
-  width: fit-content;
-  height: fit-content;
+  /* width: fit-content;
+  height: fit-content; */
   position: absolute;
   right: 0;
   top: 40px;
@@ -219,11 +219,11 @@ section > h3 {
   left: 0;
   top: 13px;
 }
-/* project & vanilla-js & vue-js ------------------- */
-section > .sec {
+/* m-project & s-project ------------------- */
+section  .sec {
   position: absolute;
   display: grid;
-  top: 53%;
+  top: 55%;
   height: 80%;
   overflow-y: scroll;
   width: 100%;
@@ -317,7 +317,7 @@ li.click .sec-container {
 }
 
 li.click .sec-img {
-  width: calc(600px * 1.1);
+  width: calc(580px * 1.1);
   height: calc(400px * 1.1);
   cursor: default;
 }
@@ -344,22 +344,22 @@ li.click .sec-img:hover::after{
 }
 
 
-.project .sec-img {background-image: url('../images/머니부.gif')}
+.m-project .sec-img {background-image: url('../images/머니부.gif')}
 
-/* .vanilla-js .li:nth-child(1) .sec-img{background-image: url('');}
-.vanilla-js .li:nth-child(2) .sec-img{background-image: url('');}
-.vanilla-js .li:nth-child(3) .sec-img{background-image: url('');}
+/* .vanilla-js .li:nth-child(1) .sec-img{background-image: url('');} */
+.vanilla-js .li:nth-child(2) .sec-img{background-image: url('../images/painting.gif');}
+/* .vanilla-js .li:nth-child(3) .sec-img{background-image: url('');}
 .vanilla-js .li:nth-child(4) .sec-img{background-image: url('');}
 .vanilla-js .li:nth-child(5) .sec-img{background-image: url('');}
 .vanilla-js .li:nth-child(6) .sec-img{background-image: url('');} 
-.vanilla-js .li:nth-child(7) .sec-img{background-image: url('');} 
+.vanilla-js .li:nth-child(7) .sec-img{background-image: url('');}  */
 
-.vue-js .li:nth-child(1) .sec-img{background-image: url('');} 
+/* .vue-js .li:nth-child(1) .sec-img{background-image: url('');} 
 .vue-js .li:nth-child(2) .sec-img{background-image: url('');} 
 .vue-js .li:nth-child(3) .sec-img{background-image: url('');} 
 .vue-js .li:nth-child(4) .sec-img{background-image: url('');}  */
 
-li.click .sec-container > .sec-img::before{
+li.click .sec-container > .sec-img::before {
   content: '';
   position: absolute;
   width: 200px;
@@ -367,7 +367,6 @@ li.click .sec-container > .sec-img::before{
   left: 50%;
   transform: translateX(-50%) rotateZ(-6deg);
   top: -60px;
-
   background-image: url('../images/siver.png') ;
   background-repeat: no-repeat;
   background-size: contain;
@@ -426,8 +425,45 @@ li.click .content {
 }
 .content  a + a { margin-left: 7px;}
 
-.vanilla-js .content > .code-box a:nth-child(1){background-image:url('../images/paint-red.png')}
-.vanilla-js .content > .code-box a:nth-child(2){background-image:url('../images/paint-yellow.png');}
-.vanilla-js .content > .code-box a:nth-child(3){background-image: url('../images/paint-blue.png')}
-.vue-js .content > a:nth-child(2), .project .content > a:nth-child(2){background-image: url('../images/paint-green.png'); line-height: initial;}
+.s-project .content > .code-box a:nth-child(1){background-image:url('../images/paint-red.png')}
+.s-project .content > .code-box a:nth-child(2){background-image:url('../images/paint-yellow.png');}
+.s-project .content > .code-box a:nth-child(3){background-image: url('../images/paint-blue.png')}
+.vue-js .content > a:nth-child(2), .m-project .content > a:nth-child(2){background-image: url('../images/paint-green.png'); line-height: initial;}
+
+/* s-project */
+.s-tab {
+  position: absolute;
+  left:60px;
+  top: 55px;
+
+}
+.s-tab > button {
+  font-size: 1.5em;
+  margin-right: 5px;
+  width: fit-content;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+.s-tab > button.show::before {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  content: '';
+  background-color: rgba(165, 175, 174, 0.507);
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: .6;
+}
+.s-contents > div  {
+  visibility: hidden;
+}
+
+.s-contents > div.show{
+  visibility: visible;
+  animation: all .3s ease;
+
+} 
+
 

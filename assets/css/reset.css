@@ -184,19 +184,26 @@ input:focus {
     padding-top: 80px;
     position: absolute;
     width: 34px;
-    right: 50px;
-    bottom: 50px;
+    right: 130px;
+    bottom: 0px;
     opacity: 1;
+    visibility: hidden;
+}
+.scroll.show {
+    visibility: visible;
+}
+.page-wrap.click .scroll {
+  visibility: hidden;
 }
 .scroll span {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 2px solid #404040;
-    border-bottom: 2px solid #404040;
+    width: 20px;
+    height: 20px;
+    margin-left: -12px ;
+    border-left: 2px solid #807f7f28;
+    border-bottom: 2px solid #80807f28; 
     transform: rotate(-45deg);
     animation: scroll 2s infinite;
     opacity: 0;

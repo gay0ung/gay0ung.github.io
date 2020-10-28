@@ -8,38 +8,23 @@ const mainInn = document.querySelector('.main-inner')
   section = mainInn.querySelector('section'),
   secLis = mainInn.querySelectorAll('.list > li');
 
+const sProject = document.querySelector('.s-project'),
+  secTab = document.querySelectorAll('.s-tab > button'),
+  secContent = document.querySelectorAll('.s-contents > div');
 
-const scrollIcon = document.querySelector('.scroll');
+const scrollIcon = document.querySelectorAll('.scroll');
 
 const closeBtn = document.querySelectorAll('.close-btn');
 
 
 init();
 
-/* header ------------------------------------------------------------------- */
+/* header ---------------------------------------------------------------- */
 function headerNavBtn() {
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].num = i
-  }
-
-  hNav.addEventListener('click', (e) => {
-    if (e.target.tagName !== 'BUTTON') return;
-
-    const btnNum = e.target.num;
-
-    Array.from(buttons).map((btn, idx) => {
-      btn.classList.remove('on');
-      sections[idx].classList.remove('on')
-      resetClass()
-    })
-
-    buttons[btnNum].classList.add('on');
-    sections[btnNum].classList.add('on');
-  });
+  clickHandler(buttons, hNav, sections, 'BUTTON', "on")
 };
 
-
-/* main --------------------------------------------------------------------- */
+/* main ------------------------------------------------------------------ */
 
 // 리스트 클릭했을때 상세내용 보이게 하기
 function listClickHandler() {
@@ -50,6 +35,10 @@ function listClickHandler() {
     HIDE = "hide";
 
   return Array.from(secUls).map((ul, idx) => {
+    if (ul.children.length > 1){
+      scrollIcon[idx].classList.add("show")
+    }
+
      Array.from(ul.children).map((li, num) => {
       li.num = num;
       const clickNum = li.num;
@@ -62,7 +51,7 @@ function listClickHandler() {
           for(let i = 0 ; i < lis.length; i++){
             lis[i].className = HIDE;
           }
-  
+          console.log(closeBtn);
           lis[clickNum].className = CLICK;
           pageWrap.classList.add(CLICK);
           closeBtn[idx].classList.add(ACTIVE);
@@ -80,7 +69,8 @@ function listClickHandler() {
 }
 
 function paintHeadColor(){
-  const h3 = document.querySelectorAll('h3')
+  const h3 = document.querySelectorAll('h3');
+
   const mainColor = [
     '#e7e7e7', 
     '#cfcfcf', 
@@ -89,11 +79,15 @@ function paintHeadColor(){
     '#98b8a27c'
   ];
 
-  Array.from(h3).map((h,idx) => {
-    h.style.backgroundColor = mainColor[idx]
+  Array.from(h3).map((h,idx) => { 
+    h.style.backgroundColor = mainColor[idx] 
   })
+  // startsWith('')
+}
 
-
+// sub project탭메뉴 클릭
+function sectionTab(){
+  clickHandler(secTab, sProject, secContent, 'BUTTON', 'show')
 }
 
 // nav메뉴를 클릭 할때 리셋.
@@ -104,8 +98,33 @@ function resetClass(){
   pageWrap.classList.remove("click");
 }
 
+
+// 클릭 이벤트
+function clickHandler(child, parent, friend, tagName, className) {
+  for (let i = 0; i < child.length; i++) {
+    child[i].num = i
+  }
+
+  parent.addEventListener('click', (e) => {
+    if (e.target.tagName !== tagName) return;
+
+    const btnNum = e.target.num;
+
+    Array.from(child).map((btn, idx) => {
+      btn.classList.remove(className);
+      friend[idx].classList.remove(className);
+      resetClass()
+    })
+
+    child[btnNum].classList.add(className);
+    friend[btnNum].classList.add(className);
+  });
+};
+
 function init(){
   headerNavBtn();
-  paintHeadColor()
-  listClickHandler()
+  paintHeadColor();
+  listClickHandler();
+  sectionTab();
+
 }

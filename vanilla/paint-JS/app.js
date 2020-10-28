@@ -20,7 +20,6 @@ ctx.strokeStyle = INITIAL_COLOR
 ctx.fillStyle = INITIAL_COLOR
 ctx.lineWidth = 2.5;
 
-// ctx.fillRect(50, 20, 100, 49)
 
 let painting = false;
 let filling = false;
@@ -40,11 +39,9 @@ function onMouseMove(e){
     const y = e.offsetY;
 
     if (!painting) {
-        // 한번 마우스를 놓으면 painting이 끝난다.
         ctx.beginPath()
         ctx.moveTo(x,y)
     } else {
-        // path로 그림을 그린다.
         ctx.lineTo(x, y)
         ctx.stroke()
     }
