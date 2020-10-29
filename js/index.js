@@ -1,7 +1,10 @@
 const pageWrap = document.querySelector('.page-wrap');
 
 const hNav = document.querySelector('.h-nav'),
-      buttons = hNav.querySelectorAll('li > button');
+  nav = document.querySelector('nav')
+  hNavBtn = document.querySelector('#hNavBtn'),
+  buttons = hNav.querySelectorAll('li > button');
+
   
 const mainInn = document.querySelector('.main-inner')
   sections = mainInn.querySelectorAll('.main-inner > section'),
@@ -16,12 +19,24 @@ const scrollIcon = document.querySelectorAll('.scroll');
 
 const closeBtn = document.querySelectorAll('.close-btn');
 
+console.dir();
 
 init();
-
 /* header ---------------------------------------------------------------- */
 function headerNavBtn() {
-  clickHandler(buttons, hNav, sections, 'BUTTON', "on")
+  clickHandler(buttons, hNav, sections, 'BUTTON', "on");
+
+  if(window.innerWidth < 768){
+    hNavBtn.addEventListener('click', (e) => {
+      if (e.target.classList.contains("active")) {
+        hNavBtn.classList.remove("active");
+        nav.style.visibility ="hidden";
+      } else {
+        hNavBtn.classList.add('active');
+        nav.style.visibility = "visible"
+      }
+    })
+  }
 };
 
 /* main ------------------------------------------------------------------ */
@@ -51,7 +66,7 @@ function listClickHandler() {
           for(let i = 0 ; i < lis.length; i++){
             lis[i].className = HIDE;
           }
-          console.log(closeBtn);
+
           lis[clickNum].className = CLICK;
           pageWrap.classList.add(CLICK);
           closeBtn[idx].classList.add(ACTIVE);
@@ -82,7 +97,6 @@ function paintHeadColor(){
   Array.from(h3).map((h,idx) => { 
     h.style.backgroundColor = mainColor[idx] 
   })
-  // startsWith('')
 }
 
 // sub project탭메뉴 클릭
@@ -96,6 +110,11 @@ function resetClass(){
   Array.from(closeBtn).forEach(el => {el.classList.remove("active")})
 
   pageWrap.classList.remove("click");
+
+  if(window.innerWidth < 768){
+    hNavBtn.classList.remove("active");
+    nav.style.visibility = "hidden";
+  }
 }
 
 
@@ -126,5 +145,4 @@ function init(){
   paintHeadColor();
   listClickHandler();
   sectionTab();
-
 }

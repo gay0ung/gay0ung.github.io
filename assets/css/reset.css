@@ -34,7 +34,7 @@ body {
     width: 100%;
     height: 100vh;
     padding:50px  40px;
-    max-width: 1500px;
+    max-width: 1400px;
     margin:0 auto;
     color: #404040;
     position: relative;
@@ -127,6 +127,7 @@ input:focus {
   animation: fade 2s infinite;
   margin: 100px auto 0;
   font-size: 1.3em;
+  font-family: "Raleway";
 }
 
 .stick {
@@ -184,7 +185,7 @@ input:focus {
     padding-top: 80px;
     position: absolute;
     width: 34px;
-    right: 130px;
+    right: 60px;
     bottom: 0px;
     opacity: 1;
     visibility: hidden;

@@ -36,29 +36,11 @@ h1 {
   color: #888888c7;
   height: fit-content;
   position: relative;
-  /* padding: 10px; */
   line-height: initial;
-  text-align: center;
   align-self: center;
   font-weight: 300;
+  padding-left: 10px;
 }
-/* .pw-logo::after,.pw-logo::before {
-  position: absolute;
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-left: 2px solid #999393f1;
-  border-top: 2px solid #bdb2b267;
-  top: 0;
-  left: 0;
-}
-.pw-logo::after {
-  transform: rotateZ(-180deg);
-  bottom: 0;
-  right: 0;
-  top: auto;
-  left: auto;
-} */
 
 .h-nav {
   display: grid;
@@ -105,7 +87,7 @@ h1 {
   bottom: 0;
 }
 
-
+#hNavBtn { visibility: hidden;}
 /* MAIN ------------------------------------------------- */
 .main-inner {
   height: 100%;
@@ -124,8 +106,6 @@ h1 {
 
 section  h3 {
   font-size: 4.3em;
-  /* width: fit-content;
-  height: fit-content; */
   position: absolute;
   right: 0;
   top: 40px;
@@ -165,11 +145,14 @@ section  h3 {
 }
 
 /* technique */
+/* .sec > li */
 .technique > ul > li {
   display: grid;
   height: fit-content;
   gap: 10px;
   justify-content: flex-start;
+  place-items: start;
+  grid-template-rows: auto;
 }
 .technique strong {
   display: grid;
@@ -196,9 +179,7 @@ section  h3 {
 .technique b {
   font-size: 1.2em;
   width: fit-content;
-  /* background-image: url(); */
   color: #707070c0;
-
 }
 .technique li:nth-child(1) span::before {background-color:#b3b898 ;}
 .technique li:nth-child(2) span::before {background-color:#b8ad98 ;}
@@ -229,17 +210,21 @@ section  .sec {
   width: 100%;
   gap: 50px;
   transform: translateY(-50%);
-  padding:0 60px;
+  padding-left: 50px;
 
 }
 .page-wrap.click > section > .sec {
   grid-template-rows: 100%;
 }
 .sec > li {
-  position: relative;
-  display: grid;
-  place-content: start center;
-  gap: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20px auto;
+    place-content: start center;
+    place-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
 .sec > li.click {
@@ -269,7 +254,7 @@ section  .sec {
   right: 84px;
   top: 195px;
 }
-.close-btn .line {
+#hNavBtn .line,.close-btn .line {
   width: 50px;
   height: 5px;
   background-color:transparent;
@@ -277,18 +262,19 @@ section  .sec {
   transition: all 0.3s ease-in-out;
   margin: 8px auto;
 }
-.close-btn.active:hover{
+#hNavBtn.active:hover ,.close-btn.active:hover{
   cursor: pointer;
 }
-.close-btn.active .line {
+#hNavBtn.active .line ,.close-btn.active .line {
   background-color: #888888;
 }
-.close-btn.active .line:nth-child(1){
+#hNavBtn.active .line:nth-child(1) ,.close-btn.active .line:nth-child(1){
   transform: translateY(1px) rotate(45deg);
 }
-.close-btn.active .line:nth-child(2){
+#hNavBtn.active .line:nth-child(2) ,.close-btn.active .line:nth-child(2){
   transform: translateY(-13px) rotate(-45deg);
 }
+
 
 /* sec-container */
 .sec-container {
@@ -346,18 +332,9 @@ li.click .sec-img:hover::after{
 
 .m-project .sec-img {background-image: url('../images/머니부.gif')}
 
-/* .vanilla-js .li:nth-child(1) .sec-img{background-image: url('');} */
-.vanilla-js .li:nth-child(2) .sec-img{background-image: url('../images/painting.gif');}
-/* .vanilla-js .li:nth-child(3) .sec-img{background-image: url('');}
-.vanilla-js .li:nth-child(4) .sec-img{background-image: url('');}
-.vanilla-js .li:nth-child(5) .sec-img{background-image: url('');}
-.vanilla-js .li:nth-child(6) .sec-img{background-image: url('');} 
-.vanilla-js .li:nth-child(7) .sec-img{background-image: url('');}  */
+/* .vanilla-js > .sec > li:first-child {background-image: url('');} */
+.vanilla-js > .sec > li:nth-child(2) .sec-img {background-image: url('../images/painting.gif');}
 
-/* .vue-js .li:nth-child(1) .sec-img{background-image: url('');} 
-.vue-js .li:nth-child(2) .sec-img{background-image: url('');} 
-.vue-js .li:nth-child(3) .sec-img{background-image: url('');} 
-.vue-js .li:nth-child(4) .sec-img{background-image: url('');}  */
 
 li.click .sec-container > .sec-img::before {
   content: '';
@@ -380,18 +357,23 @@ li.click .content {
   justify-self: flex-start;
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr repeat(2,70px);
+  grid-template-rows: 1fr repeat(2,auto);
   width: 100%;
+  position: relative;
+  gap: 16px;
 }
 .sec-explain {
   overflow-y: scroll;
+  height: calc(100% - 30px);
 }
-.content::before {
-  content: '← code';
+.code::before,
+.code-box::before {
+  content: 'code ↓';
   position: absolute;
-  right: 0;
-  bottom: 110px;
+  bottom: 47px;
+  left: 8px;
   font-weight: 600;
+  font-size: 18px;
   color: #b7b7b7;
 }
 .content a {
@@ -404,6 +386,7 @@ li.click .content {
   background: center;
   background-repeat:  no-repeat ;
   background-size:  contain;
+  position: relative;
 }
 
 .content a.sec-btn {
@@ -422,6 +405,7 @@ li.click .content {
 .code-box {
   grid-template-rows: 1fr;
   align-self: start;
+  position: relative;
 }
 .content  a + a { margin-left: 7px;}
 
@@ -466,4 +450,221 @@ li.click .content {
 
 } 
 
+/* media query ---------------------------------------------------------- */
+/* 테블릿 가로 */
+@media screen and (max-width:1210px){
+  body {
+    padding: 20px 15px;
+  }
+  .page-wrap.click > header , 
+  header {
+    border: none;
+    padding:30px 28px;
+  }
+  .page-wrap.click {
+    grid-template-columns: 27% 1fr;
+  }
+     
+  .pw-logo {
+    font-size:1.9em
+  }
 
+  section h3 {
+    font-size: 3em;
+    right: 20px;
+  }
+  section .sec {
+    padding: 5px;
+    height: 83%;
+  }
+
+  .sec > li.click {
+    grid-template-rows: 50px 1fr;
+    margin-top: 0;
+    align-self: start;
+  }
+  
+  .sec > li.click > strong{
+    font-size: 2em;
+    justify-self: center;
+    margin-left: -308px;
+  }
+  li.click .sec-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    gap : 10px;
+    align-self: center;
+  }
+  .sec-img {
+    width: 428px;
+    height: 294px;
+  }
+  li.click .sec-img {
+    width: 428px;
+    height: 294px;
+  }
+  li.click .sec-container > .sec-img::before{
+    width: 130px;
+    height: 100px;
+    top: -53px;
+  }
+  li.click .content {
+    position: static;
+    grid-template-rows: 1fr auto;
+  }
+
+  .code , .code-box {
+    position: relative;
+    right: 0;
+  }
+  .code::before   {
+    top: -35px;
+    left: 3px;
+  }
+
+
+  .content a {
+    font-size: 18px;
+  }
+  .content a + a{margin-left: 0;}
+  .close-btn {
+    right: 12%;
+    top: auto;
+    bottom: 102px;
+  }
+  .close-btn .line {
+    width: 40px;
+  }
+  .content a.sec-btn {
+    position: absolute;
+    top: -62px;
+    right: 0;
+    font-size: 1.4em;
+  }
+
+  .b1, 
+  .b2  {
+    bottom: -4px;
+    left: -4px;
+    right: -4px;
+  }
+  .b2 {
+    top: -4px;
+  }
+
+  .b3, 
+  .b4 { 
+    left: -4px;
+    top: -4px;
+    bottom: -4px;
+  }
+
+  .b4 {
+    left: auto;
+    right: -4px;
+    bottom: -4px;
+    top:-4px;
+  }
+  .scroll {
+    left: 0;
+    right: auto;
+    bottom: 20px;
+  }
+}
+
+
+/* 모바일 가로, 테블릿 세로 */
+@media screen and  (max-width:768px){
+  body {
+    /* background-color: orange; */
+  }
+  .page-wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .page-wrap.click {
+   grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+  .page-wrap.click > header { padding: 10px; }
+  header {
+    place-self: start;
+    grid-template-columns: auto;
+    grid-template-rows: none;
+    gap: 0;
+    padding: 10px;
+  }
+
+  .pw-logo {
+    font-size: 1.5em;
+    padding: 10px 0 0 20px;
+
+  }
+  header > nav {
+    background-color: #fbfbfb;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+  }
+
+  .h-nav {
+    place-items: center;
+    height: 100%;
+  }
+  .h-nav button {
+    font-size: 3em;
+  }
+
+  /* nav-btn */
+  #hNavBtn {
+    position: fixed;
+    top: 46px;
+    right: 40px;
+    bottom: auto;
+    cursor: pointer;
+    z-index: 1100;
+    visibility: visible;
+  }
+
+  #hNavBtn .line {
+    background-image: url('../images/lineBar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #hNavBtn.active .line {background-color: transparent;}
+  #hNavBtn.active .line:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  #hNavBtn.active .line:nth-child(2){transform: translateY(-13px) rotate(-45deg);}
+
+  section h3 {
+    right: 20px;
+    top: 10px;
+  }
+  .s-tab {
+    left: 14px;
+  }
+  .scroll {
+    left: 20px;
+  }
+  .close-btn {
+    right: 3%;
+    top: auto;
+    bottom: 50px
+  }
+
+  .technique .sec {
+    padding: 0 40px;
+  }
+}
+
+/* 모바일 세로 */
+@media screen and (max-width:479px){
+  body {
+    background-color: yellow;
+  }
+}
