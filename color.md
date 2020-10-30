@@ -15,12 +15,12 @@
 #98b8ad
 #98b3b8
 
-#c9cccf
-#c9c9cf
-#ccc9cf
-#cfc9cf
-#cfc9cc
-#cfc9c9
+#e8e3e0
+#e8e7e0
+#e5e8e0
+#e1e8e0
+#e0e8e3
+#e0e8e7
 <!-- font -->
 400
 600

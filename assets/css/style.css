@@ -20,8 +20,6 @@
 }
 /* HEADER ----------------------------------------------- */
 header {
-/* background-image: linear-gradient(90deg, #e7e7e7 0%, #e7e7e703 100%); */
-  /* background-color: #e7e7e767; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 100px 300px;
@@ -126,9 +124,8 @@ section  h3 {
 
 .contact {
   display: grid;
-  align-self: flex-start;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
 }
 .contact a {
   display: grid;
@@ -145,26 +142,46 @@ section  h3 {
 }
 
 /* technique */
-/* .sec > li */
-.technique > ul > li {
-  display: grid;
-  height: fit-content;
-  gap: 10px;
-  justify-content: flex-start;
-  place-items: start;
-  grid-template-rows: auto;
+.technique > ul.sec {
+  grid-template-columns: repeat(3,1fr);
+  padding: 0 50px;
+  gap: 30px;
 }
+.technique > ul > li {
+  position: relative;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto ;
+  gap: 0;
+  place-items: start;
+  padding: 20px;
+  /* background-color:#a0a0a01a ; */
+  border:2px solid #a0a0a01a ;
+  overflow: hidden;
+}
+
+.technique .t-content {
+  overflow-y: scroll;
+  display: grid;
+  height: 100%;
+  font-family: 'Nanum Gothic';
+  font-size: 1em;
+  font-weight: bold;
+}
+
 .technique strong {
   display: grid;
-  grid-template-columns: 70px 1fr;
+  grid-template-columns: 50px 1fr;
   font-size: 30px;
   gap: 4px;
   align-items: center;
+  top: -40px;
+  color: rgb(202, 202, 202);
 }
 .t-logo {
   display: inline-block;
-  width: 65px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -174,34 +191,16 @@ section  h3 {
 .technique li:nth-child(2) .t-logo {background-image: url('../images/html_logo.png');}
 .technique li:nth-child(3) .t-logo {background-image: url('../images/css_logo.png');}
 .technique li:nth-child(4) .t-logo {background-image: url('../images/vue.png');}
-.technique li:nth-child(5) .t-logo {background-image: url('../images/github.png'); width: 50px; height: 50px; justify-self: center;}
+.technique li:nth-child(5) .t-logo {background-image: url('../images/github.png'); width: 30px; height: 30px; justify-self: center;}
 
 .technique b {
-  font-size: 1.2em;
+  font-size: 1em;
   width: fit-content;
   color: #707070c0;
-}
-.technique li:nth-child(1) span::before {background-color:#b3b898 ;}
-.technique li:nth-child(2) span::before {background-color:#b8ad98 ;}
-.technique li:nth-child(3) span::before {background-color: #98b3b8;}
-.technique li:nth-child(4) span::before {background-color: #98b8ad;}
-.technique li:nth-child(5) span::before {background-color:#a0a0a0 ;}
-
-.technique span {
-  position: relative;
-  font-size: 1.5em;
-  padding-left: 20px;
-}
-.technique span::before{
-  content: '';
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  left: 0;
-  top: 13px;
+  margin:14px 0 3px
 }
 /* m-project & s-project ------------------- */
-section  .sec {
+section .sec {
   position: absolute;
   display: grid;
   top: 55%;
@@ -211,18 +210,19 @@ section  .sec {
   gap: 50px;
   transform: translateY(-50%);
   padding-left: 50px;
-
 }
-.page-wrap.click > section > .sec {
+.page-wrap.click > section  .sec {
   grid-template-rows: 100%;
+
 }
 .sec > li {
     position: relative;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 20px auto;
+    grid-template-rows: 20px 1fr;
     place-content: start center;
     place-items: center;
+    place-self: start;
     gap: 10px;
     width: 100%;
 }
@@ -281,8 +281,9 @@ section  .sec {
   position: relative;
   display: grid;
   gap:38px;
-  place-content: center;
+  /* place-content: center; */
   place-items: center center;
+  grid-template-columns: 1fr;
 }
 
 li.click .sec-container {
@@ -360,7 +361,7 @@ li.click .content {
   grid-template-rows: 1fr repeat(2,auto);
   width: 100%;
   position: relative;
-  gap: 16px;
+  gap: 30px;
 }
 .sec-explain {
   overflow-y: scroll;
@@ -453,7 +454,9 @@ li.click .content {
 /* media query ---------------------------------------------------------- */
 /* 테블릿 가로 */
 @media screen and (max-width:1210px){
+  .loading-container{display: none;}
   body {
+    /* background-color: red; */
     padding: 20px 15px;
   }
   .page-wrap.click > header , 
@@ -476,6 +479,9 @@ li.click .content {
   section .sec {
     padding: 5px;
     height: 83%;
+  }
+  .technique > ul.sec {
+    grid-template-columns: repeat(2 ,1fr);
   }
 
   .sec > li.click {
@@ -511,12 +517,26 @@ li.click .content {
   li.click .content {
     position: static;
     grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: 
+    "content content"
+    "code result"
+    ;
   }
 
-  .code , .code-box {
+  li.click .content .sec-explain{grid-area: content;}
+  li.click .content .code-box,
+  li.click .content .code {
+    grid-area: code;
+    align-self: end;
     position: relative;
     right: 0;
   }
+  li.click .content .sec-btn{
+    grid-area: result;
+    font-size: 1.4em;
+  }
+
   .code::before   {
     top: -35px;
     left: 3px;
@@ -534,12 +554,6 @@ li.click .content {
   }
   .close-btn .line {
     width: 40px;
-  }
-  .content a.sec-btn {
-    position: absolute;
-    top: -62px;
-    right: 0;
-    font-size: 1.4em;
   }
 
   .b1, 
@@ -575,9 +589,6 @@ li.click .content {
 
 /* 모바일 가로, 테블릿 세로 */
 @media screen and  (max-width:768px){
-  body {
-    /* background-color: orange; */
-  }
   .page-wrap {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -603,17 +614,19 @@ li.click .content {
   header > nav {
     background-color: #fbfbfb;
     position: fixed;
+    display: grid;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 1000;
     visibility: hidden;
+    align-content: center;
   }
 
   .h-nav {
     place-items: center;
-    height: 100%;
+    gap: 62px;
   }
   .h-nav button {
     font-size: 3em;
@@ -653,8 +666,8 @@ li.click .content {
   }
   .close-btn {
     right: 3%;
-    top: auto;
-    bottom: 50px
+    top: 122px;
+    bottom: auto;
   }
 
   .technique .sec {
@@ -664,7 +677,70 @@ li.click .content {
 
 /* 모바일 세로 */
 @media screen and (max-width:479px){
-  body {
-    background-color: yellow;
+  
+  section h3 {
+    font-size: 1.3em;
+    right: auto;
+    left: 50%;
+    top: 8px;
+    transform: translateX(-50%)
+  }
+  section .sec {
+    top: 50%;
+  }
+
+
+  .contact > .sec {
+    grid-row: auto;
+    height: auto;
+  }
+  .contact-img {
+    width: 70%;
+  }
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: auto;
+    gap: 45px;
+  } 
+    .contact i {
+      font-size:2em ;
+    }
+  .technique > ul.sec {
+    grid-template-columns: 1fr;
+  }
+
+  .s-tab {
+    left: 50%;
+    bottom:20px;
+    top: auto;
+    transform: translateX(-50%);
+  }
+  .sec > li.click > strong  {
+    margin-left: 10px;
+    /* justify-self: center; */
+    font-size: 1.2em;
+  }
+  .sec-img {
+    width: 300px;
+    height: 190px;
+  }
+
+  li.click .sec-img {
+    width: 300px;
+    height: 190px;
+  }
+  li.click .sec-container > .sec-img::before {
+    width: 80px;
+  }
+  .close-btn {
+    top: 73px;
+  }
+  .close-btn .line {
+    width: 30px;
+  }
+  .scroll {
+    left: 38px;
+    bottom: -27px;
   }
 }

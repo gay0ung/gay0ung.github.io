@@ -19,25 +19,53 @@ const scrollIcon = document.querySelectorAll('.scroll');
 
 const closeBtn = document.querySelectorAll('.close-btn');
 
-console.dir();
+let WIDHT = 0;
+
 
 init();
 /* header ---------------------------------------------------------------- */
 function headerNavBtn() {
   clickHandler(buttons, hNav, sections, 'BUTTON', "on");
+};
+sizeCheck()
+function sizeCheck(){
+  let loadedSize = window.innerWidth;
+  const contact = document.querySelectorAll('.contact > a')
 
-  if(window.innerWidth < 768){
-    hNavBtn.addEventListener('click', (e) => {
-      if (e.target.classList.contains("active")) {
+   window.addEventListener('resize', (e)=>{
+     window.location.reload();
+    })
+  
+  if (loadedSize < 768) {
+    nav.style.visibility = "hidden";
+
+    hNavBtn.addEventListener('click', (ev) => {
+      console.log(ev.target);
+      if (ev.target.classList.contains("active")) {
         hNavBtn.classList.remove("active");
-        nav.style.visibility ="hidden";
+        nav.style.visibility = "hidden";
       } else {
         hNavBtn.classList.add('active');
         nav.style.visibility = "visible"
       }
     })
+  } else {
+    nav.style.visibility = "visible"
   }
-};
+
+  if(loadedSize < 479){
+    // contact
+    console.log();
+    contact.forEach(txt => {
+      console.dir(txt.lastChild.textContent);
+      txt.lastChild.textContent= ""
+    })
+  }
+}
+
+
+
+
 
 /* main ------------------------------------------------------------------ */
 
@@ -114,7 +142,7 @@ function resetClass(){
   if(window.innerWidth < 768){
     hNavBtn.classList.remove("active");
     nav.style.visibility = "hidden";
-  }
+  } 
 }
 
 
@@ -145,4 +173,5 @@ function init(){
   paintHeadColor();
   listClickHandler();
   sectionTab();
+  // sizeCheck()
 }
