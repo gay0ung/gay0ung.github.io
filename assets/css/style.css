@@ -419,15 +419,13 @@ li.click .content {
 .s-tab {
   position: absolute;
   left:60px;
-  top: 55px;
+  top: 46px;
 
 }
 .s-tab > button {
   font-size: 1.5em;
   margin-right: 5px;
   width: fit-content;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   position: relative;
 }
 .s-tab > button.show::before {
@@ -678,6 +676,9 @@ li.click .content {
 /* 모바일 세로 */
 @media screen and (max-width:479px){
   
+  section#sub-p.s-project h3 {
+    display: none;
+  }
   section h3 {
     font-size: 1.3em;
     right: auto;
@@ -712,9 +713,22 @@ li.click .content {
 
   .s-tab {
     left: 50%;
-    bottom:20px;
-    top: auto;
+    top: 10px;
     transform: translateX(-50%);
+  }
+  .s-tab > button {
+    color: #b7b7b7;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+  .s-tab > button.show {
+    color: #404040;
+  }
+  .s-tab > button.show:nth-child(1){background-color:  #b8b1987e;}
+  .s-tab > button.show:nth-child(2){background-color: #98b8a27c;}
+  .s-tab > button.show::before {
+    display: none;
   }
   .sec > li.click > strong  {
     margin-left: 10px;
@@ -730,6 +744,8 @@ li.click .content {
     width: 300px;
     height: 190px;
   }
+
+
   li.click .sec-container > .sec-img::before {
     width: 80px;
   }

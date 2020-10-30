@@ -27,7 +27,7 @@ init();
 function headerNavBtn() {
   clickHandler(buttons, hNav, sections, 'BUTTON', "on");
 };
-sizeCheck()
+
 function sizeCheck(){
   let loadedSize = window.innerWidth;
   const contact = document.querySelectorAll('.contact > a')
@@ -55,10 +55,9 @@ function sizeCheck(){
 
   if(loadedSize < 479){
     // contact
-    console.log();
     contact.forEach(txt => {
       console.dir(txt.lastChild.textContent);
-      txt.lastChild.textContent= ""
+      txt.lastChild.textContent = "";
     })
   }
 }
@@ -173,5 +172,5 @@ function init(){
   paintHeadColor();
   listClickHandler();
   sectionTab();
-  // sizeCheck()
+  sizeCheck()
 }
