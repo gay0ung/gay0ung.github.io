@@ -756,7 +756,12 @@ li.click .content {
     width: 30px;
   }
   .scroll {
-    left: 38px;
-    bottom: -27px;
+    left: 50%;
+    bottom: -37px;
+    transform: translate(-50%);
+  }
+  .scroll span {
+    width: 18px;
+    height: 18px;
   }
 }
