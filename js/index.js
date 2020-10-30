@@ -32,9 +32,9 @@ function sizeCheck(){
   let loadedSize = window.innerWidth;
   const contact = document.querySelectorAll('.contact > a')
 
-   window.addEventListener('resize', (e)=>{
-     window.location.reload();
-    })
+  //  window.addEventListener('resize', (e)=>{
+  //    window.location.reload();
+  //   })
   
   if (loadedSize < 768) {
     nav.style.visibility = "hidden";
