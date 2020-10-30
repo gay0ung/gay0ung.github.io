@@ -720,7 +720,7 @@ li.click .content {
     color: #b7b7b7;
     background-color: transparent;
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: .9em;
   }
   .s-tab > button.show {
     color: #404040;
@@ -734,6 +734,7 @@ li.click .content {
     margin-left: 10px;
     /* justify-self: center; */
     font-size: 1.2em;
+    margin-right: 0;
   }
   .sec-img {
     width: 300px;
