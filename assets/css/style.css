@@ -721,6 +721,7 @@ li.click .content {
     background-color: transparent;
     font-weight: 700;
     font-size: .9em;
+    margin-right: 0;
   }
   .s-tab > button.show {
     color: #404040;
