@@ -333,9 +333,15 @@ li.click .sec-img:hover::after{
 
 .m-project .sec-img {background-image: url('../images/머니부.gif')}
 
-/* .vanilla-js > .sec > li:first-child {background-image: url('');} */
+.vanilla-js > .sec > li:first-child {background-image: url('');}
 .vanilla-js > .sec > li:nth-child(2) .sec-img {background-image: url('../images/painting.gif');}
-
+.vanilla-js > .sec > li:nth-child(3) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(4) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(5) .sec-img {background-image: url('../images/portfolio.gif');}
+.vanilla-js > .sec > li:nth-child(6) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(7) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(8) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(9) .sec-img {background-image: url('');}
 
 li.click .sec-container > .sec-img::before {
   content: '';
@@ -361,7 +367,7 @@ li.click .content {
   grid-template-rows: 1fr repeat(2,auto);
   width: 100%;
   position: relative;
-  gap: 30px;
+  gap: 30px 8px;
 }
 .sec-explain {
   overflow-y: scroll;
@@ -475,7 +481,7 @@ li.click .content {
     right: 20px;
   }
   section .sec {
-    padding: 5px;
+    padding: 17px;
     height: 83%;
   }
   .technique > ul.sec {
@@ -683,7 +689,7 @@ li.click .content {
     font-size: 1.3em;
     right: auto;
     left: 50%;
-    top: 8px;
+    top: 20px;
     transform: translateX(-50%)
   }
   section .sec {
@@ -704,11 +710,20 @@ li.click .content {
     grid-template-rows: auto;
     gap: 45px;
   } 
-    .contact i {
-      font-size:2em ;
-    }
+  .contact i {
+    font-size:2em ;
+  }
   .technique > ul.sec {
     grid-template-columns: 1fr;
+    gap: 0;
+    padding:20px 50px 0;
+  }
+  .technique > ul > li {
+    padding:  0 5px;
+    border: none;
+    border-bottom: 1px solid #b7b7b74d;
+    height: fit-content;
+    padding-bottom: 20px;
   }
 
   .s-tab {
@@ -733,7 +748,6 @@ li.click .content {
   }
   .sec > li.click > strong  {
     margin-left: 10px;
-    /* justify-self: center; */
     font-size: 1.2em;
     margin-right: 0;
   }
@@ -759,7 +773,7 @@ li.click .content {
   }
   .scroll {
     left: 50%;
-    bottom: -37px;
+    bottom: -33px;
     transform: translate(-50%);
   }
   .scroll span {

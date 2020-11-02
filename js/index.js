@@ -5,7 +5,6 @@ const hNav = document.querySelector('.h-nav'),
   hNavBtn = document.querySelector('#hNavBtn'),
   buttons = hNav.querySelectorAll('li > button');
 
-  
 const mainInn = document.querySelector('.main-inner')
   sections = mainInn.querySelectorAll('.main-inner > section'),
   section = mainInn.querySelector('section'),
@@ -19,33 +18,36 @@ const scrollIcon = document.querySelectorAll('.scroll');
 
 const closeBtn = document.querySelectorAll('.close-btn');
 
-let WIDHT = 0;
+
+// class name
+const CLICK = "click",
+  ACTIVE = "active",
+  HIDE = "hide",
+  SHOW = "show",
+  ON = 'on';
 
 
 init();
+
+
 /* header ---------------------------------------------------------------- */
 function headerNavBtn() {
-  clickHandler(buttons, hNav, sections, 'BUTTON', "on");
+  clickHandler(buttons, hNav, sections, 'BUTTON', ON);
 };
 
 function sizeCheck(){
   let loadedSize = window.innerWidth;
-  const contact = document.querySelectorAll('.contact > a')
-
-  //  window.addEventListener('resize', (e)=>{
-  //    window.location.reload();
-  //   })
   
+  // nav메뉴 모바일&테블릿 사이즈 일때(햄버거 메뉴)
   if (loadedSize < 768) {
     nav.style.visibility = "hidden";
 
     hNavBtn.addEventListener('click', (ev) => {
-      console.log(ev.target);
-      if (ev.target.classList.contains("active")) {
-        hNavBtn.classList.remove("active");
+      if (ev.target.classList.contains(ACTIVE)) {
+        hNavBtn.classList.remove(ACTIVE);
         nav.style.visibility = "hidden";
       } else {
-        hNavBtn.classList.add('active');
+        hNavBtn.classList.add(ACTIVE);
         nav.style.visibility = "visible"
       }
     })
@@ -54,17 +56,31 @@ function sizeCheck(){
   }
 
   if(loadedSize < 479){
-    // contact
-    contact.forEach(txt => {
-      console.dir(txt.lastChild.textContent);
-      txt.lastChild.textContent = "";
+    let conTxt = document.querySelectorAll('.contact > a');
+    let tequTxt = document.querySelectorAll('.technique .t-content');
+    
+    let editNode = [conTxt, tequTxt]
+
+    editNode.map( el => {
+      return el.forEach(txt => {
+        txt.nodeName === "DIV" ? txt.style.display = "none" : txt.lastChild.textContent = "";
+      })
     })
   }
 }
 
+// nav메뉴를 클릭 할때 리셋.
+function resetClass() {
+  Array.from(secLis).forEach(el => { el.className = "" });
+  Array.from(closeBtn).forEach(el => { el.classList.remove(ACTIVE) })
 
+  pageWrap.classList.remove(CLICK);
 
-
+  if (window.innerWidth < 768) {
+    hNavBtn.classList.remove(ACTIVE);
+    nav.style.visibility = "hidden";
+  }
+}
 
 /* main ------------------------------------------------------------------ */
 
@@ -72,13 +88,9 @@ function sizeCheck(){
 function listClickHandler() {
   const secUls = document.querySelectorAll('.list');
 
-  const CLICK = "click",
-    ACTIVE = "active",
-    HIDE = "hide";
-
   return Array.from(secUls).map((ul, idx) => {
     if (ul.children.length > 1){
-      scrollIcon[idx].classList.add("show")
+      scrollIcon[idx].classList.add(SHOW)
     }
 
      Array.from(ul.children).map((li, num) => {
@@ -99,7 +111,8 @@ function listClickHandler() {
           closeBtn[idx].classList.add(ACTIVE);
           
           closeBtn[idx].addEventListener('click', (e)=> {
-            for (let i = 0; i < lis.length; i++) {lis[i].className = ""; }
+              for (let i = 0; i < lis.length; i++) { lis[i].className = "" }
+
               closeBtn[idx].classList.remove(ACTIVE);
               pageWrap.classList.remove(CLICK);
             }
@@ -121,27 +134,12 @@ function paintHeadColor(){
     '#98b8a27c'
   ];
 
-  Array.from(h3).map((h,idx) => { 
-    h.style.backgroundColor = mainColor[idx] 
-  })
+  Array.from(h3).map((h,idx) => { h.style.backgroundColor = mainColor[idx] })
 }
 
 // sub project탭메뉴 클릭
 function sectionTab(){
-  clickHandler(secTab, sProject, secContent, 'BUTTON', 'show')
-}
-
-// nav메뉴를 클릭 할때 리셋.
-function resetClass(){
-  Array.from(secLis).forEach(el => {el.className = ""});
-  Array.from(closeBtn).forEach(el => {el.classList.remove("active")})
-
-  pageWrap.classList.remove("click");
-
-  if(window.innerWidth < 768){
-    hNavBtn.classList.remove("active");
-    nav.style.visibility = "hidden";
-  } 
+  clickHandler(secTab, sProject, secContent, 'BUTTON', SHOW)
 }
 
 
@@ -172,5 +170,5 @@ function init(){
   paintHeadColor();
   listClickHandler();
   sectionTab();
-  sizeCheck()
+  sizeCheck();
 }
