@@ -651,7 +651,7 @@ li.click .content {
   #hNavBtn {
     position: absolute;
     top: 30px;
-    right: 30px;
+    right: 15px;
     bottom: auto;
     cursor: pointer;
     z-index: 1100;
