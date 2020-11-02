@@ -603,6 +603,7 @@ li.click .content {
 
 /* 모바일 가로, 테블릿 세로 */
 @media screen and  (max-width:768px){
+  body {padding: 0;}
   .page-wrap {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -627,7 +628,7 @@ li.click .content {
   }
   header > nav {
     background-color: #fbfbfb;
-    position: fixed;
+    position: absolute;
     display: grid;
     left: 0;
     top: 0;
@@ -649,8 +650,8 @@ li.click .content {
   /* nav-btn */
   #hNavBtn {
     position: absolute;
-    top: 46px;
-    right: 40px;
+    top: 30px;
+    right: 30px;
     bottom: auto;
     cursor: pointer;
     z-index: 1100;
@@ -687,11 +688,34 @@ li.click .content {
   .technique .sec {
     padding: 0 40px;
   }
+
+  .b1, 
+  .b2  {
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+  }
+  .b2 {
+    top: 4px;
+  }
+
+  .b3, 
+  .b4 { 
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+  }
+
+  .b4 {
+    left: auto;
+    right: 4px;
+    bottom: 4px;
+    top:4px;
+  }
 }
 
 /* 모바일 세로 */
 @media screen and (max-width:479px){
-  
   section#sub-p.s-project h3 {
     display: none;
   }
