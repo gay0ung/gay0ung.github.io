@@ -232,6 +232,7 @@ section .sec {
   grid-template-rows: 100px auto;
   place-content: start;
   margin-top: 58px;
+  gap: 0;
 }
 .sec > li.hide { display: none; };
 
@@ -281,7 +282,6 @@ section .sec {
   position: relative;
   display: grid;
   gap:38px;
-  /* place-content: center; */
   place-items: center center;
   grid-template-columns: 1fr;
 }
@@ -361,23 +361,25 @@ li.click .sec-container > .sec-img::before {
 .content {display: none;}
 li.click .content { 
   display: grid; 
-  justify-self: flex-start;
-  height: 100%;
+  /* justify-self: flex-start; */
+  height: 87%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr repeat(2,auto);
   width: 100%;
   position: relative;
-  gap: 30px 8px;
+  gap: 10px 8px;
 }
 .sec-explain {
   overflow-y: scroll;
-  height: calc(100% - 30px);
+  padding: 0 20px;
+  font-size: 1.3em;
+  margin-bottom: 40px;
 }
 .code::before,
 .code-box::before {
   content: 'code ↓';
   position: absolute;
-  bottom: 47px;
+  bottom: 36px;
   left: 8px;
   font-weight: 600;
   font-size: 18px;
@@ -419,8 +421,11 @@ li.click .content {
 .s-project .content > .code-box a:nth-child(1){background-image:url('../images/paint-red.png')}
 .s-project .content > .code-box a:nth-child(2){background-image:url('../images/paint-yellow.png');}
 .s-project .content > .code-box a:nth-child(3){background-image: url('../images/paint-blue.png')}
-.vue-js .content > a:nth-child(2), .m-project .content > a:nth-child(2){background-image: url('../images/paint-green.png'); line-height: initial;}
-
+.vue-js .code, 
+.m-project .code-box > a {background-image: url('../images/paint-green.png'); line-height: initial;}
+.m-project .code-box > a {
+  background-position: left;
+}
 /* s-project */
 .s-tab {
   position: absolute;
@@ -481,7 +486,7 @@ li.click .content {
     right: 20px;
   }
   section .sec {
-    padding: 17px;
+    padding: 17px 17px 0;
     height: 83%;
   }
   .technique > ul.sec {
@@ -492,18 +497,21 @@ li.click .content {
     grid-template-rows: 50px 1fr;
     margin-top: 0;
     align-self: start;
+    height: 100%;
   }
   
   .sec > li.click > strong{
     font-size: 2em;
     justify-self: center;
     margin-left: -308px;
+
   }
   li.click .sec-container {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(2,1fr);
+    /* grid-template-rows: repeat(2,1fr); */
     gap : 10px;
     align-self: center;
+    height: 100%;
   }
   .sec-img {
     width: 428px;
@@ -529,8 +537,9 @@ li.click .content {
   }
 
   li.click .content .sec-explain{grid-area: content;}
-  li.click .content .code-box,
-  li.click .content .code {
+
+   /* li.click .content .code, */
+  li.click .content .code-box {
     grid-area: code;
     align-self: end;
     position: relative;
@@ -553,8 +562,9 @@ li.click .content {
   .content a + a{margin-left: 0;}
   .close-btn {
     right: 12%;
-    top: auto;
-    bottom: 102px;
+    /* top: auto;
+    bottom: 102px; */
+    top: 145px;
   }
   .close-btn .line {
     width: 40px;
@@ -638,7 +648,7 @@ li.click .content {
 
   /* nav-btn */
   #hNavBtn {
-    position: fixed;
+    position: absolute;
     top: 46px;
     right: 40px;
     bottom: auto;
@@ -666,7 +676,7 @@ li.click .content {
     left: 14px;
   }
   .scroll {
-    left: 20px;
+    left: 7px;
   }
   .close-btn {
     right: 3%;
@@ -689,7 +699,7 @@ li.click .content {
     font-size: 1.3em;
     right: auto;
     left: 50%;
-    top: 20px;
+    top: 8px;
     transform: translateX(-50%)
   }
   section .sec {
@@ -761,9 +771,22 @@ li.click .content {
     height: 190px;
   }
 
-
+  .m-project li.click .content .code-box {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding-bottom: 5px; */
+  }
+  .m-project li.click .content .code-box::before {
+    /* content:'code'; */
+    bottom: 51px;
+  }
   li.click .sec-container > .sec-img::before {
     width: 80px;
+  }
+
+  li.click .content .sec-explain {
+    font-size: 1em;
+    margin-bottom: 26px;
   }
   .close-btn {
     top: 73px;
