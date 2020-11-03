@@ -1,4 +1,3 @@
-
 window.addEventListener('load', function () {
 /* header ------------------------------------------------------------- */
     // scroll
@@ -146,7 +145,6 @@ window.addEventListener('load', function () {
         }
         
     }
-    //{background-position: -285px -25px}
 });
 
 
