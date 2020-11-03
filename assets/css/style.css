@@ -340,8 +340,8 @@ li.click .sec-img:hover::after{
 .vanilla-js > .sec > li:nth-child(5) .sec-img {background-image: url('../images/portfolio.gif');}
 .vanilla-js > .sec > li:nth-child(6) .sec-img {background-image: url('');}
 .vanilla-js > .sec > li:nth-child(7) .sec-img {background-image: url('');}
-.vanilla-js > .sec > li:nth-child(8) .sec-img {background-image: url('');}
-.vanilla-js > .sec > li:nth-child(9) .sec-img {background-image: url('');}
+.vanilla-js > .sec > li:nth-child(8) .sec-img {background-image: url('../images/jennifer.gif');}
+.vanilla-js > .sec > li:nth-child(9) .sec-img {background-image: url('../images/kakao.gif');}
 
 li.click .sec-container > .sec-img::before {
   content: '';
