@@ -7,7 +7,6 @@ window.addEventListener('load', function () {
     var mailIcon = document.querySelector('.contact_box');
     var links = document.querySelector('.link');
     var hamBtn = document.querySelector('.ham_btn');
-
     
     window.addEventListener('scroll', scrollWork);
     var oldScroll = 0; //--> 전역변수로 호명해준다(지역으로 하면 계속 호출되기 때문)
@@ -120,10 +119,11 @@ window.addEventListener('load', function () {
             speed:800,
             nextSelector: $('.txt_btn.next'),
             prevSelector: $('.txt_btn.prev'),
-            onSliderLoad: function () {
+            adaptiveHeight: true,
+            onSliderLoad: function (){
                 lineAni(this.getCurrentSlide())
             }, //--> 로드되면서 먼저 실행 시키는 메소드
-            onSlideBefore: function () {
+            onSlideBefore: function(){
                 lineAni(this.getCurrentSlide())
             } //-->클릭할때마다 실행 시키는 메소드
         }
@@ -156,13 +156,9 @@ window.addEventListener('load', function () {
         var icoMail = document.querySelector('.ico_mail');
         var licenseBtn = document.querySelector('.license')
 
-        
         etcLangBtn.addEventListener('click', LangClick);
         icoMail.addEventListener('click', boxClick);
-        licenseBtn.addEventListener('click', licenseClick)
-        //console.log(headerBtn.parentNode);
-
-        //console.log(icoMail);
+        licenseBtn.addEventListener('click', licenseClick);
     
     //etcLangBtn
         function LangClick(e) {
@@ -215,13 +211,6 @@ window.addEventListener('load', function () {
                 licenseBtn.classList.remove('active');
                 return;
             }
-
-//라이센스 텍스트에서 글자를 찾는다
-//찾은 글자를 라이센스 옵션에 글자로 박는다.
-// slideroption참고 해보기
-
-            
-            
         }
     }
 })
