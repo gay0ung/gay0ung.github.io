@@ -20,6 +20,7 @@
 .k-insurance-wrap {
   min-width: 320px;
   overflow: hidden;
+  position: relative;
 }
 .inwrap {
   max-width: 1260px;
@@ -35,22 +36,32 @@ header {
   height: 80px;
   position: fixed;
   width: 100%;
-  z-index: 100;
-  background-color: #fff;
+  z-index: 300;
   border-bottom: 1px solid #dddddd;
+  background-color: #fff;
+  overflow: hidden;
+
 }
-header.on::before {
+header.on{
   border-bottom: 2px solid #0d2d4f;
+}
+header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  height: 900px;
+  background: #e8e9eb;
+  z-index: 300;
 }
 .header-inner {
   width: 95%;
   display: flex;
-}
-.header-inner > * {
-  box-sizing: border-box;
+  height: 80px;
 }
 
-/*  */
+/* header-logo */
 .header-logo {
   height: 80px;
 }
@@ -80,46 +91,46 @@ header.on::before {
   font-weight: 700;
   color: #131313;
   transition: color 0.4s;
+  cursor: default;
 }
 .header-nav .nav-group1 > li > a:hover {
   color: #108ad3;
 }
-/* ---------------------- js적용 시키기 */
-.h-nav01 > .on > .nav-group2.on,
-.hero-sitemap.on {
-  display: block;
-}
-.header-nav > ul > li > .nav-group2,
-.hero-sitemap {
-  display: none;
-}
+
 /* ------------------------------------------ */
 
-.h-nav01 > .on .nav-group2.on {
-  background-color: #e8e9eb;
-  display: flex;
+
+.header-nav .nav-group2 {
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  align-content:start;
   position: absolute;
-  top: 80px;
+  width: 100%;
   left: 0;
-  right: 0;
+  top: 80px;
+  height: 0;
 }
-/* .h-nav01 > .on .nav-group2.on::before {
-  content: "";
+
+.header-nav .nav-group1 > li.on > .nav-group2 {
+  visibility: visible;
+  background-color: #e8e9eb;
   position: absolute;
   top: 80px;
   left: 0;
   right: 0;
-  background-color: #e8e9eb;
-} */
+  z-index: 400;
+  height: fit-content;
+}
+
 .header-nav .nav-group2 > li {
-  width: 25%;
-  font-size: 19px;
-  font-weight: 700;
   text-align: left;
-  padding: 2.45% 3% 47px;
+  padding: 10% 10% 0;
+  font-weight: 700;
+  font-size: 19px;
   border-right: 1px solid #dddee0;
 }
-.header-nav .nav-group2 > li:first-child {
+.header-nav .header-nav .nav-group2 > li:first-child {
   border-left: 1px solid #dddee0;
 }
 .header-nav .nav-group3 > li {
@@ -183,27 +194,8 @@ header.on::before {
   overflow: hidden;
   cursor: pointer;
 }
-.util-search input:focus {
-  outline: none;
-}
-.util-search input::placeholder {
-  color: #000;
-  font-size: 16px;
-}
-.util-search input:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-.util-search input:focus::-moz-placeholder {
-  color: transparent;
-}
-.util-search input:focus:-ms-input-placeholder {
-  color: transparent;
-}
-.util-search input:focus::-ms-input-placeholder {
-  color: transparent;
-}
 
-/*  */
+/* search-txt */
 .search-txt {
   font-size: 15px;
   background-color: transparent;
@@ -236,32 +228,50 @@ header.on::before {
   background-position: -52px 2px;
   right: 14px;
 }
-.header-util.on > * {
-  transform: none;
+
+.nav-group1 > .on > .nav-group2.on,
+.header-sitemap.on {
+  display: block;
 }
-.header-util > .header-sitemap.on > .hero-sitemap.on {
+
+/* .header-nav > ul > li > .nav-group2, */
+.header-sitemap > .hero-sitemap {
+  display: none;
+}
+.header-sitemap.on {
+  position: fixed;
+  transform: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d2d4f;
+  overflow-y: scroll;
+  border-radius: 0;
+  z-index: 1000;
+  margin-left: 0;
+  border:none;
+}
+.header-sitemap.on > a { display: none; }
+.header-sitemap.on > .hero-sitemap {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #0d2d4f;
-  z-index: 100;
+  display: block; 
   overflow-y: scroll;
 }
-.hero-sitemap.on > div > * {
-  box-sizing: border-box;
-}
-.hero-sitemap.on h1 {
+.header-sitemap.on h1 {
   padding: 60px 0 50px;
   position: relative;
   border-bottom: 3px solid #ffffff;
 }
-.hero-sitemap.on h1 a img {
+.header-sitemap.on h1 a img {
   display: block;
   margin: 0 auto;
 }
-.hero-sitemap.on h1 a::after {
+.header-sitemap.on h1 .close-btn {
   content: "";
   display: block;
   width: 28px;
@@ -269,54 +279,55 @@ header.on::before {
   position: absolute;
   right: 45px;
   top: 50%;
+  cursor: pointer;
   transform: translateY(-50%);
   background: url("../images/btn_sitemap_close.png");
 }
-.hero-sitemap.on .nav-group1 > li {
+.header-sitemap.on .nav-group1 > li {
   width: 100%;
   display: inline-block;
   border-bottom: 1px solid #3d5772;
   padding: 50px 0;
 }
-.hero-sitemap.on .nav-group1 li {
+.header-sitemap.on .nav-group1 li {
   box-sizing: border-box;
 }
-.hero-sitemap.on .nav-group1 > li > a {
+.header-sitemap.on .nav-group1 > li > a {
   font-size: 26px;
   line-height: 50px;
   float: left;
 }
-.hero-sitemap.on .nav-group1 a {
+.header-sitemap.on .nav-group1 a {
   color: #fff;
   display: block;
 }
-.hero-sitemap.on .nav-group2 {
+.header-sitemap.on .nav-group2 {
   overflow: hidden;
   padding-top: 10px;
   margin-left: 200px;
 }
-.hero-sitemap.on .nav-group2 > li {
+.header-sitemap.on .nav-group2 > li {
   float: left;
   width: 25%;
 }
-.hero-sitemap.on .nav-group2 > li:nth-child(4n + 1) {
+.header-sitemap.on .nav-group2 > li:nth-child(4n + 1) {
   clear: both;
 }
-.hero-sitemap.on .nav-group2 > li:nth-child(4n + 1) > a {
+.header-sitemap.on .nav-group2 > li:nth-child(4n + 1) > a {
   padding: 5px 0;
   line-height: 25px;
   font-size: 17px;
 }
-.hero-sitemap.on .nav-group3 > li > a {
+.header-sitemap.on .nav-group3 > li > a {
   padding: 5px 0;
   line-height: 25px;
   font-size: 17px;
 }
-.hero-sitemap.on .nav-group4 {
+.header-sitemap.on .nav-group4 {
   margin-left: 12px;
   padding: 5px 0;
 }
-.hero-sitemap.on .nav-group4 > li > a {
+.header-sitemap.on .nav-group4 > li > a {
   font-size: 14px;
   color: #6e8195;
   line-height: 23px;
@@ -431,6 +442,11 @@ section h2::before {
   display: block;
   padding: 38px 10px 62px;
 }
+
+#section01 .col > a:hover {background-color:#108ad3 ;}
+#section01 .col > a:hover h3, 
+#section01 .col > a:hover p.show {color: #fff}
+
 .col > a > i {
   margin: 0 auto;
   display: block;
@@ -636,13 +652,14 @@ section h2::before {
   position: relative;
   width: 50%;
   box-sizing: border-box;
-  overflow: hidden;
   padding: 0 70px 0 170px;
   height: 60px;
 }
+
 .board-swipe {
   position: relative;
 }
+
 .swiper-btn {
   position: absolute;
   right: 20px;
@@ -653,7 +670,6 @@ section h2::before {
   width: 32px;
   height: 29px;
   background: url("../images/icon_arrow02.png") no-repeat center;
-  transition: background 0.4s;
 }
 
 /* section2_ 생명보험협회 ---*/
@@ -694,32 +710,36 @@ section h2::before {
   left: 0;
   top: 0;
   right: 0;
-  line-height: 51px;
+  height: 51px;
   border-bottom: 1px solid #d4d5d8;
 }
-.tab > a {
-  background-color: #fff;
+.tab > button {
+  position: absolute;
+  background-color: transparent;
   border-right: 1px solid #d4d5d8;
-  display: block;
   float: left;
   max-width: 140px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   width: 33.333%;
-  position: relative;
+  display: block;
+  height: calc(100% + 1px);
+  border-bottom: 1px solid #d4d5d8;
 }
 .more-btn {
   position: absolute;
   right: 0;
 }
 /* --------------------------------------- hide */
-.tab > a.hide {
-  display: none;
-}
-.tab > a.on {
+.tab > button.hide{display: none;}
+.tab > button.on  {
   z-index: 10;
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
 }
-
+#user{
+  left:140px;
+}
 .tab-contents {
   position: absolute;
   top: 50px;
@@ -727,7 +747,7 @@ section h2::before {
   right: 0;
   padding: 28px 38px;
   background-color: #fff;
-  height: auto;
+  height: 100%;
   border-top: 1px solid #d4d5d8;
 }
 .tab-contents > ul {
@@ -741,6 +761,10 @@ section h2::before {
   color: #6d6d6d;
   font-size: 15px;
   line-height: 32px;
+  padding-right: 80px;
+}
+.tab-contents > ul.hide{
+  display: none;
 }
 .tab-contents > ul.on {
   display: block;
@@ -749,7 +773,6 @@ section h2::before {
 .notice-ext-contents > li > a {
   display: block;
   overflow: hidden;
-  max-width: 335px;
   text-overflow: ellipsis;
   white-space: nowrap;
   transition: color 0.3s;
@@ -793,12 +816,14 @@ span.more-btn::after {
 
 .sec02-inner {
   background-color: #108ad3 !important;
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+  grid-template-rows: repeat(2,50%);
 }
 .sec02-inner > li {
-  float: left;
-  width: 50%;
   padding: 10px;
   box-sizing: border-box;
+  place-self: center;
 }
 .sec02-inner > li > a {
   display: block;

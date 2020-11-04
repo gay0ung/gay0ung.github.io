@@ -6,8 +6,10 @@
   }
 }
 
+
+/* 1280px 이하 ---------------------------------------------------------------- */
 @media screen and (max-width: 1280px) {
-  body::-webkit-scrollbar {
+   body::-webkit-scrollbar {
     display: block;
   }
   .header-util,
@@ -16,9 +18,6 @@
   .page-control .btn-down {
     display: none;
   }
-}
-/* 1280px 이하 ---------------------------------------------------------------- */
-@media screen and (max-width: 1280px) {
   .footer-info-wrap {
     padding: 0;
   }
@@ -50,10 +49,19 @@
   }
 }
 
+@media screen and (max-width: 1254px) {
+  .page-control {
+    position: absolute;
+    right: 27px;
+    bottom: 27px;
+  }
+ .btn.up, .btn.down { display: none }
+}
 /* 1190이하 ---------------------------------------------------------------------*/
 @media screen and (max-width: 1198px) {
   /* header ----- */
   .header-nav {
+    
     margin-left: 36px;
     margin-right: 0;
   }
@@ -100,13 +108,19 @@
   }
 
   /* section02 */
-  #section02 .col4 > .col:nth-child(1),
+  #section02 .col4 > .col:nth-child(1){width: 100%;}
   #section02 .col.col2 {
+    float: none;
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
   }
-  #section02 .col.col2 > .col {
-    height: auto;
+  #section02 .col.col2 > .col,
+  #section02 .sec02-inner {
+    width: 100%;
+    height: 100%;
   }
+  
   #section02 .col4 > .col:nth-child(3),
   #section02 .col4 > .col:nth-child(4) {
     display: none;
@@ -135,6 +149,12 @@
     right: 0;
     left: 0;
     background-color: lawngreen;
+  }
+  #pr{
+    left:140px ;
+  }
+  #user{
+    left: 280px;
   }
   /* #section02 .tab > a{display: block}
   --> .hide를 없애야함.
@@ -226,6 +246,22 @@
 
 /* 766px 이하 --------------------------------------------------------------------- */
 @media screen and (max-width: 766px) {
+  /* section02 tab */
+  .tab {
+    height: 31px;
+  }
+  .tab > button {
+  font-size: 13px;
+  }
+  .tab > span.more-btn{
+    right: 10px;
+  }
+  .tab > span.more-btn::after{
+    width: 9px;
+    height: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
   /* footer */
   .footer-info {
     padding: 20px 15px;
@@ -399,7 +435,7 @@
     font-size: 17px;
   }
   /* header nav */
-  .h-nav01 > .on .nav-group2.on {
+  .header-nav  li.on .nav-group2 {
     display: block;
     padding: 20px 0 47px;
   }

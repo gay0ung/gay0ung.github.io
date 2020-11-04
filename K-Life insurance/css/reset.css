@@ -10,9 +10,9 @@ body {
   word-break: keep-all;
   letter-spacing: -0.04em;
 }
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 img,
 fieldset {
   border: 0 none;
@@ -58,6 +58,9 @@ button {
   background: transparent;
   cursor: pointer;
 }
+button:focus{
+  outline: none;
+}
 a:link,
 a:visited,
 a:active,
@@ -68,4 +71,26 @@ a:hover {
 input {
   font: inherit;
   box-sizing: border-box;
+}
+
+* {box-sizing: border-box;}
+
+.util-search input:focus {
+  outline: none;
+}
+.util-search input::placeholder {
+  color: #000;
+  font-size: 16px;
+}
+.util-search input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+.util-search input:focus::-moz-placeholder {
+  color: transparent;
+}
+.util-search input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.util-search input:focus::-ms-input-placeholder {
+  color: transparent;
 }
