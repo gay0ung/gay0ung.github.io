@@ -28,11 +28,11 @@ function headerNav(){
 
   for (let i = 0; i < nlist.length; i++){
     navLis[i].addEventListener('mouseenter', (e) => {
-      e.target.className = "on";
+      e.target.classList = "on";
       hNav.classList.add('on');
 
       hNav.style.height = nlist[i].clientHeight + 120 + 'px';
-      hNav.style.transition = '.3s';
+      hNav.style.transition = '.5s';
     })
 
     navLis[i].addEventListener('mouseleave',(e) =>{
@@ -186,12 +186,57 @@ function removeTxt(innerWidth){
   return innerWidth < 767 ? moreBtn.lastChild.textContent = '' : moreBtn.lastChild.textContent = 'MORE'
 }
 
+// 슬라이드 팝업창
 function sec2Slide(){
-  const slideBtns = document.querySelector('.slide-page-set');
+  const slideBtns = document.querySelector('.slide-page-set'),
+    pauseBtn = document.querySelector('.slide-btn > span')
+    slidePageNum = document.querySelectorAll('.slide-page-num > span');
 
+  const slideWrap = document.querySelector('.slide-img-wrap'),
+    slides = document.querySelectorAll('.slide'),
+    currentSlide = document.querySelector('.slide.show');
+  
   slideBtns.addEventListener('click', (e)=>{
-    console.log(e.target);
+    // pause/play Btn
+    if(e.target.className === 'pause') {
+      pauseBtn.className = 'play';
+      clearInterval()
+    } else if (e.target.className === 'play') {
+      pauseBtn.className = 'pause'
+    }
+    const parentName = e.target.parentElement.className;
+    if (parentName === 'slide-page-num') {
+     
+
+      for (let i = 0; i < slidePageNum.length; i++) {
+        slidePageNum[i].num = i
+        slides[i].classList.remove('show')
+      }
+      let targetNum = e.target.num;
+
+      slides[targetNum].classList.add('show')
+      pagination(slideSet)
+    }
   })
+  
+  // 슬라이드
+  function slide(targetNum){
+   let slideWidth = Array.from(slides).map(el => el.clientWidth)[0],
+    slideLen = slides.length;
+
+    slideWrap.style.width = 100 * (slideLen + 2) + '%';
+  };
+
+  let slideSet = window.setInterval(slide, 2000);
+  // pageNum
+  function pagination(){
+    for (let i = 0; i < slides.length; i++){
+      slidePageNum[i].className = ""
+      if(slides[i].classList.contains('show')){
+        slidePageNum[i].className = "on"
+      }
+    }
+  }
 }
 
 
@@ -203,5 +248,5 @@ function init(){
   headerMenu()
   sizeChecking()
   sec2TabMenu()
-  sec2TabMenu()
+  sec2Slide()
 }
