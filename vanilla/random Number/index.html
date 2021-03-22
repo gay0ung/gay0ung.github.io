@@ -7,36 +7,30 @@
   <title>Parcel Sandbox</title>
 </head>
 <body>
-  <h1>Random Number Game</h1>
-  <h3 class="js-view">Generate a number between 0 and 10</h3>
-
-  <form action="" id="js-range-form">
-    <datalist id="number">
-      <option value="50"></option>
-      <option value="100"></option>
-      <option value="150"></option>
-      <option value="200"></option>
-    </datalist>
-    <input 
-      type ="range" 
-      id = "rangeInput"
-      min = "10"
-      max= "200"
-      step="1"
-      value="0"
-      list="number"
-    >
-  </form>
-  
-  
-  <form id="js-num-form">
-    <p id="userNum">Guess the number 👉🏿</p>
-    <input type="Number" id="numInput" placeholder="number">
-    <button type="submit" id="playBtn">Play!</button>
-  </form>
-
-  <p class="playing"></p>
-  <p class="result"></p>
+ <div class="random-game-wrap">
+    <h1>Random Number Game</h1>
+    <h3 class="js-view">Generate a number between 0 and 10</h3>
+    
+    <form action="" id="js-range-form">
+      <datalist id="number">
+        <option value="50"></option>
+        <option value="100"></option>
+        <option value="150"></option>
+        <option value="200"></option>
+      </datalist>
+      <input type="range" id="rangeInput" min="10" max="200" step="1" value="0" list="number">
+    </form>
+    
+    
+    <form id="js-num-form">
+      <p id="userNum">Guess the number 👉🏿</p>
+      <input type="Number" id="numInput" placeholder="number">
+      <button type="submit" id="playBtn">Play!</button>
+    </form>
+    
+    <p class="playing"></p>
+    <p class="result"></p>
+ </div>
 
   <script src="src/index.js"></script>
 </body>

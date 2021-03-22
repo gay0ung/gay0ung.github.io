@@ -40,13 +40,12 @@ header {
   border-bottom: 1px solid #dddddd;
   background-color: #fff;
   overflow: hidden;
-
 }
-header.on{
+header.on {
   border-bottom: 2px solid #0d2d4f;
 }
 header::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 80px;
@@ -99,12 +98,11 @@ header::before {
 
 /* ------------------------------------------ */
 
-
 .header-nav .nav-group2 {
   visibility: hidden;
   display: grid;
-  grid-template-columns: repeat(4,25%);
-  align-content:start;
+  grid-template-columns: repeat(4, 25%);
+  align-content: start;
   position: absolute;
   width: 100%;
   left: 0;
@@ -250,16 +248,18 @@ header::before {
   border-radius: 0;
   z-index: 1000;
   margin-left: 0;
-  border:none;
+  border: none;
 }
-.header-sitemap.on > a { display: none; }
+.header-sitemap.on > a {
+  display: none;
+}
 .header-sitemap.on > .hero-sitemap {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: block; 
+  display: block;
   overflow-y: scroll;
 }
 .header-sitemap.on h1 {
@@ -443,9 +443,13 @@ section h2::before {
   padding: 38px 10px 62px;
 }
 
-#section01 .col > a:hover {background-color:#108ad3 ;}
-#section01 .col > a:hover h3, 
-#section01 .col > a:hover p.show {color: #fff}
+#section01 .col > a:hover {
+  background-color: #108ad3;
+}
+#section01 .col > a:hover h3,
+#section01 .col > a:hover p.show {
+  color: #fff;
+}
 
 .col > a > i {
   margin: 0 auto;
@@ -731,14 +735,16 @@ section h2::before {
   right: 0;
 }
 /* --------------------------------------- hide */
-.tab > button.hide{display: none;}
-.tab > button.on  {
+.tab > button.hide {
+  display: none;
+}
+.tab > button.on {
   z-index: 10;
   background-color: #fff;
   border-bottom: 1px solid #fff;
 }
-#user{
-  left:140px;
+#user {
+  left: 140px;
 }
 .tab-contents {
   position: absolute;
@@ -763,7 +769,7 @@ section h2::before {
   line-height: 32px;
   padding-right: 80px;
 }
-.tab-contents > ul.hide{
+.tab-contents > ul.hide {
   display: none;
 }
 .tab-contents > ul.on {
@@ -817,8 +823,8 @@ span.more-btn::after {
 .sec02-inner {
   background-color: #108ad3 !important;
   display: grid;
-  grid-template-columns: repeat(2,50%);
-  grid-template-rows: repeat(2,50%);
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
 }
 .sec02-inner > li {
   padding: 10px;
@@ -858,27 +864,31 @@ span.more-btn::after {
 }
 
 /* section02- slider */
-#section02 .col4 >.col.col2 {
+#section02 .col4 > .col.col2 {
   float: none;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
 }
-#section02 .col4 >.col.col2 > .col,
+#section02 .col4 > .col.col2 > .col,
 .col-slide-container,
-.slide{
+.slide {
   width: 100%;
   height: 100%;
 }
-.col-slide-container{position: relative;}
+.col-slide-container {
+  position: relative;
+}
 .slide-img-wrap {
   position: absolute;
   width: calc(100% * 3);
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
-.col-slide-container span {cursor: pointer;}
+.col-slide-container span {
+  cursor: pointer;
+}
 .slide span {
   display: inline-block;
   width: 100%;
