@@ -495,6 +495,7 @@ li.click .content {
 .s-project .content > .code-box a:nth-child(3) {
   background-image: url("../images/paint-blue.png");
 }
+
 /* vue project */
 .vue-js .code,
 .m-project .code-box > a {
@@ -507,6 +508,15 @@ li.click .content {
 
 .vue-js > .sec > li:nth-child(1) .sec-img {
   background-image: url("../images/weather.jpg");
+}
+.vue-js > .sec > li:nth-child(2) .sec-img {
+  background-image: url("");
+}
+.vue-js > .sec > li:nth-child(3) .sec-img {
+  background-image: url("../images/hacker-news.gif");
+}
+.vue-js > .sec > li:nth-child(4) .sec-img {
+  background-image: url("../images/vue-todo.gif");
 }
 /* s-project */
 .s-tab {
