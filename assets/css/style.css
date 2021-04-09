@@ -218,14 +218,10 @@ section h3 {
 }
 .technique li:nth-child(5) .t-logo {
   background-image: url("../images/github.png");
-  /* width: 30px;
-  height: 30px; */
   justify-self: center;
 }
 .technique li:nth-child(6) .t-logo {
   background-image: url("../images/react.png");
-  /* width: 30px;
-  height: 30px; */
   justify-self: center;
 }
 .technique b {
@@ -253,7 +249,6 @@ section .sec {
   position: relative;
   display: grid;
   grid-template-columns: 100%;
-  /* grid-template-rows: 20px 1fr; */
   place-content: start center;
   place-items: center;
   place-self: start;
@@ -388,10 +383,10 @@ li.click .sec-img:hover::after {
   background-image: url("../images/portfolio.gif");
 }
 .vanilla-js > .sec > li:nth-child(6) .sec-img {
-  background-image: url("");
+  background-image: url("../images/생명보험.jpg");
 }
 .vanilla-js > .sec > li:nth-child(7) .sec-img {
-  background-image: url("");
+  background-image: url("../images/microsoft.jpg");
 }
 .vanilla-js > .sec > li:nth-child(8) .sec-img {
   background-image: url("../images/jennifer.gif");
