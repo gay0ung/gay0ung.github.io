@@ -372,8 +372,8 @@ li.click .sec-img:hover::after {
   background-image: url("../images/머니부.gif");
 }
 
-.vanilla-js > .sec > li:first-child {
-  background-image: url("");
+.vanilla-js > .sec > li:first-child .sec-img {
+  background-image: url("../images/vanilla-todolist.gif");
 }
 .vanilla-js > .sec > li:nth-child(2) .sec-img {
   background-image: url("../images/painting.gif");
@@ -433,6 +433,12 @@ li.click .content {
   padding: 0 20px;
   font-size: 1.3em;
   margin-bottom: 40px;
+  display: grid;
+  row-gap: 11px;
+}
+.sec-explain ul {
+  display: grid;
+  gap: 4px;
 }
 .code::before,
 .code-box::before {

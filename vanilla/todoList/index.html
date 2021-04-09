@@ -7,20 +7,30 @@
   <title>Parcel Sandbox</title>
 </head>
 <body>
-  <h1>Tasks</h1>
-  <form action="" class="js-todo-form">
-    <input type="text" placeholder="Add task">
-  </form>
-  <div class="todo-wrap">
-    <div>
-      <h2>Pending</h2>
-      <ul class="js-pending"></ul>
-    </div>
-    <div>
-      <h2>Finished</h2>
-      <ul class="js-finished"></ul>
-    </div>
-  </div>
-  <script src="src/index.js"></script>
+  <div class="todo-list-wrap">
+    <div class="random-img"></div>
+    <header>
+      <h1>TODO LIST</h1>
+      <form action="" class="js-todo-form">
+        <input type="text" placeholder="Add task">
+      </form>
+      <div class="js-clock">
+        <h1 class="js-title">00:00</h1>
+      </div>
+    </header>
+    <main class="todo-wrap">
+      <div>
+        <h2>Pending</h2>
+        <ul class="js-pending"></ul>
+      </div>
+      <div>
+        <h2>Finished</h2>
+        <ul class="js-finished"></ul>
+      </div>
+      </div>
+    </main>
+  <script src="src/js/randomImg.js"></script>
+  <script src="src/js/index.js"></script>
+  <script src="src/js/clock.js"></script>
 </body>
 </html>

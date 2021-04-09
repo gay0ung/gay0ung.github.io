@@ -1,11 +1,11 @@
 const todoForm = document.querySelector('.js-todo-form'),
   input = todoForm.querySelector('input');
 
+const bgForm = document.querySelector('.random-img')  
+
 const PendingL = document.querySelector('.js-pending');
 const finishedL = document.querySelector('.js-finished');
 
-console.log(todoForm, input);
-console.log(PendingL, finishedL);
 let pendingTasks=[] ,
     finishedTasks=[]
 
