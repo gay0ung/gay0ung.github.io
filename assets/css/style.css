@@ -172,7 +172,6 @@ section h3 {
   gap: 0;
   place-items: start;
   padding: 20px;
-  /* background-color:#a0a0a01a ; */
   border: 2px solid #a0a0a01a;
   overflow: hidden;
 }
@@ -283,7 +282,7 @@ section .sec {
 .close-btn {
   position: absolute;
   right: 84px;
-  top: 195px;
+  top: 164px;
 }
 #hNavBtn .line,
 .close-btn .line {
@@ -363,10 +362,16 @@ li.click .sec-img:hover::after {
   background-color: transparent;
 }
 
-.m-project .sec-img {
+/* mainProject-img */
+.m-project > .sec > li:first-child .sec-img {
   background-image: url("../images/머니부.gif");
 }
 
+.m-project > .sec > li:nth-child(2) .sec-img {
+  /* background-image: url("../images/); */
+}
+
+/* subProject-img */
 .vanilla-js > .sec > li:first-child .sec-img {
   background-image: url("../images/vanilla-todolist.gif");
 }
@@ -415,7 +420,6 @@ li.click .sec-container > .sec-img::before {
 }
 li.click .content {
   display: grid;
-  /* justify-self: flex-start; */
   height: 87%;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr repeat(2, auto);
@@ -424,7 +428,6 @@ li.click .content {
   gap: 10px 8px;
 }
 .sec-explain {
-  overflow-y: scroll;
   padding: 0 20px;
   font-size: 1.3em;
   margin-bottom: 40px;
@@ -519,6 +522,17 @@ li.click .content {
 .vue-js > .sec > li:nth-child(4) .sec-img {
   background-image: url("../images/vue-todo.gif");
 }
+
+/* react */
+.react > .sec > li:nth-child(1) .sec-img {
+  background-image: url("../images/contact.gif");
+}
+
+.react .code,
+.m-project .code-box > a {
+  background-image: url("../images/paint-blue.png");
+  line-height: initial;
+}
 /* s-project */
 .s-tab {
   position: absolute;
@@ -558,7 +572,6 @@ li.click .content {
     display: none;
   }
   body {
-    /* background-color: red; */
     padding: 20px 15px;
   }
   .page-wrap.click > header,
@@ -600,7 +613,6 @@ li.click .content {
   }
   li.click .sec-container {
     grid-template-columns: 1fr;
-    /* grid-template-rows: repeat(2,1fr); */
     gap: 10px;
     align-self: center;
     height: 100%;
@@ -656,8 +668,6 @@ li.click .content {
   }
   .close-btn {
     right: 12%;
-    /* top: auto;
-    bottom: 102px; */
     top: 145px;
   }
   .close-btn .line {
@@ -901,10 +911,8 @@ li.click .content {
   .m-project li.click .content .code-box {
     display: flex;
     flex-wrap: wrap;
-    /* padding-bottom: 5px; */
   }
   .m-project li.click .content .code-box::before {
-    /* content:'code'; */
     bottom: 51px;
   }
   li.click .sec-container > .sec-img::before {
