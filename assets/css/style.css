@@ -367,9 +367,9 @@ li.click .sec-img:hover::after {
   background-image: url("../images/머니부.gif");
 }
 
-.m-project > .sec > li:nth-child(2) .sec-img {
-  /* background-image: url("../images/); */
-}
+/* .m-project > .sec > li:nth-child(2) .sec-img {
+  background-image: url("../images/);
+} */
 
 /* subProject-img */
 .vanilla-js > .sec > li:first-child .sec-img {
