@@ -137,9 +137,11 @@ function paintHeadColor() {
   const mainColor = [
     "#e7e7e7",
     "#cfcfcf",
+    "#b3b3b3",
+    "#98b8a27c",
     "#98b3b881",
     "#b8b1987e",
-    "#98b8a27c",
+
   ];
 
   Array.from(h3).map((h, idx) => {

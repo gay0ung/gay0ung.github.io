@@ -136,12 +136,13 @@ section h3 {
 .contact {
   display: grid;
   justify-content: center;
-  gap: 10px;
+  grid-auto-rows: max-content;
+  row-gap: 24px;
 }
 .contact a {
   display: grid;
   grid-template-columns: 30px 1fr;
-  gap: 10px;
+  gap: 10px ;
   font-style: normal;
   font-weight: 600;
 }
@@ -153,6 +154,9 @@ section h3 {
 }
 .contact a:nth-child(3):hover {
   color: #b1b898;
+}
+.contact a:nth-child(4):hover {
+  color: #989db8;
 }
 .contact i {
   font-size: 30px;
@@ -213,16 +217,20 @@ section h3 {
   background-image: url("../images/css_logo.png");
 }
 .technique li:nth-child(4) .t-logo {
-  background-image: url("../images/vue.png");
+  background-image: url("../images/scss_logo.png");
 }
 .technique li:nth-child(5) .t-logo {
-  background-image: url("../images/github.png");
-  justify-self: center;
+  background-image: url("../images/vue.png");
 }
 .technique li:nth-child(6) .t-logo {
   background-image: url("../images/react.png");
   justify-self: center;
 }
+.technique li:nth-child(7) .t-logo {
+  background-image: url("../images/github.png");
+  justify-self: center;
+}
+
 .technique b {
   font-size: 1em;
   width: fit-content;
@@ -237,7 +245,7 @@ section .sec {
   height: 80%;
   overflow-y: scroll;
   width: 100%;
-  gap: 50px;
+  row-gap: 60px;
   transform: translateY(-50%);
   padding-left: 50px;
 }
@@ -281,8 +289,8 @@ section .sec {
 /* 닫기 버튼 */
 .close-btn {
   position: absolute;
-  right: 84px;
-  top: 164px;
+  left: 64px;
+  top:75px
 }
 #hNavBtn .line,
 .close-btn .line {
@@ -321,6 +329,7 @@ section .sec {
 
 li.click .sec-container {
   grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 50px
 }
 
 /* 스크린샷  */
@@ -364,12 +373,12 @@ li.click .sec-img:hover::after {
 
 /* mainProject-img */
 .m-project > .sec > li:first-child .sec-img {
-  background-image: url("../images/머니부.gif");
+  background-image: url("../images/졸작.gif");
 }
 
-/* .m-project > .sec > li:nth-child(2) .sec-img {
-  background-image: url("../images/);
-} */
+.m-project > .sec > li:nth-child(2) .sec-img {
+  background-image: url("../images/머니부.gif");
+}
 
 /* subProject-img */
 .vanilla-js > .sec > li:first-child .sec-img {
@@ -417,6 +426,8 @@ li.click .sec-container > .sec-img::before {
 /* content */
 .content {
   display: none;
+  height: 100%;
+  padding-bottom: 20px;
 }
 li.click .content {
   display: grid;
@@ -437,6 +448,12 @@ li.click .content {
 .sec-explain ul {
   display: grid;
   gap: 4px;
+}
+.sec-explain > li {
+  display: grid;
+}
+.sec-explain b {
+  margin-bottom: 5px;
 }
 .code::before,
 .code-box::before {
@@ -632,7 +649,7 @@ li.click .content {
   }
   li.click .content {
     position: static;
-    grid-template-rows: 1fr auto;
+    /* grid-template-rows: 1fr auto; */
     grid-template-columns: 1fr auto;
     grid-template-areas:
       "content content"
@@ -667,8 +684,8 @@ li.click .content {
     margin-left: 0;
   }
   .close-btn {
-    right: 12%;
-    top: 145px;
+    top: 59px;
+    left: 10px;
   }
   .close-btn .line {
     width: 40px;
@@ -790,9 +807,8 @@ li.click .content {
     left: 7px;
   }
   .close-btn {
-    right: 3%;
-    top: 122px;
-    bottom: auto;
+    top: 25px;
+    left: 60px;
   }
 
   .technique .sec {
